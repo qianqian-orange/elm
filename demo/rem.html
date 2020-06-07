@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 1rem;
+      height: 1rem;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOMContentLoaded')
+    })
+    function debounce(fn, delay = 300, immediate = true) {
+      let timer = null
+
+      function debounced() {
+        timer && clearTimeout(timer)
+        if (immediate) {
+          const callNow = !timer
+          timer = setTimeout(() => {
+            timer = null
+          }, delay)
+          callNow && fn.apply(this, arguments)
+        } else {
+          timer = setTimeout(() => {
+            timer = null
+            fn.apply(this, arguments)
+          }, delay)
+        }
+      }
+
+      debounced.cancel = function () {
+        clearTimeout(timer)
+        timer = null
+      }
+
+      return debounced
+    }
+    (function (document, window) {
+      const psdWidth = 750
+      const baseFontSize = 75
+      const docEl = document.documentElement
+      let meta = document.querySelector('meta[name="viewport"]')
+      if (!meta) {
+        meta = document.createElement('meta')
+        meta.setAttribute('name', 'viewprot')
+        document.head.appendChild(meta)
+      }
+
+      function setFontSize() {
+        const dpr = window.devicePixelRatio || 1
+        const scale = 1 / dpr
+        meta.setAttribute('content', `width=device-width, initial-scale=${scale}, user-scalable=no, maximum-scale=${scale}, minimum-scale=${scale}`)
+        console.log(docEl.clientWidth)
+        docEl.style.fontSize = baseFontSize * docEl.clientWidth / psdWidth + 'px'
+      }
+
+      window.addEventListener('resize', debounce(setFontSize))
+      setFontSize()
+    })(document, window)
+  </script>
+</body>
+</html>
