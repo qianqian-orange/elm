@@ -6,7 +6,7 @@ const webpack = require('webpack')
 module.exports = {
   mode: 'production',
   entry: {
-    vendors: ['vue', 'vue-router'],
+    vendors: ['vue', 'vue-router', 'vuex', 'axios'],
   },
   output: {
     path: path.join(__dirname, '../dist', 'dll'),

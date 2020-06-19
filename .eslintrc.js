@@ -13,11 +13,16 @@ module.exports = {
       'named': 'never',
     }],
     'vue/component-tags-order': ['error', {
-      'order': ['template', 'script', 'style']
-    }]
+      'order': ['template', 'script', 'style'],
+    }],
+    'vue/singleline-html-element-content-newline': 0,
+    'vue/multiline-html-element-content-newline': 0,
+    'no-prototype-builtins': 0,
+    'vue/no-v-html': 0,
+    'no-func-assign': 0,
   },
   extends: [
     'plugin:vue/vue3-recommended',
-    'standard'
+    'standard',
   ],
 }

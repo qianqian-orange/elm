@@ -1,0 +1,15 @@
+$psdWidth: 750;
+$baseFontSize: 75;
+
+$headerHeight: 84;
+
+$themeColor: #008cff;
+$primaryTextColor: #222;
+$secondaryTextColor: #999;
+$hairlineColor: #ccc;
+
+:export {
+  baseFontSize: $baseFontSize;
+  headerHeight: $headerHeight;
+  themeColor: $themeColor;
+}

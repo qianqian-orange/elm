@@ -13,6 +13,14 @@ module.exports = webpackMerge(baseConfig, {
     overlay: false,
     stats: 'minimal', // verbose minimal errors-only none normal
     contentBase: path.join(__dirname, '../dist'),
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        pathRewrite: {
+          '^/api': '',
+        },
+      },
+    },
     historyApiFallback: true,
   },
   devtool: 'cheap-module-eval-source-map',

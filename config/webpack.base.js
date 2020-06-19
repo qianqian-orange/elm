@@ -1,7 +1,6 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
@@ -51,9 +50,14 @@ module.exports = {
           },
           'css-loader',
           'postcss-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              prependData: '@import "~@/scss/index.scss";',
+            },
+          },
         ],
-        include: path.join(__dirname, '../src'),
+        include: [path.join(__dirname, '../src'), file => /normalize\.css/.test(file)],
       },
     ],
   },
@@ -61,12 +65,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve('../public/index.html'),
       filename: 'index.html',
+      favicon: resolve('../public/favicon.ico'),
     }),
     new MiniCssExtractPlugin({
       filename: isDev ? 'css/[name].css' : 'css/[name].[hash:6].css',
-    }),
-    new webpack.DllReferencePlugin({
-      manifest: resolve('../dist', 'dll', 'manifest.json'),
     }),
     new VueLoaderPlugin(),
     new CopyWebpackPlugin({

@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <span>hello world</span>
+    <keep-alive include="Home">
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
-<style lang="scss">
-  // #app {
-  //   width: 1rem;
-  //   height: 1rem;
-  //   background-color: red;
-  // }
+<style lang="scss" scoped>
+  #app {
+    width: 100%;
+    height: 100%;
+  }
 </style>
