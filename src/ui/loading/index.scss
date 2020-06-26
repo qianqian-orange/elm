@@ -1,7 +1,23 @@
 .elm-loading {
+  padding: px2rem(30)
+}
+.elm-loading-icon {
   color: rgb(25, 137, 250);
   display: inline-block;
   animation: elm-rotate 2s linear infinite;
+
+  circle {
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    fill: none;
+    animation: elm-circular 1.5s ease-in-out infinite;
+  }
+}
+.elm-loading-text {
+  padding-top: px2rem(20);
+  font-size: px2rem(28);
+  color: #999;
 }
 
 @keyframes elm-rotate {
@@ -11,14 +27,6 @@
   100% {
     transform: rotate(360deg);
   }
-}
-
-.elm-loading circle {
-  stroke: currentColor;
-  stroke-width: 3;
-  stroke-linecap: round;
-  fill: none;
-  animation: elm-circular 1.5s ease-in-out infinite;
 }
 
 @keyframes elm-circular {
@@ -34,11 +42,4 @@
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -120;
   }
-}
-
-
-.elm-loading-text {
-  padding-top: px2rem(20);
-  font-size: px2rem(28);
-  color: #999;
 }

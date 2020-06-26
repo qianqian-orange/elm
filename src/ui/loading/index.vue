@@ -1,8 +1,11 @@
 <template>
-  <div :style="{ textAlign: align }">
+  <div
+    class="elm-loading"
+    :style="{ textAlign: align }"
+  >
     <div
       :style="styleObj"
-      class="elm-loading"
+      class="elm-loading-icon"
     >
       <!-- 前两个参数指定图标的x,y 后两个参数指定图标的width, height -->
       <svg viewBox="0 0 50 50">

@@ -2,6 +2,7 @@
   <list-scroll-view
     ref="scroll"
     :loading="loading"
+    :finish="finish"
     :data-source="dataSource"
     :probe-type="probeType"
     @loadmore="loadmore"
@@ -58,6 +59,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    finish: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     process(val) {
@@ -80,6 +85,7 @@ export default {
 <style lang="scss" scoped>
   .poi-list {
     padding-left: px2rem(30);
+
     .poi-item {
       width: 100%;
       height: px2rem(92);
@@ -95,7 +101,7 @@ export default {
         line-height: px2rem(36);
         color: $secondaryTextColor;
 
-        @include single-line-overflow()
+        @include single-line-overflow();
       }
     }
     .poi-item:not(:last-child) {

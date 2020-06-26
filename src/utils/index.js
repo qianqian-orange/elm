@@ -1,7 +1,7 @@
 // options: { leading, trailing}
 // leading为true立即触发一次
 // trailing为true触发最后一次
-export function throttle(fn, delay, options = { leading: true, trailing: true }) {
+export function throttle(fn, delay = 300, options = { leading: true, trailing: true }) {
   let previous = 0
   let timer = null
 
@@ -34,7 +34,7 @@ export function throttle(fn, delay, options = { leading: true, trailing: true })
   return throttled
 }
 
-export function debounce(fn, delay, immediate = true) {
+export function debounce(fn, delay = 300, immediate = true) {
   let timer = null
 
   function debounced() {
@@ -68,3 +68,30 @@ export function delay(duration) {
     }, duration)
   })
 }
+
+function curryed(fn, ...args) {
+  return function () {
+    return fn.apply(this, args.concat(Array.prototype.slice.call(arguments)))
+  }
+}
+
+export function curry(fn, length) {
+  length = length || fn.length
+  return function () {
+    if (arguments.length < length) {
+      return curry(curryed.apply(this, [fn].concat(Array.prototype.slice.call(arguments))), length - arguments.length)
+    } else {
+      return fn.apply(this, arguments)
+    }
+  }
+}
+
+export const compose = (...fns) => fns.reduce((pre, cur) => (...args) => pre(cur(...args)))
+
+// export function compose(...fns) {
+//   return fns.reduce((pre, cur) => {
+//     return function (...args) {
+//       pre.call(this, cur.apply(this, args))
+//     }
+//   })
+// }

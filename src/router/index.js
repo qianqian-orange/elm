@@ -21,9 +21,19 @@ const router = new VueRouter({
       component: () => import('@/views/address/index.vue'),
       children: [
         {
-          path: 'city',
-          name: 'city',
-          component: () => import('@/views/city/index.vue'),
+          path: 'search',
+          component: () => import('@/views/address/search.vue'),
+        },
+      ],
+    },
+    {
+      path: '/city',
+      name: 'city',
+      component: () => import('@/views/city/index.vue'),
+      children: [
+        {
+          path: 'search',
+          component: () => import('@/views/city/search.vue'),
         },
       ],
     },

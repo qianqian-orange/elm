@@ -1,7 +1,8 @@
 import Translate from './translate'
 import Transition from './transition'
 import EventEmitter from '../eventEmitter'
-import eventType from './eventType'
+import eventType from '../eventType'
+import { add, remove } from './scheduler'
 
 function trigger(type, e) {
   switch (type) {
@@ -20,13 +21,21 @@ function trigger(type, e) {
 }
 
 class Scroll {
-  constructor({ el, probeType }) {
+  constructor({
+    el,
+    probeType = 0,
+    click = true,
+    stopPropagation = false,
+  } = {}) {
     this.el = typeof el === 'string' ? document.querySelector(el) : el
     if (!this.el) {
       console.error('the element is not exist')
       return
     }
+    add(this)
     this.probeType = probeType
+    this.click = click
+    this.stopPropagation = stopPropagation
     this.eventEmitter = new EventEmitter()
     this.translate = new Translate({
       el: this.el,
@@ -39,26 +48,42 @@ class Scroll {
       eventEmitter: this.eventEmitter,
       translate: this.translate,
     })
+    this.clientY = 0
     this.origins = [this.translate, this.transition]
     this.init()
   }
 
   start(e) {
+    e.preventDefault()
+    if (this.stopPropagation) e.stopPropagation()
+    this.clientY = e.touches[0].clientY
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchstart, e)
     })
   }
 
   move(e) {
+    e.preventDefault()
+    if (this.stopPropagation) e.stopPropagation()
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchmove, e)
     })
   }
 
   end(e) {
+    e.preventDefault()
+    if (this.stopPropagation) e.stopPropagation()
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchend, e)
     })
+    if (this.click && Math.abs(e.changedTouches[0].clientY - this.clientY) <= 8) {
+      const event = new Event('click')
+      let el = e.target
+      while (el !== this.el) {
+        el.dispatchEvent(event)
+        el = el.parentNode
+      }
+    }
   }
 
   init() {
@@ -76,6 +101,7 @@ class Scroll {
   }
 
   destroy() {
+    remove(this)
     this.transition.removeEventListener()
     this.el.removeEventListener(eventType.touchstart, this.bindStart, false)
     this.el.removeEventListener(eventType.touchmove, this.bindMove, false)
@@ -93,7 +119,7 @@ class Scroll {
   }
 
   scrollTo(scrollHeight, duration = 0) {
-    this.transition.to(-scrollHeight, duration)
+    this.transition.to(scrollHeight, duration)
   }
 
   reset() {

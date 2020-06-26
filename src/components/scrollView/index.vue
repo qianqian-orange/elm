@@ -14,6 +14,14 @@ export default {
       type: Number,
       default: 0,
     },
+    click: {
+      type: Boolean,
+      default: true,
+    },
+    stopPropagation: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -24,6 +32,8 @@ export default {
     this.scroll = new Scroll({
       el: this.$refs['scroll-container'],
       probeType: this.probeType,
+      click: this.click,
+      stopPropagation: this.stopPropagation,
     })
   },
   beforeDestroy() {
@@ -31,7 +41,9 @@ export default {
   },
   methods: {
     reset() {
-      this.scroll.reset()
+      this.$nextTick(() => {
+        this.scroll.reset()
+      })
     },
     scrollTo(offsetHeight, duration) {
       this.scroll.scrollTo(offsetHeight, duration)
@@ -41,6 +53,9 @@ export default {
     },
     on(type, fn) {
       this.scroll.on(type, fn)
+    },
+    off(type, fn) {
+      this.scroll.off(type, fn)
     },
   },
 }

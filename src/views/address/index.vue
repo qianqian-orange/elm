@@ -6,18 +6,32 @@
     >
       <div class="search-container">
         <router-link
-          to="/address/city"
+          to="/city"
           class="link"
-        >{{ location.city }}</router-link>
-        <search-list
-          :adcode="location.adcode"
-          @ensure="ensure"
-        />
+        >{{ city }}</router-link>
+        <router-link
+          to="/address/search"
+        >
+          <p class="placeholder">
+            <span class="icon">
+              <elm-icon
+                name="search"
+                color="#999"
+                :font-size="36"
+              />
+            </span>请输入小区、写字楼、学校名称</p>
+        </router-link>
       </div>
     </elm-header>
     <p class="title">当前位置</p>
     <p class="content">
-      <span @click="ensure(current)"><i class="icon iconfont icon-location" />{{ location.address }}</span>
+      <span @click="ensure(current)">
+        <elm-icon
+          class="icon"
+          name="location"
+          :font-size="28"
+          :color="variable.themeColor"
+        />{{ location.address }}</span>
       <span
         class="locate"
         @click="locate"
@@ -27,6 +41,7 @@
     <div class="scroll-wrapper">
       <list
         :loading="loading"
+        :finish="!loading"
         :data-source="pois"
         @ensure="ensure"
       />
@@ -39,19 +54,20 @@
 
 <script>
 import locateMixin from '@/mixins/locate'
-import ElmHeader from '@/components/elmHeader/index.vue'
+import addressMixin from './mixin'
+import ElmHeader from '@/components/header/index.vue'
 import List from './list.vue'
-import SearchList from './searchList'
-import { UPDATE_LOCATION } from '@/store/modules/global/mutation-types'
+import { get, set } from '@/utils/sessionStorage'
+import { sessionStorageKey } from '@/config'
+import variable from '@/scss/var.scss'
 
 export default {
   name: 'Address',
   components: {
     ElmHeader,
     List,
-    SearchList,
   },
-  mixins: [locateMixin],
+  mixins: [locateMixin, addressMixin],
   data() {
     return {
       current: {
@@ -70,10 +86,14 @@ export default {
       },
       loading: false,
       pois: [],
+      variable,
+      city: '',
     }
   },
   mounted() {
     if (this.location.initial) this.preserve(this.previous)
+    const data = get(sessionStorageKey.city)
+    if (data) this.city = data.city
     this.locate()
   },
   methods: {
@@ -103,21 +123,19 @@ export default {
           })
           if (!this.location.initial) this.preserve(this.previous)
           this.preserve(this.current)
+          if (!get(sessionStorageKey.city)) {
+            this.city = this.location.city
+            set(sessionStorageKey.city, {
+              city: this.location.city,
+              adcode: this.location.adcode,
+              longitude: this.location.longitude,
+              latitude: this.location.latitude,
+            })
+          }
         })
         .finally(() => {
           this.loading = false
         })
-    },
-    ensure(poi) {
-      this[UPDATE_LOCATION]({
-        initial: true,
-        city: poi.city,
-        adcode: poi.adcode,
-        longitude: poi.longitude,
-        latitude: poi.latitude,
-        address: poi.name || poi.address,
-      })
-      this.$router.push('/home')
     },
   },
 }
@@ -131,28 +149,44 @@ export default {
     height: 100%;
     padding-top: px2rem($headerHeight);
   }
-  .search-container {
+  ::v-deep .search-container {
     position: relative;
     box-sizing: border-box;
-    border-radius: px2rem(48);
     overflow: hidden;
     flex: 1;
     height: px2rem(60);
     padding-left: px2rem(140);
     margin-right: px2rem(20);
     background-color: #fff;
-  }
-  .link {
-    top: 50%;
-    left: px2rem(30);
-    transform: translateY(-50%);
-    width: px2rem(90);
-    padding-right: px2rem(20);
-    font-size: px2rem(28);
+    border-radius: px2rem(48);
 
-    @include single-line-overflow();
-    @include border-right-1px();
-    position: absolute;
+    .link {
+      top: 50%;
+      left: px2rem(30);
+      transform: translateY(-50%);
+      width: px2rem(90);
+      padding-right: px2rem(20);
+      font-size: px2rem(28);
+
+      @include single-line-overflow();
+      @include border-right-1px();
+      // 之所以要把position放到这里是因为border-right-1px会默认设置position: relative
+      position: absolute;
+    }
+  }
+  .placeholder {
+    position: relative;
+    padding: 0 px2rem(60);
+    font-size: px2rem(28);
+    line-height: px2rem(60);
+    color: #999;
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: px2rem(16);
+      transform: translateY(-50%);
+    }
   }
   .title {
     box-sizing: border-box;
@@ -178,8 +212,6 @@ export default {
   }
   .icon {
     margin-right: px2rem(12);
-    font-size: px2rem(28);
-    color: $themeColor;
   }
   .locate {
     float: right;

@@ -29,6 +29,7 @@ export default {
 <style lang="scss" scoped>
   .group-city-list {
     padding-left: px2rem(30);
+
     .group-city-item {
       width: 100%;
       height: px2rem(84);

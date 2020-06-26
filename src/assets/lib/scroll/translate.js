@@ -1,4 +1,4 @@
-import eventType from './eventType'
+import eventType from '../eventType'
 
 class Translate {
   constructor({ el, probeType, eventEmitter }) {
@@ -14,6 +14,7 @@ class Translate {
 
   start(e) {
     this.startClientY = e.touches[0].clientY
+    this.eventEmitter.emit(eventType.beforeScrollStart, { y: this.preScrollHeight })
   }
 
   move(e) {
@@ -45,7 +46,7 @@ class Translate {
   }
 
   ensure(scrollHeight) {
-    if (scrollHeight > 0) return 0
+    if (this.wrapperHeight >= this.contentHeight || scrollHeight > 0) return 0
     if (scrollHeight < this.wrapperHeight - this.contentHeight) return this.wrapperHeight - this.contentHeight
     return scrollHeight
   }

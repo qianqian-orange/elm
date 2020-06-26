@@ -1,4 +1,4 @@
-import eventType from './eventType'
+import eventType from '../eventType'
 
 const regex = /matrix\((.*)\)/
 
@@ -48,18 +48,24 @@ class Transition {
   end(e) {
     if (this.translate.isTop() || this.translate.isBottom()) {
       this.instance = 0
+      this.eventEmitter.emit(eventType.scrollEnd, { y: this.scrollHeight() })
       return
     }
     let speed = +(Math.floor(this.instance) / (Date.now() - this.timeStamp)).toFixed(2)
     this.instance = 0
-    if (speed < this.lowestSpeed) return
+    if (speed < this.lowestSpeed) {
+      this.eventEmitter.emit(eventType.scrollEnd, { y: this.scrollHeight() })
+      return
+    }
     speed = e.changedTouches[0].clientY < this.startClientY ? -speed : speed
     this.pending = true
     this.el.style.transitionDuration = `${this.duration}ms`
     this.translate.offset(parseInt(speed * this.seconds, 10))
-    this.id = window.requestAnimationFrame(() => {
-      this.step()
-    })
+    if (this.probeType) {
+      this.id = window.requestAnimationFrame(() => {
+        this.step()
+      })
+    }
   }
 
   to(scrollHeight, duration) {
@@ -79,6 +85,7 @@ class Transition {
     this.pending = false
     this.el.style.transitionDuration = '0ms'
     window.cancelAnimationFrame(this.id)
+    this.eventEmitter.emit(eventType.scrollEnd, { y: this.scrollHeight() })
   }
 
   addEventListener() {

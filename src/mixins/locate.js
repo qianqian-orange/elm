@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { mapState, mapMutations } from 'vuex'
-import { Notify } from '@/ui'
 import { UPDATE_LOCATION } from '@/store/modules/global/mutation-types'
 import { AmapKey } from '@/config'
 
@@ -11,11 +10,21 @@ export default {
     }),
   },
   methods: {
-    getCurrentCity() {
+    getCurrentCity(initial) {
       return axios.get('https://restapi.amap.com/v3/ip', {
         params: {
           key: AmapKey,
         },
+      }).then(({ data }) => {
+        if (data.status !== '1') throw new Error()
+        const [longitude, latitude] = data.rectangle.split(';')[0].split(',')
+        this[UPDATE_LOCATION]({
+          initial: initial,
+          city: data.city,
+          adcode: data.adcode,
+          longitude,
+          latitude,
+        })
       })
     },
     getCurrentAddress() {
@@ -25,33 +34,24 @@ export default {
           key: AmapKey,
           extensions: 'all',
         },
+      }).then(({ data }) => {
+        if (data.status !== '1') throw new Error()
+        const { township } = data.regeocode.addressComponent
+        this[UPDATE_LOCATION]({ address: township })
+        return data
       })
     },
     locateCore(initial) {
-      return this.getCurrentCity()
-        .then(({ data }) => {
-          if (data.status !== '1') {
-            Notify({ type: 'danger', message: '请求数据失败' })
-            return
-          }
-          const [longitude, latitude] = data.rectangle.split(';')[0].split(',')
+      this[UPDATE_LOCATION]({
+        address: '正在定位中',
+      })
+      return this.getCurrentCity(initial)
+        .then(() => this.getCurrentAddress())
+        .catch(() => {
           this[UPDATE_LOCATION]({
-            initial,
-            city: data.city,
-            adcode: data.adcode,
-            longitude,
-            latitude,
+            address: '定位失败',
           })
-          return this.getCurrentAddress()
-            .then(({ data }) => {
-              if (data.status !== '1') {
-                Notify({ type: 'danger', message: '请求数据失败' })
-                return
-              }
-              const { township } = data.regeocode.addressComponent
-              this[UPDATE_LOCATION]({ address: township })
-              return data
-            })
+          this.$notify({ type: 'danger', message: '请求数据失败' })
         })
     },
     ...mapMutations('global', [UPDATE_LOCATION]),

@@ -1,16 +1,23 @@
 import EventEmitter from '../eventEmitter'
-import eventType from './eventType'
+import eventType from '../eventType'
 // 用于匹配transfrom值
 const regex = /matrix\((.*)\)/
 
 class Slider {
-  constructor({ el }) {
+  constructor({
+    el,
+    duration = 400,
+    loop = true,
+    bounce = true,
+    stopPropagation = true,
+  } = {}) {
     // 这个的el传的是上面HTML文档结构中的div
     this.el = typeof el === 'string' ? document.querySelector(el) : el
     if (!this.el) {
       console.error('the el is not exist')
       return
     }
+    this.stopPropagation = stopPropagation
     // 记录开始触碰div的触点的clientX, 即touches[0].clientX
     this.clientX = 0
     // 记录ul的当前偏移位置
@@ -22,44 +29,60 @@ class Slider {
     // 判断是否正在过渡过程中
     this.pending = false
     // 过渡时间
-    this.duration = 400
+    this.duration = duration
+    this.loop = loop
+    this.bounce = bounce
+    // 当滑动距离小于该值是不会触发trantionend事件的
+    // 所以小于该值时就需要设置过渡时间了，同时pengding也要设置为false
+    this.min = 20
     this.eventEmitter = new EventEmitter()
-    // 调用init方法进行初始化
     this.init()
-  }
-
-  to(x) {
-    this.ul.style.transform = `translateX(${x}px)`
   }
 
   init() {
     if (this.el.children.length === 0) return
     this.ul = this.el.children[0]
-    this.size = this.ul.children.length
     const children = this.ul.children
+    this.size = children.length
+    if (this.size === 0) return
     // li的宽度
     this.width = children[0].offsetWidth
     this.el.style.width = `${this.width}px`
-    if (this.size <= 1) return
+    if (this.size === 1) return
     // 遍历li设置li的宽度，因为我们在设置li的宽度样式时可能不是使用px，
     // 而是使用width: 100%,那么需要设置成px, 因为我们接下在会修改ul的宽度
     // 如果li宽度样式依旧是100%的话那么不正确了
     for (let i = 0; i < children.length; i += 1) {
       children[i].style.width = `${this.width}px`
     }
-    // 设置ul的宽度, 需要额外两个li宽度，因为需要复制首尾两个li
-    this.ul.style.width = `${this.width * (this.size + 2)}px`
-    const first = children[0]
-    const last = children[children.length - 1]
-    this.ul.appendChild(first.cloneNode(true))
-    this.ul.insertBefore(last.cloneNode(true), first)
     // 设置ul过渡样式
     this.ul.style.transition = 'transform 0ms ease'
-    // 这里注意初始偏移值是-this.width, 因为ul第一个li元素是尾元素的副本
-    this.to(-this.width)
-    this.startX = -this.width
     this.interval = this.width * 0.2
     this.addEventListener()
+    if (this.loop) {
+      this.startX = -this.width
+      this.ul.style.width = `${this.width * (this.size + 2)}px`
+      const children = this.ul.children
+      const first = children[0]
+      const last = children[children.length - 1]
+      this.ul.appendChild(first.cloneNode(true))
+      this.ul.insertBefore(last.cloneNode(true), first)
+    } else {
+      this.startX = 0
+      this.ul.style.width = `${this.width * this.size}px`
+    }
+    this.to(this.startX)
+  }
+
+  to(x) {
+    if (this.bounce || this.loop) {
+      this.ul.style.transform = `translateX(${x}px)`
+      return
+    }
+    // bounce需要在loop为false的情况下才能工作
+    if (x > 0) x = 0
+    else if (x < -this.width * (this.size - 1)) x = -this.width * (this.size - 1)
+    this.ul.style.transform = `translateX(${x}px)`
   }
 
   addEventListener() {
@@ -74,6 +97,8 @@ class Slider {
   }
 
   start(e) {
+    e.preventDefault()
+    if (this.stopPropagation) e.stopPropagation()
     // 这个判断逻辑分支后面讲
     if (this.pending) this.stop()
     this.clientX = e.touches[0].clientX
@@ -81,30 +106,78 @@ class Slider {
   }
 
   move(e) {
+    e.preventDefault()
+    if (this.stopPropagation) e.stopPropagation()
     this.to(e.touches[0].clientX - this.clientX + this.startX)
   }
 
   end(e) {
-    // 注意这里设置pending为true
+    e.preventDefault()
+    if (this.stopPropagation) e.stopPropagation()
     this.pending = true
-    const interval = e.changedTouches[0].clientX - this.clientX
     this.ul.style.transitionDuration = `${this.duration}ms`
+    // 先把当前的startX值保留起来
+    const startX = this.startX
     // 如果在过渡过程中触碰了div, 那么会调用stop函数，会修改starX的值
     // 修改后的值不是li宽度的整数倍，所以需要根据index值重新计算
-    this.startX = -this.width * (this.index + 1)
-    if (Math.abs(interval) < this.interval) {
+    if (this.loop) this.startX = -this.width * (this.index + 1)
+    else this.startX = -this.width * this.index
+    const interval = e.changedTouches[0].clientX - this.clientX
+    this.lessThanInterval(Math.abs(interval), startX)
+    this.notLessThanInterval(interval)
+    if (Math.abs(interval) >= this.min) {
+      // 这里之所以要派发transitionend的事件是因为trantionend函数中有处理loop为true时才有的
+      // 边界处理，就没要在这里添加边界处理的逻辑
+      if (!this.duration) {
+        const event = new Event(eventType.transitionend)
+        this.ul.dispatchEvent(event)
+        return
+      }
+      // 对于bounce为false的情况，只需要判断ul当前的transform的偏移值是否已到边界即可
+      if (!this.loop && !this.bounce) {
+        regex.test(window.getComputedStyle(this.ul, null).transform)
+        const x = +RegExp.$1.split(', ')[4]
+        if (x === 0 || x === -this.width * (this.size - 1)) {
+          this.pending = false
+          this.ul.style.transitionDuration = '0ms'
+          this.eventEmitter.emit(eventType.scrollEnd)
+        }
+      }
+    }
+  }
+
+  // 负责处理没有触发touchmove的情况
+  lessThanInterval(interval, startX) {
+    if (interval < this.interval) {
       this.to(this.startX)
-      return
+      // 过渡过程中没有触发touchmove的情况不用处理
+      if (interval < this.min && startX === this.startX) {
+        this.pending = false
+        this.ul.style.transitionDuration = '0ms'
+      }
     }
-    // 左划
-    if (interval < 0) {
-      this.index += 1
-      this.startX -= this.width
-    } else {
-      this.index -= 1
-      this.startX += this.width
+  }
+
+  notLessThanInterval(interval) {
+    if (Math.abs(interval) >= this.interval) {
+      if (interval < 0) {
+        this.index += 1
+        this.startX -= this.width
+      } else {
+        this.index -= 1
+        this.startX += this.width
+      }
+      if (!this.loop) {
+        if (this.index === -1) {
+          this.index += 1
+          this.startX -= this.width
+        } else if (this.index === this.size) {
+          this.index -= 1
+          this.startX += this.width
+        }
+      }
+      this.to(this.startX)
     }
-    this.to(this.startX)
   }
 
   transitionEnd() {

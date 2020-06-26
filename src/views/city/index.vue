@@ -2,29 +2,26 @@
   <div class="city-container">
     <elm-header to="/address">
       <div class="search-container">
-        <search
-          v-model="search"
-          placeholder="输入城市名或首字母查询"
-          :top="top"
-          :data-source="result"
-        >
-          <list-scroll-view
-            ref="list"
-            :data-source="result"
-          >
-            <list
-              :data-source="result"
-              @locate="locate"
-            />
-          </list-scroll-view>
-        </search>
+        <router-link to="/city/search">
+          <p class="placeholder">
+            <span class="icon">
+              <elm-icon
+                name="search"
+                color="#999"
+                :font-size="36"
+              />
+            </span>输入城市名或首字母查询</p>
+        </router-link>
       </div>
     </elm-header>
     <div class="scroll-wrapper">
       <scroll-view ref="scroll">
         <!-- 当前定位城市 -->
         <p class="title">当前定位城市</p>
-        <p class="content">{{ location.city }}</p>
+        <p
+          class="content"
+          @click="locate(currentCity)"
+        >{{ currentCity }}</p>
         <!-- 热门城市 -->
         <p class="title">热门城市</p>
         <ul class="hot-city-list">
@@ -49,12 +46,7 @@
             @locate="locate"
           />
         </div>
-        <div
-          v-show="loading"
-          class="loading-container"
-        >
-          <elm-loading />
-        </div>
+        <elm-loading v-show="loading" />
       </scroll-view>
     </div>
     <letter-nav
@@ -62,41 +54,38 @@
       :letters="letters"
       @transform="transform"
     />
+    <transition name="elm">
+      <router-view :group-city="groupCity" />
+    </transition>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import { mapState, mapMutations } from 'vuex'
-import ElmHeader from '@/components/elmHeader/index.vue'
+import { mapState } from 'vuex'
+import cache from '@/cache'
+import ElmHeader from '@/components/header/index.vue'
 import ScrollView from '@/components/scrollView/index.vue'
-import ListScrollView from '@/components/listScrollView/index.vue'
-import Search from '@/components/search/index.vue'
 import LetterNav from '@/components/letterNav/index.vue'
-import { Notify } from '@/ui'
 import List from './list.vue'
-import { UPDATE_LOCATION } from '@/store/modules/global/mutation-types'
+import cityMixin from './mixin'
 import { AmapKey } from '@/config'
-import variale from '@/scss/var.scss'
 
 export default {
   name: 'City',
   components: {
     ElmHeader,
     ScrollView,
-    ListScrollView,
     LetterNav,
-    Search,
     List,
   },
+  mixins: [cityMixin],
   data() {
     return {
+      currentCity: '',
       hotCity: [],
       groupCity: [],
-      search: '',
-      result: [],
       loading: false,
-      top: +variale.headerHeight,
     }
   },
   computed: {
@@ -107,112 +96,113 @@ export default {
       location: state => state.location,
     }),
   },
-  watch: {
-    search(val) {
-      this.$refs.list.scrollTo(0)
-      if (val === '') {
-        this.result = []
-        return
-      }
-      if (val.length === 1) {
-        const char = val.toUpperCase()
-        const code = char.charCodeAt()
-        if (code >= 65 && code <= 90) {
-          const group = this.groupCity.find(group => group.letter === char)
-          if (!group) return
-          this.result = group.cities
-          return
-        }
-      }
-      this.result = this.groupCity.reduce((result, group) => {
-        return result.concat(group.cities.filter(city => city.name.includes(val)))
-      }, [])
-    },
-  },
   mounted() {
-    this.loading = true
-    this.getHotAndGroupCity()
-      .then(({ data }) => {
-        if (data.code !== 0) {
-          Notify({ type: 'danger', message: '获取数据失败' })
-          return
-        }
-        this.hotCity = data.data.hot_city.map(city => ({ id: city.city_id, name: city.city_name }))
-        this.groupCity = data.data.city_nav.map(group => ({
-          letter: group.idx,
-          cities: group.cities.map(city => ({ id: city.city_id, name: city.city_name })),
-        }))
-        this.groupCity.sort((a, b) => a.letter < b.letter ? -1 : 1)
-        this.reset()
-      })
-      .finally(() => {
-        this.loading = false
+    if (this.location.initial) {
+      this.currentCity = this.location.city
+      this.saveData(this.location)
+    } else this.getCurrentCity()
+    const city = cache.get('city')
+    if (city) {
+      const { hotCity, groupCity } = city
+      this.hotCity = hotCity
+      this.groupCity = groupCity
+      this.reset()
+      return
+    }
+    this.getData()
+      .then(() => {
+        cache.set('city', {
+          hotCity: this.hotCity,
+          groupCity: this.groupCity,
+        }, {
+          maxAge: 1000 * 60,
+          deep: false,
+        })
         this.reset()
       })
   },
   methods: {
     reset() {
-      this.$nextTick(() => {
-        if (this.$refs.scroll) this.$refs.scroll.reset()
-      })
+      if (this.$refs.scroll) this.$refs.scroll.reset()
     },
-    getHotAndGroupCity() {
+    getData() {
+      this.loading = true
       return axios.get('/api/city/list')
+        .then(({ data }) => {
+          if (data.code !== 0) {
+            this.$notify({ type: 'danger', message: '获取数据失败' })
+            return
+          }
+          this.hotCity = data.data.hot_city.map(city => ({ id: city.city_id, name: city.city_name }))
+          this.groupCity = data.data.city_nav.map(group => ({
+            letter: group.idx,
+            cities: group.cities.map(city => ({ id: city.city_id, name: city.city_name })),
+          }))
+          this.groupCity.sort((a, b) => a.letter < b.letter ? -1 : 1)
+        })
+        .finally(() => {
+          this.loading = false
+        })
     },
     transform(index) {
       this.$refs.scroll.scrollToElement(this.$refs.letters[index])
     },
-    locate(city) {
-      axios.get('https://restapi.amap.com/v3/geocode/geo', {
+    getCurrentCity() {
+      return axios.get('https://restapi.amap.com/v3/ip', {
         params: {
           key: AmapKey,
-          address: city,
         },
       }).then(({ data }) => {
-        if (data.status !== '1') {
-          Notify({ type: 'danger', message: '获取数据失败' })
-          return
-        }
-        const { adcode, location } = data.geocodes[0]
-        const [longitude, latitude] = location.split(',')
-        this[UPDATE_LOCATION]({
-          city,
-          adcode,
+        if (data.status !== '1') throw new Error()
+        this.currentCity = data.city
+        const [longitude, latitude] = data.rectangle.split(';')[0].split(',')
+        this.saveData({
+          city: data.city,
+          adcode: data.adcode,
           longitude,
           latitude,
         })
-        this.$router.push('/address')
       })
     },
-    ...mapMutations('global', [UPDATE_LOCATION]),
   },
 }
 </script>
 
 <style lang="scss" scoped>
   .city-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
+    position: relative;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
     padding-top: px2rem($headerHeight);
-    overflow: hidden;
-    background-color: #fff;
   }
-  .scroll-wrapper {
-    width: 100%;
-    height: 100%;
-  }
-  .search-container {
+  ::v-deep .search-container {
     box-sizing: border-box;
     overflow: hidden;
     border-radius: px2rem(48);
     flex: 1;
     height: px2rem(60);
     margin-right: px2rem(20);
+    background-color: #fff;
+  }
+  .placeholder {
+    position: relative;
+    padding: 0 px2rem(60);
+    font-size: px2rem(28);
+    color: #999;
+    line-height: px2rem(60);
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: px2rem(16);
+      transform: translateY(-50%);
+    }
+  }
+  .scroll-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
   .title {
     box-sizing: border-box;
@@ -253,8 +243,5 @@ export default {
     .hot-city-item:nth-child(4n) {
       border-right: none;
     }
-  }
-  .loading-container {
-    padding-top: px2rem(30);
   }
 </style>

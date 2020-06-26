@@ -1,23 +1,26 @@
 <template>
   <span
     :style="styleObj"
-    class="iconfont icon-arrowon"
-  />
+    class="elm-tag"
+  >
+    <slot />
+  </span>
 </template>
 
 <script>
 import px2rem from '@/utils/px2rem'
+import variable from '@/scss/var.scss'
 
 export default {
-  name: 'Arrow',
+  name: 'ElmTag',
   props: {
+    color: {
+      type: String,
+      default: variable.themeColor,
+    },
     fontSize: {
       type: Number,
       default: 24,
-    },
-    color: {
-      type: String,
-      default: '#fff',
     },
   },
   computed: {

@@ -1,4 +1,4 @@
-@import url("//at.alicdn.com/t/font_1878848_heop0sqhawt.css");
+@import url("//at.alicdn.com/t/font_1878848_kz5vm9yapoc.css");
 
 html, body {
   width: 100%;
@@ -18,6 +18,8 @@ ul {
 a {
   color: #222;
   text-decoration: none;
+  /* 去除a标签点击高亮效果 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .border-1px {
@@ -68,4 +70,22 @@ a {
 
 .elm-enter-to, .elm-leave {
   transform: translateX(0);
+}
+
+.clear-fix::before, .clear-fix::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+.fullscreen-fixed-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  box-sizing: border-box;
+  background-color: #fff;
 }

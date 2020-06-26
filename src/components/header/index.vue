@@ -6,7 +6,11 @@
           class="arrow-container"
           @click="jump"
         >
-          <arrow :font-size="44" />
+          <elm-icon
+            name="arrow"
+            :font-size="44"
+            :rotate="-90"
+          />
         </div>
       </router-link>
     </slot>
@@ -16,13 +20,8 @@
 </template>
 
 <script>
-import Arrow from '@/components/arrow/index.vue'
-
 export default {
   name: 'ElmHeader',
-  components: {
-    Arrow,
-  },
   props: {
     to: {
       type: String,
@@ -48,11 +47,9 @@ export default {
     box-sizing: border-box;
     width: 100%;
     height: px2rem($headerHeight);
-    // background-color: $themeColor;
     background-image: linear-gradient(90deg,#1db5ff,#008cff)
   }
   .arrow-container {
-    transform: rotate(-90deg);
     width: px2rem(72);
     height: px2rem(72);
     text-align: center;

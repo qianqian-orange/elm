@@ -13,7 +13,7 @@
     const dpr = window.devicePixelRatio || 1
     const scale = 1 / dpr
     meta.setAttribute('content', `width=device-width, initial-scale=${scale}, user-scalable=no`)
-    const width = docEl.clientWidth < 750 ? docEl.clientWidth : 750
+    const width = docEl.clientWidth
     docEl.style.fontSize = width / (psdWidth / baseFontSize) + 'px'
   }
 

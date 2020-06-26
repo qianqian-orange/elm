@@ -3,6 +3,7 @@ export default {
   touchmove: 'touchmove',
   touchend: 'touchend',
   transitionend: 'transitionend',
+  scroll: 'scroll',
   scrollEnd: 'scrollEnd',
   beforeScrollStart: 'beforeScrollStart',
 }
