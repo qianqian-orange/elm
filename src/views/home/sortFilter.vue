@@ -66,7 +66,7 @@ export default {
       location: state => state.location,
     }),
     ...mapState('shop', {
-      initial: state => state.filter.initial,
+      filter: state => state.filter,
       insideSortFilter: state => state.filter.insideSortFilter,
       outsideSortFilter: state => state.filter.outsideSortFilter,
       outsideFilters: state => state.filter.outsideFilters,
@@ -76,7 +76,7 @@ export default {
     }),
   },
   mounted() {
-    if (this.initial) return
+    if (this.filter.initial) return
     this.getData()
   },
   methods: {
@@ -108,6 +108,7 @@ export default {
 
 <style lang="scss" scoped>
   .filter-container {
+    box-sizing: border-box;
     width: 100%;
     background-color: #fff;
   }

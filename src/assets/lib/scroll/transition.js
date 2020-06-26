@@ -81,7 +81,8 @@ class Transition {
     })
   }
 
-  transitionEnd() {
+  transitionEnd(e) {
+    e.stopPropagation()
     this.pending = false
     this.el.style.transitionDuration = '0ms'
     window.cancelAnimationFrame(this.id)

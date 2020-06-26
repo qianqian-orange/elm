@@ -42,12 +42,13 @@ module.exports = {
       {
         test: /\.(sc|c)ss$/,
         use: [
-          isDev ? 'style-loader' : {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: true,
-            },
-          },
+          // isDev ? 'style-loader' : {
+          //   loader: MiniCssExtractPlugin.loader,
+          //   options: {
+          //     hmr: true,
+          //   },
+          // },
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           {
@@ -58,6 +59,31 @@ module.exports = {
           },
         ],
         include: [path.join(__dirname, '../src'), file => /normalize\.css/.test(file)],
+      },
+      {
+        test: /\.(png|jpeg|jpg|gif|svg|webp)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            esModule: false,
+            limit: 1024 * 10, // 10kb
+            outputPath: 'image',
+            name: '[name].[hash:6].[ext]',
+          },
+        },
+        include: path.join(__dirname, '../src'),
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            esModule: false,
+            outputPath: 'font',
+            name: '[name].[hash:6].[ext]',
+          },
+        },
+        include: path.join(__dirname, '../src'),
       },
     ],
   },

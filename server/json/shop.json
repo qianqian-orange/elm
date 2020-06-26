@@ -1710,6 +1710,1852 @@
               "data_source": "swarm"
           },
           "type": null
-      }
+      },
+      {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": null,
+            "brandName": null,
+            "closingCountDown": 19476,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "",
+            "distance": 4362,
+            "favorTime": null,
+            "floatDeliveryFee": 1,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E9765205833603190735",
+            "imagePath": "390ec0aae9beb84d5700613af927596dJPEG",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": false,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.262264,
+            "longitude": 116.41238,
+            "name": "浩记煲仔饭",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "明天 9:30",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "9:30/20:00"
+            ],
+            "orderLeadTime": 39,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "远距离配送¥1",
+                "extraFee": 1,
+                "isExtra": true,
+                "noSubsidyFee": "¥5",
+                "rules": [
+                    {
+                        "fee": 1,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "4.0",
+                "tips": "远距离配送¥1"
+            },
+            "promotionInfo": "",
+            "rating": 4.7,
+            "ratingCount": 2661,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.7426300048828125,
+                "riderScore": 4.95881986618042,
+                "shopScore": null,
+                "tasteScore": 4.667759895324707
+            },
+            "recentOrderNum": 2609,
+            "recentOrderNumDisplay": "月售2609",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "榨菜肉丝煲仔饭包装好味道好",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                },
+                {
+                    "displayFoods": [],
+                    "reason": "人人爱吃",
+                    "reasonType": 5,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E9765205833603190735?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "25减7",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "35减14",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "48减19",
+                    "type": 1
+                },
+                {
+                    "background": {
+                        "rgbFrom": "FAEED7",
+                        "rgbTo": "FAEED7"
+                    },
+                    "bizCode": 160,
+                    "border": "E8D6C3",
+                    "color": "AF7436",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "VIP_COUPON",
+                    "text": "￥6无门槛红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 110,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "QUALITY_UNION",
+                    "text": "品质联盟",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 70,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY",
+                    "text": "9.9折",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 121,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "COUPON_DIRECT_UNRECEIVED",
+                    "text": "领30元红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                },
+                {
+                    "background": null,
+                    "bizCode": 131,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "UNKNOW",
+                    "text": "返红包",
+                    "type": 1
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": null,
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    },
+    {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": null,
+            "brandName": null,
+            "closingCountDown": 17676,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "",
+            "distance": 2534,
+            "favorTime": null,
+            "floatDeliveryFee": 0,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E1138237795920208519",
+            "imagePath": "88592A804AC94EA4B7E04E43468D1126png",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": false,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.257611,
+            "longitude": 116.430348,
+            "name": "港叔餐厅",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "20:00",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "10:30/19:30",
+                "20:00/0:00"
+            ],
+            "orderLeadTime": 33,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "免配送费",
+                "extraFee": 0,
+                "isExtra": false,
+                "noSubsidyFee": "¥4",
+                "rules": [
+                    {
+                        "fee": 0,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "4.0",
+                "tips": "免配送费"
+            },
+            "promotionInfo": "如果有漏餐，弄错餐，不要急于评价，请与小店联系！",
+            "rating": 4.3,
+            "ratingCount": 1815,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.460909843444824,
+                "riderScore": 4.9753098487854,
+                "shopScore": null,
+                "tasteScore": 4.358019828796387
+            },
+            "recentOrderNum": 2592,
+            "recentOrderNumDisplay": "月售2592",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "经常点广式豆鼓鸡套餐",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E1138237795920208519?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "25减15",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "50减30",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "100减55",
+                    "type": 1
+                },
+                {
+                    "background": {
+                        "rgbFrom": "FAEED7",
+                        "rgbTo": "FAEED7"
+                    },
+                    "bizCode": 160,
+                    "border": "E8D6C3",
+                    "color": "AF7436",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "VIP_COUPON",
+                    "text": "￥6无门槛红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 70,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY",
+                    "text": "9.8折",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 71,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY_FIX_PRICE_WITHOUT_CONDITION",
+                    "text": "4.8元特价",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 121,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "COUPON_DIRECT_UNRECEIVED",
+                    "text": "领15元红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 140,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "GIFT",
+                    "text": "赠",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": null,
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    },
+    {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": null,
+            "brandName": null,
+            "closingCountDown": 30276,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "地址，作新桥路口金波园正对面",
+            "distance": 429,
+            "favorTime": null,
+            "floatDeliveryFee": 0,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E13304242278397692638",
+            "imagePath": "76a7fbd3cc92d28261e470b1f5c2f0cbjpeg",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": false,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.243101,
+            "longitude": 116.43439,
+            "name": "鸳鸯奶茶.便当.小吃店",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "明天 10:15",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "10:15/23:00"
+            ],
+            "orderLeadTime": 30,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "免配送费",
+                "extraFee": 0,
+                "isExtra": false,
+                "noSubsidyFee": "¥4",
+                "rules": [
+                    {
+                        "fee": 0,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "4.0",
+                "tips": "免配送费"
+            },
+            "promotionInfo": "电话13417172926",
+            "rating": 4.7,
+            "ratingCount": 8562,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.695370197296143,
+                "riderScore": 4.962629795074463,
+                "shopScore": null,
+                "tasteScore": 4.6579999923706055
+            },
+            "recentOrderNum": 2536,
+            "recentOrderNumDisplay": "月售2536",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "肉多,超级满足,非常优质的外卖体验",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E13304242278397692638?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "20减5",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "30减12",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "40减15",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "50减20",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "70减25",
+                    "type": 1
+                },
+                {
+                    "background": {
+                        "rgbFrom": "FAEED7",
+                        "rgbTo": "FAEED7"
+                    },
+                    "bizCode": 160,
+                    "border": "E8D6C3",
+                    "color": "AF7436",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "VIP_COUPON",
+                    "text": "￥6无门槛红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 110,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "QUALITY_UNION",
+                    "text": "品质联盟",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 70,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY",
+                    "text": "8折",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": null,
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    },
+    {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": 473250,
+            "brandName": "益禾堂",
+            "closingCountDown": 33276,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "请备注",
+            "distance": 2275,
+            "favorTime": null,
+            "floatDeliveryFee": 3,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E3616500375567686571",
+            "imagePath": "af65f9d3cfeb32783ba3b7295679e7b7png",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": true,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.249233,
+            "longitude": 116.423146,
+            "name": "益禾堂(峡山环美店)",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "明天 10:55",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "10:55/23:50"
+            ],
+            "orderLeadTime": 30,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "配送¥3",
+                "extraFee": 0,
+                "isExtra": false,
+                "noSubsidyFee": "¥4",
+                "rules": [
+                    {
+                        "fee": 3,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "1.0",
+                "tips": "配送¥3"
+            },
+            "promotionInfo": "如有服务方面问题可以咨询：18126900023 我们竭诚为您解决哦！",
+            "rating": 4.8,
+            "ratingCount": 9702,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.800000190734863,
+                "riderScore": 4.961550235748291,
+                "shopScore": null,
+                "tasteScore": 4.7799601554870605
+            },
+            "recentOrderNum": 2525,
+            "recentOrderNumDisplay": "月售2525",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "味道好,包装不错,下次购买",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E3616500375567686571?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": {
+                        "rgbFrom": "FAEED7",
+                        "rgbTo": "FAEED7"
+                    },
+                    "bizCode": 160,
+                    "border": "E8D6C3",
+                    "color": "AF7436",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "VIP_COUPON",
+                    "text": "￥7无门槛红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 110,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "QUALITY_UNION",
+                    "text": "品质联盟",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": "d53fc0cb4dc67973038cbc591938a1b6png",
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    },
+    {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": null,
+            "brandName": null,
+            "closingCountDown": 32076,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "一份来自2002年的甘草水果、果汁冰\n18年老店，\n因为不将就，\n所以保持着100%的回购率。\n因为用心，\n所以一直占据着峡山果切类NO.1的位置！",
+            "distance": 2473,
+            "favorTime": null,
+            "floatDeliveryFee": 0,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E10453279860098973762",
+            "imagePath": "f61ed63f7e2aec249cd1f75c1b2de734png",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": false,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.250116,
+            "longitude": 116.422088,
+            "name": "汕头阿龙FRUITS甘草水果·果汁冰",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "明天 11:00",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "11:00/23:30"
+            ],
+            "orderLeadTime": 30,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "免配送费",
+                "extraFee": 0,
+                "isExtra": false,
+                "noSubsidyFee": "¥4",
+                "rules": [
+                    {
+                        "fee": 0,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "4.0",
+                "tips": "免配送费"
+            },
+            "promotionInfo": "一份来自2002年的甘草水果、果汁冰\n18年老店，\n因为不将就，\n所以保持着100%的回购率。\n因为用心，\n所以一直占据着峡山果切类NO.1的位置！",
+            "rating": 4.7,
+            "ratingCount": 1938,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.7365899085998535,
+                "riderScore": 4.983739852905273,
+                "shopScore": null,
+                "tasteScore": 4.64877986907959
+            },
+            "recentOrderNum": 2517,
+            "recentOrderNumDisplay": "月售2517",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "很好吃,价格也挺划算",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                },
+                {
+                    "displayFoods": [],
+                    "reason": "潮南区汉堡薯条实惠第1名",
+                    "reasonType": 5,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E10453279860098973762?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "25减5",
+                    "type": 1
+                },
+                {
+                    "background": {
+                        "rgbFrom": "FAEED7",
+                        "rgbTo": "FAEED7"
+                    },
+                    "bizCode": 160,
+                    "border": "E8D6C3",
+                    "color": "AF7436",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "VIP_COUPON",
+                    "text": "￥6无门槛红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 110,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "QUALITY_UNION",
+                    "text": "品质联盟",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 70,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY",
+                    "text": "2折",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 71,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY_FIX_PRICE_WITHOUT_CONDITION",
+                    "text": "5.9元特价",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": null,
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    },
+    {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": null,
+            "brandName": null,
+            "closingCountDown": null,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "未填写茶点酸菜鱼",
+            "distance": 3850,
+            "favorTime": null,
+            "floatDeliveryFee": 0.5,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E15855863495148645671",
+            "imagePath": "c8b29ce39ca921860b7ec498150b42bejpeg",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": false,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.255206,
+            "longitude": 116.41178,
+            "name": "金苑大酒店·金符厅(金苑店)",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "0:00/23:59"
+            ],
+            "orderLeadTime": 32,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "远距离配送¥0.5",
+                "extraFee": 0.5,
+                "isExtra": true,
+                "noSubsidyFee": "¥4.5",
+                "rules": [
+                    {
+                        "fee": 0.5,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "4.0",
+                "tips": "远距离配送¥0.5"
+            },
+            "promotionInfo": "",
+            "rating": 4.7,
+            "ratingCount": 5544,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.6836700439453125,
+                "riderScore": 4.961450099945068,
+                "shopScore": null,
+                "tasteScore": 4.645120143890381
+            },
+            "recentOrderNum": 2498,
+            "recentOrderNumDisplay": "月售2498",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "西洋菜汤好喝,鸡中翅也好吃",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                },
+                {
+                    "displayFoods": [],
+                    "reason": "吃货强推",
+                    "reasonType": 5,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E15855863495148645671?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "20减5",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "30减10",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "50减15",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "80减18",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "100减20",
+                    "type": 1
+                },
+                {
+                    "background": {
+                        "rgbFrom": "FAEED7",
+                        "rgbTo": "FAEED7"
+                    },
+                    "bizCode": 160,
+                    "border": "E8D6C3",
+                    "color": "AF7436",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "VIP_COUPON",
+                    "text": "￥6无门槛红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 70,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY",
+                    "text": "9.9折",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 71,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY_FIX_PRICE_WITHOUT_CONDITION",
+                    "text": "9.9元特价",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": null,
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    },
+    {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": null,
+            "brandName": null,
+            "closingCountDown": 32676,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "",
+            "distance": 3299,
+            "favorTime": null,
+            "floatDeliveryFee": 1.5,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E8809066565395685990",
+            "imagePath": "3a88c47a346e7f279a3206e4c89c996cjpeg",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": false,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.264511,
+            "longitude": 116.430166,
+            "name": "青岛牛肉店",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "明天 10:00",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "10:00/23:40"
+            ],
+            "orderLeadTime": 30,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "远距离配送¥1.5",
+                "extraFee": 0.5,
+                "isExtra": true,
+                "noSubsidyFee": "¥4.5",
+                "rules": [
+                    {
+                        "fee": 1.5,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "3.0",
+                "tips": "远距离配送¥1.5"
+            },
+            "promotionInfo": "",
+            "rating": 4.7,
+            "ratingCount": 7489,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.687449932098389,
+                "riderScore": 4.939209938049316,
+                "shopScore": null,
+                "tasteScore": 4.667190074920654
+            },
+            "recentOrderNum": 2469,
+            "recentOrderNumDisplay": "月售2469",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "点的湿炒牛肉粿觉得很合算",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                },
+                {
+                    "displayFoods": [],
+                    "reason": "牛肉火锅中的热卖餐厅",
+                    "reasonType": 5,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E8809066565395685990?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "20减5",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "30减9",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "40减14",
+                    "type": 1
+                },
+                {
+                    "background": {
+                        "rgbFrom": "FAEED7",
+                        "rgbTo": "FAEED7"
+                    },
+                    "bizCode": 160,
+                    "border": "E8D6C3",
+                    "color": "AF7436",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "VIP_COUPON",
+                    "text": "￥6无门槛红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": null,
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    },
+    {
+        "activityId": null,
+        "foods": null,
+        "restaurant": {
+            "activityCombination": null,
+            "adInfo": {
+                "isAd": "false"
+            },
+            "address": null,
+            "averageCost": null,
+            "baiduId": null,
+            "bidding": null,
+            "billBoard": null,
+            "brandId": 472569,
+            "brandName": "一汤一饭",
+            "closingCountDown": 32976,
+            "customizeBenefit": null,
+            "deliveryMode": {
+                "badge": null,
+                "border": "",
+                "color": "2395FF",
+                "gradient": {
+                    "rgbFrom": "00a6ff",
+                    "rgbTo": "00a6ff"
+                },
+                "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+                "id": 1,
+                "isSolid": true,
+                "text": "蜂鸟专送",
+                "textColor": "FFFFFF"
+            },
+            "description": "",
+            "distance": 2515,
+            "favorTime": null,
+            "floatDeliveryFee": 0,
+            "floatMinimumOrderAmount": 15,
+            "foldingRestaurantBrand": null,
+            "foldingRestaurants": null,
+            "id": "E13792253990140719199",
+            "imagePath": "a994c4e33a1aef6ba313d57ff8042e0fjpeg",
+            "imageShowType": null,
+            "isNew": false,
+            "isPremium": false,
+            "isRetailShop": false,
+            "isStockEmpty": false,
+            "isValid": 1,
+            "latitude": 23.257428,
+            "longitude": 116.430213,
+            "name": "一汤一饭.酸汤小肥牛.柠檬酸汤.冬阴功汤",
+            "newShopTag": null,
+            "newShopType": null,
+            "nextBusinessTime": "明天 10:30",
+            "onlyUsePoi": null,
+            "openingHours": [
+                "10:30/23:45"
+            ],
+            "orderLeadTime": 30,
+            "phone": null,
+            "piecewiseAgentFee": {
+                "description": "免配送费",
+                "extraFee": 0,
+                "isExtra": false,
+                "noSubsidyFee": "¥4",
+                "rules": [
+                    {
+                        "fee": 0,
+                        "price": 15
+                    }
+                ],
+                "subsidyFee": "4.0",
+                "tips": "免配送费"
+            },
+            "promotionInfo": "",
+            "rating": 4.3,
+            "ratingCount": 2743,
+            "ratingInfo": {
+                "likesAmount": null,
+                "packageScore": 4.504260063171387,
+                "riderScore": 4.906280040740967,
+                "shopScore": null,
+                "tasteScore": 4.352129936218262
+            },
+            "recentOrderNum": 2441,
+            "recentOrderNumDisplay": "月售2441",
+            "recommend": {
+                "color": null,
+                "iconTag": null,
+                "imageHash": null,
+                "isAd": false,
+                "noneAdWithTrackableReason": false,
+                "reason": "",
+                "track": null
+            },
+            "recommendReasons": [
+                {
+                    "displayFoods": [],
+                    "reason": "味道很不错,份量也足,满意",
+                    "reasonType": 2,
+                    "reasonUrl": null
+                }
+            ],
+            "satisfyCount": null,
+            "saveDeliveryFee": null,
+            "scheme": "https://h5.ele.me/shop/#id=E13792253990140719199?o2o_extra_param=%7B%22rank_id%22%3A%2237e8607895bb4f7381eca6ecdbb62400%22%7D",
+            "shopDeliveryTags": null,
+            "shopTags": null,
+            "star": false,
+            "status": 1,
+            "supportTags": [
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "20减7",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "30减12",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 50,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "REDUCE",
+                    "text": "48减20",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 71,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "FOOD_ACTIVITY_FIX_PRICE_WITHOUT_CONDITION",
+                    "text": "1元特价",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 121,
+                    "border": "FFC9C1",
+                    "color": "FF4B33",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "COUPON_DIRECT_UNRECEIVED",
+                    "text": "领10元红包",
+                    "type": 1
+                },
+                {
+                    "background": null,
+                    "bizCode": 190,
+                    "border": "B2B2B2",
+                    "color": "666666",
+                    "desc": "",
+                    "extension": null,
+                    "icon": null,
+                    "tagCode": "INSURANCE",
+                    "text": "食无忧",
+                    "type": 2
+                }
+            ],
+            "supports": [
+                {
+                    "border": "dddddd",
+                    "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                    "iconColor": "666666",
+                    "iconName": "保",
+                    "id": 7,
+                    "name": "食无忧",
+                    "textColor": "666666",
+                    "twoCharactersIconName": "保险"
+                }
+            ],
+            "targetTagPath": null,
+            "theme": {
+                "defaultColor": "2395ff",
+                "headerStyle": 3,
+                "hongbaoStyle": 0,
+                "logoSub": null,
+                "logoSubV2": null,
+                "logoSubV3": null,
+                "priceColor": "ff5339",
+                "thirdTabName": "商家",
+                "vanishFields": []
+            },
+            "totalDiscount": null
+        },
+        "trackMap": {
+            "data_source": "swarm"
+        },
+        "type": null
+    }
   ]
 }

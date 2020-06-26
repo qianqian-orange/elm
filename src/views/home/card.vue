@@ -1,7 +1,7 @@
 <template>
   <li class="shop-card">
     <img
-      :src="shop.imagePath"
+      v-lazy="shop.imagePath"
       alt="shop"
     >
     <div class="content">
@@ -27,7 +27,10 @@
         <span class="time">{{ shop.orderLeadTime | time }}</span>
         <span class="distance">{{ shop.distance | distance }}</span>
       </div>
-      <elm-fold :height="60">
+      <elm-fold
+        :height="60"
+        @expand="expand"
+      >
         <ul class="tag-list">
           <li
             v-for="{ reason } in shop.recommendReasons"
@@ -44,7 +47,10 @@
           </li>
         </ul>
       </elm-fold>
-      <elm-fold :height="60">
+      <elm-fold
+        :height="60"
+        @expand="expand"
+      >
         <ul class="tag-list">
           <li
             v-for="(support, index) in shop.supportTags"
@@ -117,11 +123,13 @@ export default {
   },
   methods: {
     toggle() {
-      console.log('toggle')
       this.hidden = !this.hidden
     },
     hate() {
       this.$emit('hate')
+    },
+    expand() {
+      this.$emit('expand')
     },
   },
 }
@@ -146,8 +154,9 @@ export default {
     padding-bottom: px2rem(30);
 
     @include border-bottom-1px();
+
     .name {
-      width: 70%;
+      width: px2rem(350);
       margin-bottom: px2rem(12);
       font-size: px2rem(32);
       font-weight: 700;

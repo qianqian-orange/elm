@@ -52,8 +52,16 @@ class Translate {
   }
 
   reset() {
+    const previous = this.contentHeight
+    // 获取剩余可以滚动的高度
+    const residue = this.contentHeight + this.preScrollHeight - this.wrapperHeight
     this.wrapperHeight = this.el.parentNode.offsetHeight
     this.contentHeight = this.el.offsetHeight
+    const interval = previous - this.contentHeight
+    // 如果之前的内容高度小于目前的内容高度，那什么都不需要做
+    if (interval <= 0) return
+    if (residue >= interval) return
+    this.to(this.preScrollHeight + (interval - residue))
   }
 }
 

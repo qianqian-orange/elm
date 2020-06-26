@@ -6,6 +6,17 @@
         transform: `translateY(${translateY}px)`,
       }"
     />
+    <sort-filter
+      v-show="!hidden"
+      :style="{
+        position: 'fixed',
+        top: `${top}px`,
+        left: 0,
+        zIndex: 999,
+        padding: `0 ${px2rem(30)}`,
+      }"
+      @reset="reset"
+    />
     <scroll-view
       ref="scroll"
       :probe-type="1"
@@ -14,9 +25,15 @@
         :style="{
           paddingTop: `${paddingTop}px`,
         }"
-        class="scroll-wrapper"
+        class="home-main"
       >
-        <div class="wave-container">
+        <div
+          class="wave-container"
+          :style="{
+            top: 0,
+            height: px2rem(114 + paddingTop),
+          }"
+        >
           <wave />
         </div>
         <advertisement :advertisement="advertisement" />
@@ -41,33 +58,36 @@
             </div>
           </div>
           <p class="guess">猜你喜欢</p>
-          <!-- <shop /> -->
           <div>
             <sort-filter
               ref="filter"
-              :style="{
-                top: `${top}px`,
-              }"
               @reset="reset"
             />
-            <shop-list @reset="reset" />
+            <shop-list
+              ref="list"
+              @reset="reset"
+              @expand="reset"
+            />
           </div>
         </div>
       </main>
     </scroll-view>
+    <food-loading v-if="test" />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import loadmoreMixin from '@/mixins/loadmore'
 import HomeHeader from './header.vue'
 import ScrollView from '@/components/scrollView/index.vue'
 import Wave from '@/components/wave/index.vue'
 import Advertisement from './advertisement'
 import Kind from './kind'
-// import Shop from './shop'
 import SortFilter from './sortFilter'
 import ShopList from './list'
+import FoodLoading from '@/components/foodLoading/index.vue'
+import px2rem from '@/utils/px2rem'
 
 export default {
   name: 'Home',
@@ -79,10 +99,12 @@ export default {
     Kind,
     SortFilter,
     ShopList,
-    // Shop,
+    FoodLoading,
   },
+  mixins: [loadmoreMixin],
   data() {
     return {
+      px2rem,
       loading: false,
       advertisement: [],
       kindGroup: [],
@@ -91,22 +113,16 @@ export default {
       translateY: 0,
       offsetTop: 0,
       top: 0,
+      hidden: true,
+      interval: 600,
+      test: true,
     }
   },
   mounted() {
-    const { headerHeight, locationHeight } = this.$refs.header.height()
-    const inputHeight = headerHeight - locationHeight
-    console.log(inputHeight)
-    this.paddingTop = headerHeight
-    this.$refs.scroll.on('scroll', ({ y }) => {
-      y = Math.ceil(y)
-      this.translateY = locationHeight + y <= 0 ? -locationHeight : y
-      this.top = -y <= this.offsetTop - inputHeight ? 0 : -y - (this.offsetTop - inputHeight)
-    })
-    this.$refs.scroll.on('scrollEnd', ({ y }) => {
-      y = Math.ceil(y)
-      this.translateY = locationHeight + y <= 0 ? -locationHeight : y
-    })
+    setTimeout(() => {
+      this.test = false
+    }, 3000)
+    this.scrollHandler()
     this.loading = true
     Promise.all([
       this.getAdvertisement(),
@@ -141,8 +157,27 @@ export default {
           }
         })
     },
-    reset() {
-      this.$refs.scroll.reset()
+    scrollHandler() {
+      const { headerHeight, locationHeight } = this.$refs.header.height()
+      const inputHeight = headerHeight - locationHeight
+      this.top = inputHeight
+      this.paddingTop = headerHeight
+      this.$refs.scroll.on('scroll', ({ y }) => {
+        y = Math.ceil(y)
+        // 处理header
+        this.translateY = locationHeight + y <= 0 ? -locationHeight : y
+        // 处理filter
+        this.hidden = -y + inputHeight < this.offsetTop
+        // 处理loadmore
+        if (this.parentHeight + this.interval >= this.contentHeight + y) this.loadmore()
+      })
+      this.$refs.scroll.on('scrollEnd', ({ y }) => {
+        y = Math.ceil(y)
+        this.translateY = locationHeight + y <= 0 ? -locationHeight : y
+      })
+    },
+    loadmore() {
+      this.$refs.list.getData()
     },
   },
 }
@@ -152,19 +187,18 @@ export default {
   .home {
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
-  .scroll-wrapper {
+  .home-main {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    overflow: hidden;
   }
   .wave-container {
     position: absolute;
     left: 0;
     z-index: -1;
     width: 100%;
-    height: px2rem(114);
     background-color: $themeColor;
   }
   .constraint {

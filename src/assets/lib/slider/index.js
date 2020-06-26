@@ -180,7 +180,8 @@ class Slider {
     }
   }
 
-  transitionEnd() {
+  transitionEnd(e) {
+    e.stopPropagation()
     this.ul.style.transitionDuration = '0ms'
     this.pending = false
     if (this.index === -1) {

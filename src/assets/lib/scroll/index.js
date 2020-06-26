@@ -2,7 +2,7 @@ import Translate from './translate'
 import Transition from './transition'
 import EventEmitter from '../eventEmitter'
 import eventType from '../eventType'
-import { add, remove } from './scheduler'
+import { add, remove, destroy } from './scheduler'
 
 function trigger(type, e) {
   switch (type) {
@@ -123,7 +123,6 @@ class Scroll {
   }
 
   reset() {
-    // TODO: 处理内容减少的情况
     this.translate.reset()
   }
 
@@ -131,5 +130,7 @@ class Scroll {
     this.eventEmitter.on(type, fn)
   }
 }
+
+export { destroy }
 
 export default Scroll

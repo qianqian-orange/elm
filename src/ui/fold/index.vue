@@ -54,6 +54,7 @@ export default {
     toggle() {
       this.collapse = !this.collapse
       this.currentHeight = this.collapse ? this.parentHeight : this.childrenHeight
+      this.$emit('expand')
     },
   },
 }
