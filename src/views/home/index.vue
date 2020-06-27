@@ -8,14 +8,14 @@
     />
     <sort-filter
       v-show="!hidden"
+      ref="substitute"
       :style="{
         position: 'fixed',
         top: `${top}px`,
         left: 0,
         zIndex: 999,
-        padding: `0 ${px2rem(30)}`,
       }"
-      @reset="reset"
+      @search="search"
     />
     <scroll-view
       ref="scroll"
@@ -31,7 +31,7 @@
           class="wave-container"
           :style="{
             top: 0,
-            height: px2rem(114 + paddingTop),
+            paddingTop: `${paddingTop}px`,
           }"
         >
           <wave />
@@ -57,22 +57,30 @@
               />
             </div>
           </div>
-          <p class="guess">猜你喜欢</p>
-          <div>
-            <sort-filter
-              ref="filter"
-              @reset="reset"
-            />
-            <shop-list
-              ref="list"
-              @reset="reset"
-              @expand="reset"
-            />
-          </div>
+          <p
+            class="guess"
+            :style="{
+              paddingBottom: hidden ? 0 : `${filterHeight}px`,
+            }"
+          >猜你喜欢</p>
+          <sort-filter
+            v-show="hidden"
+            ref="filter"
+            :style="{
+              padding: 0,
+            }"
+            @reset="reset"
+            @top="toTop"
+            @search="search"
+          />
+          <shop-list
+            ref="list"
+            @reset="reset"
+            @expand="reset"
+          />
         </div>
       </main>
     </scroll-view>
-    <food-loading v-if="test" />
   </div>
 </template>
 
@@ -84,9 +92,8 @@ import ScrollView from '@/components/scrollView/index.vue'
 import Wave from '@/components/wave/index.vue'
 import Advertisement from './advertisement'
 import Kind from './kind'
-import SortFilter from './sortFilter'
-import ShopList from './list'
-import FoodLoading from '@/components/foodLoading/index.vue'
+import SortFilter from '@/components/sortFilter/index.vue'
+import ShopList from '@/components/shopList/index.vue'
 import px2rem from '@/utils/px2rem'
 
 export default {
@@ -99,7 +106,6 @@ export default {
     Kind,
     SortFilter,
     ShopList,
-    FoodLoading,
   },
   mixins: [loadmoreMixin],
   data() {
@@ -112,16 +118,14 @@ export default {
       paddingTop: 0,
       translateY: 0,
       offsetTop: 0,
+      filterHeight: 0,
       top: 0,
+      inputHeight: 0,
       hidden: true,
       interval: 600,
-      test: true,
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.test = false
-    }, 3000)
     this.scrollHandler()
     this.loading = true
     Promise.all([
@@ -130,7 +134,9 @@ export default {
     ]).then(() => {
       this.reset()
       this.$nextTick(() => {
-        this.offsetTop = this.$refs.filter.$el.offsetTop
+        const el = this.$refs.filter.$el
+        this.offsetTop = el.offsetTop
+        this.filterHeight = el.offsetHeight
       })
     }).catch(() => {
       this.$notify({ type: 'danger', message: '获取数据失败' })
@@ -159,15 +165,15 @@ export default {
     },
     scrollHandler() {
       const { headerHeight, locationHeight } = this.$refs.header.height()
-      const inputHeight = headerHeight - locationHeight
-      this.top = inputHeight
+      this.inputHeight = headerHeight - locationHeight
+      this.top = this.inputHeight
       this.paddingTop = headerHeight
       this.$refs.scroll.on('scroll', ({ y }) => {
         y = Math.ceil(y)
         // 处理header
         this.translateY = locationHeight + y <= 0 ? -locationHeight : y
         // 处理filter
-        this.hidden = -y + inputHeight < this.offsetTop
+        this.hidden = -y + this.inputHeight < this.offsetTop
         // 处理loadmore
         if (this.parentHeight + this.interval >= this.contentHeight + y) this.loadmore()
       })
@@ -178,6 +184,20 @@ export default {
     },
     loadmore() {
       this.$refs.list.getData()
+    },
+    toTop(sortFilter) {
+      const { locationHeight } = this.$refs.header.height()
+      this.$refs.scroll.scrollTo(-locationHeight)
+      this.translateY = -locationHeight
+      this.hidden = false
+      this.$refs.scroll.scrollTo(-(this.offsetTop - this.inputHeight), 300)
+    },
+    search() {
+      this.$refs.list.search()
+        .then(() => {
+          if (this.hidden) return
+          this.$refs.scroll.scrollTo(-(this.offsetTop - this.inputHeight), 0)
+        })
     },
   },
 }
@@ -199,6 +219,7 @@ export default {
     left: 0;
     z-index: -1;
     width: 100%;
+    height: px2rem(114);
     background-color: $themeColor;
   }
   .constraint {

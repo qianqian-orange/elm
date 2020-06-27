@@ -40,6 +40,7 @@ export default {
         filter: 'icon-shaixuan',
         star: 'icon-star',
         omit: 'icon-shenglvehao',
+        success: 'icon-success',
       },
     }
   },

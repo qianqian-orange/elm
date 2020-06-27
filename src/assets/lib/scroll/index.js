@@ -78,9 +78,14 @@ class Scroll {
     })
     if (this.click && Math.abs(e.changedTouches[0].clientY - this.clientY) <= 8) {
       const event = new Event('click')
+      let stop = false
+      event.stopPropagation = function () {
+        stop = true
+      }
       let el = e.target
       while (el !== this.el) {
         el.dispatchEvent(event)
+        if (stop) break
         el = el.parentNode
       }
     }

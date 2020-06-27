@@ -12,7 +12,7 @@
         v-for="poi in dataSource"
         :key="poi.id"
         class="poi-item"
-        @click="ensure(poi)"
+        @click.stop="ensure(poi)"
       >
         <p
           v-if="!highlight"

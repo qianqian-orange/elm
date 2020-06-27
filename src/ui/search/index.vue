@@ -20,7 +20,7 @@
     <span
       v-show="value"
       class="elm-search-icon clear"
-      @click="clear"
+      @click.stop="clear"
     >
       <elm-icon
         name="clear"

@@ -4,7 +4,7 @@
       v-for="{ id, name } in dataSource"
       :key="id"
       class="group-city-item"
-      @click="locate(name)"
+      @click.stop="locate(name)"
     >{{ name }}</li>
   </ul>
 </template>

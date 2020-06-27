@@ -35,8 +35,8 @@ export default {
   name: 'HomeHeader',
   mixins: [locateMixin],
   mounted() {
-    // if (this.location.initial) return
-    // this.locateCore(true)
+    if (this.location.initial) return
+    this.locateCore(true)
   },
   methods: {
     height() {

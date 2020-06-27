@@ -17,6 +17,7 @@
 import axios from 'axios'
 import ShopCard from './card'
 import ElmFinish from '@/components/finish/index.vue'
+import { resolveImageUrl } from '@/utils'
 
 export default {
   name: 'ShopList',
@@ -37,7 +38,7 @@ export default {
     this.getData()
   },
   methods: {
-    getData() {
+    getData(more = true) {
       if (this.loading || this.finish) return
       // 注意这里需要先设置loading为true再触发reset事件
       // 因为修改loading值,会添加一个重新渲染的回调函数，执行时机就是nextTick,
@@ -55,7 +56,6 @@ export default {
           this.$notify({ type: 'danger', message: '获取数据失败' })
           return
         }
-        const types = ['png', 'jpg']
         const result = data.data.map((shop) => {
           const {
             id,
@@ -70,8 +70,6 @@ export default {
             supportTags,
             imagePath,
           } = shop.restaurant
-          let ext = imagePath.substr(-3)
-          if (!types.includes(ext.toLowerCase())) ext = imagePath.substr(-4)
           return {
             id,
             name,
@@ -83,7 +81,7 @@ export default {
             orderLeadTime,
             recommendReasons,
             supportTags,
-            imagePath: `https://cube.elemecdn.com/${imagePath[0]}/${imagePath[1]}${imagePath[2]}/${imagePath.substr(3)}.${ext}?x-oss-process=image/resize,m_lfit,w_160,h_160/quality,q_90/format,webp`,
+            imagePath: resolveImageUrl(imagePath),
           }
         })
         if (result.length === 0) {
@@ -91,7 +89,8 @@ export default {
           return
         }
         this.currentPage += 1
-        this.shopList.push(...result)
+        if (more) this.shopList.push(...result)
+        else this.shopList = result
       }).finally(() => {
         this.loading = false
         this.$emit('reset')
@@ -99,6 +98,12 @@ export default {
     },
     expand() {
       this.$emit('expand')
+    },
+    search() {
+      this.finish = false
+      this.currentPage = 1
+      this.loading = false
+      return this.getData(false)
     },
   },
 }

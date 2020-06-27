@@ -4,7 +4,7 @@
       backgroundColor,
     }"
     class="elm-mask"
-    @click.self="handleClick"
+    @click.self.stop="handleClick"
   >
     <slot />
   </div>

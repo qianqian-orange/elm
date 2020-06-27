@@ -1,24 +1,42 @@
-import { SAVE_FILTER_DATA } from './mutation-types'
+import {
+  SAVE_FILTER_DATA,
+  UPDATE_FILTER_DATA,
+} from './mutation-types'
 
 const initState = {
   filter: {
     initial: false,
+    sortFilter: '',
     insideSortFilter: [],
     outsideSortFilter: [],
     outsideFilters: [],
+    supports: [],
+    supportIds: [],
+    activities: [],
+    activityIds: [],
+    averageCosts: [],
+    averageCostId: -1,
     insideSortFilterIndex: -1,
     outsideSortFilterIndex: -1,
-    activityTypes: [],
   },
 }
 
 const mutations = {
   [SAVE_FILTER_DATA]({ filter }, payload) {
     filter.initial = true
-    filter.insideSortFilter = payload.insideSortFilter
-    filter.outsideSortFilter = payload.outsideSortFilter
-    filter.outsideFilters = payload.outsideFilters
     filter.insideSortFilterIndex = 0
+    for (const key in payload) {
+      if (filter.hasOwnProperty(key)) {
+        filter[key] = payload[key]
+      }
+    }
+  },
+  [UPDATE_FILTER_DATA]({ filter }, payload) {
+    for (const key in payload) {
+      if (filter.hasOwnProperty(key)) {
+        filter[key] = payload[key]
+      }
+    }
   },
 }
 

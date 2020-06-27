@@ -117,9 +117,13 @@ export default {
   data() {
     return {
       px2rem,
-      variable,
       hidden: true,
     }
+  },
+  computed: {
+    variable() {
+      return variable
+    },
   },
   methods: {
     toggle() {

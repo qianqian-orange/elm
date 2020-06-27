@@ -1,13 +1,9 @@
 <template>
-  <elm-mask background-color="rgba(255, 255, 255, .6)">
-    <transition
-      name="food-loading"
-      appear
-      @beforeEnter="beforeEnter"
-      @enter="enter"
-      @afterEnter="afterEnter"
-      @beforeLeave="beforeLeave"
-    >
+  <transition
+    name="food-loading"
+    appear
+  >
+    <elm-mask background-color="rgba(255, 255, 255, .6)">
       <span
         ref="icon"
         :style="{
@@ -15,15 +11,8 @@
         }"
         class="food-loading-icon"
       />
-    </transition>
-    <!-- <span
-      ref="icon"
-      :style="{
-        backgroundPosition: `0 -${index * height}px`,
-      }"
-      class="food-loading-icon"
-    /> -->
-  </elm-mask>
+    </elm-mask>
+  </transition>
 </template>
 
 <script>
@@ -42,7 +31,6 @@ export default {
     clearTimeout(this.id)
   },
   mounted() {
-    console.log('mounted')
     this.height = this.$refs.icon.offsetHeight
     this.id = this.jump()
   },
@@ -53,18 +41,6 @@ export default {
         this.id = this.jump()
       }, this.interval)
     },
-    beforeEnter() {
-      console.log('beforeEnter')
-    },
-    enter() {
-      console.log('enter')
-    },
-    afterEnter() {
-      console.log('afterEnter')
-    },
-    beforeLeave() {
-      console.log('beforeLeave')
-    }
   },
 }
 </script>
@@ -93,9 +69,6 @@ export default {
     opacity: 0;
   }
   .food-loading-enter-active, .food-loading-leave-active {
-    transition: opacity 1s ease;
-  }
-  .food-loading-enter-to, .food-loading-leave {
-    opacity: 1;
+    transition: opacity .8s ease;
   }
 </style>

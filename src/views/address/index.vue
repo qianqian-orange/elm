@@ -25,7 +25,7 @@
     </elm-header>
     <p class="title">当前位置</p>
     <p class="content">
-      <span @click="ensure(current)">
+      <span @click.stop="ensure(current)">
         <elm-icon
           class="icon"
           name="location"
@@ -34,7 +34,7 @@
         />{{ location.address }}</span>
       <span
         class="locate"
-        @click="locate"
+        @click.stop="locate"
       >重新定位</span>
     </p>
     <p class="title">附近地址</p>
@@ -86,9 +86,13 @@ export default {
       },
       loading: false,
       pois: [],
-      variable,
       city: '',
     }
+  },
+  computed: {
+    variable() {
+      return variable
+    },
   },
   mounted() {
     if (this.location.initial) this.preserve(this.previous)

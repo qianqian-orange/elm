@@ -7,7 +7,7 @@
     <span
       v-if="!hidden"
       class="elm-fold-icon"
-      @click="toggle"
+      @click.stop="toggle"
     >
       <elm-icon
         name="arrow"

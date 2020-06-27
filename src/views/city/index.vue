@@ -20,7 +20,7 @@
         <p class="title">当前定位城市</p>
         <p
           class="content"
-          @click="locate(currentCity)"
+          @click.stop="locate(currentCity)"
         >{{ currentCity }}</p>
         <!-- 热门城市 -->
         <p class="title">热门城市</p>
@@ -29,7 +29,7 @@
             v-for="{ id, name } in hotCity"
             :key="id"
             class="hot-city-item"
-            @click="locate(name)"
+            @click.stop="locate(name)"
           >{{ name }}</li>
         </ul>
         <!-- 城市分组 -->
