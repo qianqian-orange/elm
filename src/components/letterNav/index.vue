@@ -72,10 +72,11 @@ export default {
     .letter-nav-item {
       width: 100%;
       height: px2rem(32);
-      font-size: px2rem(24);
-      text-align: center;
-      line-height: px2rem(32);
       color: #999;
+      font-size: px2rem(24);
+      line-height: px2rem(32);
+      text-align: center;
+
     }
   }
 </style>

@@ -50,41 +50,42 @@ export default {
 </script>
 <style lang="scss" scoped>
   .home-header {
+    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
-    box-sizing: border-box;
     width: 100%;
     padding: px2rem(20) px2rem(30);
-    background-image: linear-gradient(90deg,#1db5ff,#008cff);
+    background-image: linear-gradient(90deg, #1db5ff, #008cff);
   }
+
   .location {
     display: flex;
     align-items: center;
     width: 100%;
     height: px2rem(64);
     padding-bottom: px2rem(8);
+    color: #fff;
     font-size: px2rem(28);
     line-height: px2rem(64);
-    color: #fff;
 
     .address {
-      max-width: px2rem(250);
-      height: 100%;
-      margin: 0 px2rem(8) 0 px2rem(12);
-
       @include single-line-overflow();
+      height: 100%;
+      max-width: px2rem(250);
+      margin: 0 px2rem(8) 0 px2rem(12);
     }
   }
+
   .input {
     width: 100%;
     height: px2rem(60);
-    text-align: center;
+    color: $secondaryTextColor;
     font-size: px2rem(28);
     font-weight: 200;
-    color: $secondaryTextColor;
     line-height: px2rem(60);
+    text-align: center;
     background-color: #fff;
     border-radius: px2rem(48);
   }

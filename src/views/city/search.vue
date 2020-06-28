@@ -28,10 +28,10 @@
 </template>
 
 <script>
+import cityMixin from './mixin'
 import ElmHeader from '@/components/header/index.vue'
 import ListScrollView from '@/components/listScrollView/index.vue'
 import List from './list.vue'
-import cityMixin from './mixin'
 
 export default {
   name: 'CitySearch',
@@ -89,9 +89,10 @@ export default {
   .city-search {
     padding-top: px2rem($headerHeight);
   }
+
   .scroll-wrapper {
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    overflow: hidden;
   }
 </style>

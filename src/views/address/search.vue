@@ -4,7 +4,7 @@
       <div class="search-container">
         <router-link
           to="/city"
-          class="link"
+          class="border-1px border-right-1px link"
         >{{ city }}</router-link>
         <elm-search
           ref="search"
@@ -35,12 +35,13 @@
 <script>
 import axios from 'axios'
 import { mapMutations } from 'vuex'
+import transitionMixin from '@/mixins/transition'
 import addressMixin from './mixin'
+import { UPDATE_LOCATION, UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
+import { get } from '@/utils/sessionStorage'
+import { AmapKey, sessionStorageKey, transition } from '@/config'
 import ElmHeader from '@/components/header/index.vue'
 import List from './list.vue'
-import { UPDATE_LOCATION } from '@/store/modules/global/mutation-types'
-import { get } from '@/utils/sessionStorage'
-import { AmapKey, sessionStorageKey } from '@/config'
 
 export default {
   name: 'AddressSearch',
@@ -48,7 +49,7 @@ export default {
     ElmHeader,
     List,
   },
-  mixins: [addressMixin],
+  mixins: [addressMixin, transitionMixin],
   data() {
     return {
       search: '',
@@ -79,6 +80,10 @@ export default {
           this.result = data
         })
     },
+  },
+  beforeRouteLeave(to, from, next) {
+    this[UPDATE_TRANSITION](transition.slideRight)
+    next()
   },
   mounted() {
     const data = get(sessionStorageKey.city)
@@ -147,13 +152,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  // 一部分样式在index.vue中也就写了，使用::v-deep 进行复用即可
   .address-search {
     padding-top: px2rem($headerHeight);
   }
+
   .scroll-wrapper {
+    overflow: hidden;
     width: 100%;
     height: 100%;
+  }
+
+  .search-container {
+    box-sizing: border-box;
+    position: relative;
     overflow: hidden;
+    flex: 1;
+    height: px2rem(60);
+    padding-left: px2rem(140);
+    margin-right: px2rem(20);
+    background-color: #fff;
+    border-radius: px2rem(48);
+
+    .link {
+      @include single-line-overflow();
+      position: absolute;
+      top: 50%;
+      left: px2rem(30);
+      transform: translateY(-50%);
+      width: px2rem(90);
+      padding-right: px2rem(20);
+      font-size: px2rem(28);
+    }
   }
 </style>

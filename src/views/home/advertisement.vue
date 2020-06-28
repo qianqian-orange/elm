@@ -47,6 +47,7 @@ export default {
   .advertisement-list {
     overflow: hidden;
   }
+
   .advertisement-item {
     box-sizing: border-box;
     float: left;

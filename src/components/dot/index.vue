@@ -28,10 +28,10 @@ export default {
 <style lang="scss" scoped>
   .dot-list {
     position: absolute;
-    left: 50%;
     bottom: px2rem(16);
-    display: flex;
+    left: 50%;
     transform: translateX(-50%);
+    display: flex;
 
     .dot-item {
       width: px2rem(24);
@@ -42,6 +42,7 @@ export default {
       &.active {
         background-color: #fff;
       }
+
       &:last-child {
         margin-right: 0;
       }

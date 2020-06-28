@@ -7,7 +7,7 @@
       <div class="search-container">
         <router-link
           to="/city"
-          class="link"
+          class="border-1px border-right-1px link"
         >{{ city }}</router-link>
         <router-link
           to="/address/search"
@@ -46,20 +46,20 @@
         @ensure="ensure"
       />
     </div>
-    <transition name="elm">
-      <router-view />
-    </transition>
   </div>
 </template>
 
 <script>
 import locateMixin from '@/mixins/locate'
+import transitionMixin from '@/mixins/transition'
 import addressMixin from './mixin'
+import { get, set } from '@/utils/sessionStorage'
+import { sessionStorageKey, transition } from '@/config'
+import { routes } from '@/config/router'
+import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
+import variable from '@/scss/var.scss'
 import ElmHeader from '@/components/header/index.vue'
 import List from './list.vue'
-import { get, set } from '@/utils/sessionStorage'
-import { sessionStorageKey } from '@/config'
-import variable from '@/scss/var.scss'
 
 export default {
   name: 'Address',
@@ -67,7 +67,25 @@ export default {
     ElmHeader,
     List,
   },
-  mixins: [locateMixin, addressMixin],
+  mixins: [locateMixin, transitionMixin, addressMixin],
+  beforeRouteLeave(to, from, next) {
+    const {
+      home,
+      city,
+      address,
+    } = routes
+    const search = address.children.search
+    switch (to.name) {
+      case home.name:
+        this[UPDATE_TRANSITION](transition.slideRight)
+        break
+      case city.name:
+      case search.name:
+        this[UPDATE_TRANSITION](transition.slideLeft)
+        break
+    }
+    next()
+  },
   data() {
     return {
       current: {
@@ -147,15 +165,15 @@ export default {
 
 <style lang="scss" scoped>
   .address-container {
-    position: relative;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
     padding-top: px2rem($headerHeight);
   }
-  ::v-deep .search-container {
-    position: relative;
+
+  .search-container {
     box-sizing: border-box;
+    position: relative;
     overflow: hidden;
     flex: 1;
     height: px2rem(60);
@@ -165,25 +183,23 @@ export default {
     border-radius: px2rem(48);
 
     .link {
+      @include single-line-overflow();
+      position: absolute;
       top: 50%;
       left: px2rem(30);
       transform: translateY(-50%);
       width: px2rem(90);
       padding-right: px2rem(20);
       font-size: px2rem(28);
-
-      @include single-line-overflow();
-      @include border-right-1px();
-      // 之所以要把position放到这里是因为border-right-1px会默认设置position: relative
-      position: absolute;
     }
   }
+
   .placeholder {
     position: relative;
     padding: 0 px2rem(60);
+    color: #999;
     font-size: px2rem(28);
     line-height: px2rem(60);
-    color: #999;
 
     .icon {
       position: absolute;
@@ -192,39 +208,43 @@ export default {
       transform: translateY(-50%);
     }
   }
+
   .title {
+    @include border-bottom-1px();
     box-sizing: border-box;
     width: 100%;
     height: px2rem(72);
     padding-left: px2rem(30);
+    color: $secondaryTextColor;
     font-size: px2rem(28);
     line-height: px2rem(72);
-    color: $secondaryTextColor;
     background-color: #f1f1f1;
-
-    @include border-bottom-1px();
   }
+
   .content {
     box-sizing: border-box;
     width: 100%;
     height: px2rem(84);
     padding: 0 px2rem(30);
+    color: $primaryTextColor;
     font-size: px2rem(28);
     font-weight: 700;
     line-height: px2rem(84);
-    color: $primaryTextColor;
   }
+
   .icon {
     margin-right: px2rem(12);
   }
+
   .locate {
     float: right;
-    font-weight: 400;
     color: $themeColor;
+    font-weight: 400;
   }
+
   .scroll-wrapper {
+    overflow: hidden;
     width: 100%;
     height: calc(100% - #{px2rem(228)});
-    overflow: hidden;
   }
 </style>

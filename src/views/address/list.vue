@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import ListScrollView from '@/components/listScrollView/index.vue'
 import variable from '@/scss/var.scss'
+import ListScrollView from '@/components/listScrollView/index.vue'
 
 export default {
   name: 'AddressList',
@@ -92,18 +92,19 @@ export default {
       padding: px2rem(20) 0;
 
       .name {
+        color: $primaryTextColor;
         font-size: px2rem(28);
         line-height: px2rem(56);
-        color: $primaryTextColor;
       }
+
       .address {
+        @include single-line-overflow();
+        color: $secondaryTextColor;
         font-size: px2rem(24);
         line-height: px2rem(36);
-        color: $secondaryTextColor;
-
-        @include single-line-overflow();
       }
     }
+
     .poi-item:not(:last-child) {
       @include border-bottom-1px();
     }

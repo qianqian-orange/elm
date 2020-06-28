@@ -69,11 +69,13 @@ export default {
   .group-list {
     overflow: hidden;
   }
+
   .group-item {
     float: left;
-    width: 100%;
     overflow: hidden;
+    width: 100%;
   }
+
   .kind-list {
     box-sizing: border-box;
     display: flex;
@@ -81,6 +83,7 @@ export default {
     width: 100%;
     padding: px2rem(20) 0 px2rem(40);
   }
+
   .kind-item {
     display: flex;
     flex-direction: column;
@@ -91,12 +94,14 @@ export default {
       height: px2rem(90);
       object-fit: cover;
     }
+
     .title {
       margin-top: px2rem(8);
-      font-size: px2rem(24);
       color: $secondaryTextColor;
+      font-size: px2rem(24);
     }
   }
+
   ::v-deep .dot-list .dot-item.active {
     background-color: $themeColor;
   }

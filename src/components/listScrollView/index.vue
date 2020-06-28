@@ -84,13 +84,14 @@ export default {
 
 <style lang="scss" scoped>
   .list-container {
-    position: relative;
     box-sizing: border-box;
+    position: relative;
   }
+
   ::v-deep .elm-finish {
     position: absolute;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
   }
 </style>

@@ -1,4 +1,7 @@
-import { UPDATE_LOCATION } from './mutation-types'
+import {
+  UPDATE_LOCATION,
+  UPDATE_TRANSITION,
+} from './mutation-types'
 
 const initState = {
   location: {
@@ -9,6 +12,7 @@ const initState = {
     address: '',
     adcode: '',
   },
+  transition: '',
 }
 
 const mutations = {
@@ -18,6 +22,9 @@ const mutations = {
         location[key] = payload[key]
       }
     }
+  },
+  [UPDATE_TRANSITION](state, payload) {
+    state.transition = payload
   },
 }
 

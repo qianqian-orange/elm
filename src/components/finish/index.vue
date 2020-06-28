@@ -22,12 +22,13 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: px2rem(32) px2rem(30);
+    color: #999;
     font-size: px2rem(28);
     font-weight: 200;
-    color: #999;
     line-height: px2rem(48);
 
-    &::after, &::before {
+    &::after,
+    &::before {
       content: "";
       flex-basis: 36%;
       height: 1px;

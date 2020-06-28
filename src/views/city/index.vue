@@ -54,7 +54,7 @@
       :letters="letters"
       @transform="transform"
     />
-    <transition name="elm">
+    <transition name="drawer">
       <router-view :group-city="groupCity" />
     </transition>
   </div>
@@ -64,12 +64,15 @@
 import axios from 'axios'
 import { mapState } from 'vuex'
 import cache from '@/cache'
+import { AmapKey, transition } from '@/config'
+import { routes } from '@/config/router'
+import transitionMixin from '@/mixins/transition'
+import cityMixin from './mixin'
+import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
 import ElmHeader from '@/components/header/index.vue'
 import ScrollView from '@/components/scrollView/index.vue'
 import LetterNav from '@/components/letterNav/index.vue'
 import List from './list.vue'
-import cityMixin from './mixin'
-import { AmapKey } from '@/config'
 
 export default {
   name: 'City',
@@ -79,7 +82,7 @@ export default {
     LetterNav,
     List,
   },
-  mixins: [cityMixin],
+  mixins: [cityMixin, transitionMixin],
   data() {
     return {
       currentCity: '',
@@ -95,6 +98,11 @@ export default {
     ...mapState('global', {
       location: state => state.location,
     }),
+  },
+  beforeRouteLeave(to, from, next) {
+    const { address } = routes
+    if (to.name === address.name) this[UPDATE_TRANSITION](transition.slideRight)
+    next()
   },
   mounted() {
     if (this.location.initial) {
@@ -170,26 +178,27 @@ export default {
 
 <style lang="scss" scoped>
   .city-container {
-    position: relative;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
     padding-top: px2rem($headerHeight);
   }
+
   ::v-deep .search-container {
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: px2rem(48);
     flex: 1;
     height: px2rem(60);
     margin-right: px2rem(20);
     background-color: #fff;
+    border-radius: px2rem(48);
   }
+
   .placeholder {
     position: relative;
     padding: 0 px2rem(60);
-    font-size: px2rem(28);
     color: #999;
+    font-size: px2rem(28);
     line-height: px2rem(60);
 
     .icon {
@@ -199,32 +208,35 @@ export default {
       transform: translateY(-50%);
     }
   }
+
   .scroll-wrapper {
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    overflow: hidden;
   }
+
   .title {
+    @include border-bottom-1px();
     box-sizing: border-box;
     width: 100%;
     height: px2rem(72);
     padding-left: px2rem(30);
+    color: $secondaryTextColor;
     font-size: px2rem(28);
     line-height: px2rem(72);
-    color: $secondaryTextColor;
     background-color: #f1f1f1;
-
-    @include border-bottom-1px();
   }
+
   .content {
     box-sizing: border-box;
     width: 100%;
     height: px2rem(84);
     padding-left: px2rem(30);
+    color: $themeColor;
     font-size: px2rem(28);
     line-height: px2rem(84);
-    color: $themeColor;
   }
+
   .hot-city-list {
     display: flex;
     flex-wrap: wrap;
@@ -233,15 +245,16 @@ export default {
       box-sizing: border-box;
       width: 25%;
       height: px2rem(84);
-      border-bottom: 1px solid $hairlineColor;
       border-right: 1px solid $hairlineColor;
-      font-size: px2rem(28);
-      text-align: center;
-      line-height: px2rem(84);
+      border-bottom: 1px solid $hairlineColor;
       color: $primaryTextColor;
+      font-size: px2rem(28);
+      line-height: px2rem(84);
+      text-align: center;
     }
+
     .hot-city-item:nth-child(4n) {
-      border-right: none;
+      border-right-width: 0;
     }
   }
 </style>

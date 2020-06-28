@@ -3,3 +3,7 @@ export const isDev = process.env.NODE_ENV === 'development'
 export const sessionStorageKey = {
   city: 'city',
 }
+export const transition = {
+  slideLeft: 'slide-left',
+  slideRight: 'slide-right',
+}

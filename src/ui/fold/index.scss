@@ -3,22 +3,23 @@
   overflow: hidden;
   padding-right: px2rem(36);
 }
+
 .elm-fold-icon {
   position: absolute;
   top: px2rem(10);
   right: 0;
   width: px2rem(24);
   height: px2rem(24);
-  text-align: center;
   line-height: px2rem(24);
+  text-align: center;
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
     margin: px2rem(-10);
   }
 }

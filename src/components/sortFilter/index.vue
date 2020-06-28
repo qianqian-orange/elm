@@ -176,20 +176,22 @@ export default {
 
 <style lang="scss" scoped>
   .filter-container {
-    position: relative;
     box-sizing: border-box;
+    position: relative;
     width: 100%;
     padding: 0 px2rem(30);
     background-color: #fff;
   }
+
   .sort-filter-container {
     display: flex;
     width: 100%;
     height: px2rem(80);
+    color: $primaryTextColor;
     font-size: px2rem(28);
     line-height: px2rem(80);
-    color: $primaryTextColor;
   }
+
   .inside-sort-filter-head {
     height: 100%;
 
@@ -197,9 +199,10 @@ export default {
       color: $themeColor;
     }
   }
+
   .ouside-sort-filter-list {
-    flex: 1;
     overflow: hidden;
+    flex: 1;
 
     .outside-sort-filter-item {
       float: left;
@@ -211,29 +214,32 @@ export default {
       }
     }
   }
-  .filter {
 
+  .filter {
     &.active {
       color: $themeColor;
     }
+
     .elm-icon {
       vertical-align: bottom;
     }
   }
+
   .outside-filter-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: px2rem(84);
-    font-size: px2rem(24);
     color: $primaryTextColor;
+    font-size: px2rem(24);
   }
+
   .outside-filter-item {
     flex-basis: 24%;
     height: px2rem(60);
-    text-align: center;
     line-height: px2rem(60);
+    text-align: center;
     background-color: #f1f1f1;
     border-radius: px2rem(8);
 
@@ -242,6 +248,7 @@ export default {
       background-color: #e5f6ff;
     }
   }
+
   .mask {
     position: absolute;
     top: px2rem(80);

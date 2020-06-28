@@ -33,10 +33,11 @@ export default {
     .group-city-item {
       width: 100%;
       height: px2rem(84);
+      color: $primaryTextColor;
       font-size: px2rem(28);
       line-height: px2rem(84);
-      color: $primaryTextColor;
     }
+
     .group-city-item:not(:last-child) {
       @include border-bottom-1px();
     }

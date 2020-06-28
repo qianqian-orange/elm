@@ -1,14 +1,25 @@
 <template>
   <div id="app">
-    <keep-alive include="Home">
-      <router-view />
-    </keep-alive>
+    <transition
+      :name="transition"
+    >
+      <keep-alive include="Home">
+        <router-view />
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'App',
+  computed: {
+    ...mapState('global', {
+      transition: state => state.transition,
+    }),
+  },
 }
 </script>
 

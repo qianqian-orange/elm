@@ -63,17 +63,19 @@ export default {
     padding: 0 px2rem(30) px2rem(30);
     background-color: #fff;
   }
+
   .insert-sort-filter-item {
     width: 100%;
     height: px2rem(68);
-    font-size: px2rem(28);
     color: $primaryTextColor;
+    font-size: px2rem(28);
     line-height: px2rem(68);
 
     &.active {
       color: $themeColor;
     }
   }
+
   .elm-icon {
     position: absolute;
     right: px2rem(30);

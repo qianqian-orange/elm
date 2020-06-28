@@ -1,0 +1,111 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "selector-pseudo-element-no-unknown": [
+      false
+    ],
+    "selector-no-vendor-prefix": false,
+    "number-leading-zero": false,
+    "property-no-unknown": [
+      false
+    ],
+    "scss/dollar-variable-pattern": [
+      false
+    ],
+    "string-quotes": {
+      "string": "double"
+    },
+    "max-nesting-depth": {
+      "int": 2
+    },
+    "selector-max-id": {
+      "int": 1
+    },
+    "order/properties-alphabetical-order": [
+      false
+    ],
+    "order/properties-order": [
+      "box-sizing",
+      "float",
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "transform",
+      "z-index",
+      "overflow",
+      "display",
+      "flex",
+      "flex-direction",
+      "flex-wrap",
+      "justify-content",
+      "align-items",
+      "flex-basis",
+      "flex-grow",
+      "flex-shrink",
+      "width",
+      "height",
+      "min-width",
+      "min-height",
+      "max-width",
+      "max-height",
+      "padding",
+      "padding-top",
+      "padding-right",
+      "padding-bottom",
+      "padding-left",
+      "margin",
+      "margin-top",
+      "margin-right",
+      "margin-bottom",
+      "margin-left",
+      "border",
+      "border-width",
+      "border-style",
+      "border-color",
+      "border-top",
+      "border-right",
+      "border-bottom",
+      "border-left",
+      "border-top-width",
+      "border-top-style",
+      "border-top-color",
+      "border-right-width",
+      "border-right-style",
+      "border-right-color",
+      "border-bottom-width",
+      "border-bottom-style",
+      "border-bottom-color",
+      "border-left-width",
+      "border-left-style",
+      "border-left-color",
+      "color",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "text-align",
+      "text-overflow",
+      "white-space",
+      "vertical-align",
+      "opacity",
+      "visibility",
+      "background",
+      "background-color",
+      "background-image",
+      "background-position",
+      "background-repeat",
+      "background-size",
+      "transition",
+      "transition-property",
+      "transition-duration",
+      "transition-timing-function",
+      "animation",
+      "outline",
+      "border-radius",
+      "clear",
+      "object-fit",
+      "appearance"
+    ]
+  }
+}

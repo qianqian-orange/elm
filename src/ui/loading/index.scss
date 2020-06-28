@@ -1,9 +1,10 @@
 .elm-loading {
-  padding: px2rem(30)
+  padding: px2rem(30);
 }
+
 .elm-loading-icon {
-  color: rgb(25, 137, 250);
   display: inline-block;
+  color: rgb(25, 137, 250);
   animation: elm-rotate 2s linear infinite;
 
   circle {
@@ -14,16 +15,18 @@
     animation: elm-circular 1.5s ease-in-out infinite;
   }
 }
+
 .elm-loading-text {
   padding-top: px2rem(20);
-  font-size: px2rem(28);
   color: #999;
+  font-size: px2rem(28);
 }
 
 @keyframes elm-rotate {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -34,10 +37,12 @@
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
   }
+
   50% {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -40;
   }
+
   100% {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -120;

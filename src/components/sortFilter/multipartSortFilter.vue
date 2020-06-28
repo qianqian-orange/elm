@@ -115,21 +115,23 @@ export default {
 <style lang="scss" scoped>
   .multipart-sort-filter-container {
     position: relative;
-    padding: 0 px2rem(30);
-    height: 70%;
     overflow: hidden;
+    height: 70%;
+    padding: 0 px2rem(30);
     background-color: #fff;
   }
+
   .title {
     margin-bottom: px2rem(30);
+    color: #999;
     font-size: px2rem(28);
     font-weight: 200;
-    color: #999;
   }
+
   .list {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-bottom: px2rem(30);
 
     img {
@@ -141,14 +143,15 @@ export default {
       object-fit: cover;
     }
   }
+
   .item {
     flex-basis: 32%;
     height: px2rem(80);
     margin-bottom: px2rem(12);
-    font-size: px2rem(28);
     color: $primaryTextColor;
-    text-align: center;
+    font-size: px2rem(28);
     line-height: px2rem(80);
+    text-align: center;
     background-color: #fafafa;
     border-radius: px2rem(8);
 
@@ -157,27 +160,33 @@ export default {
       background-color: #edf5ff;
     }
   }
+
   .block {
     height: px2rem(90);
   }
+
   .btn {
-    display: flex;
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
+    display: flex;
     width: 100%;
     height: px2rem(90);
   }
-  .clear, .ensure {
+
+  .clear,
+  .ensure {
     flex: 1;
     height: 100%;
     font-size: px2rem(28);
-    text-align: center;
     line-height: px2rem(90);
+    text-align: center;
   }
+
   .clear {
     color: #999;
   }
+
   .ensure {
     color: #fff;
     background-color: #00d762;

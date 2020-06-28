@@ -87,14 +87,17 @@
 <script>
 import axios from 'axios'
 import loadmoreMixin from '@/mixins/loadmore'
+import transitionMixin from '@/mixins/transition'
+import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
+import { transition } from '@/config'
+import px2rem from '@/utils/px2rem'
+import SortFilter from '@/components/sortFilter/index.vue'
+import ShopList from '@/components/shopList/index.vue'
 import HomeHeader from './header.vue'
 import ScrollView from '@/components/scrollView/index.vue'
 import Wave from '@/components/wave/index.vue'
-import Advertisement from './advertisement'
-import Kind from './kind'
-import SortFilter from '@/components/sortFilter/index.vue'
-import ShopList from '@/components/shopList/index.vue'
-import px2rem from '@/utils/px2rem'
+import Advertisement from './advertisement.vue'
+import Kind from './kind.vue'
 
 export default {
   name: 'Home',
@@ -107,7 +110,11 @@ export default {
     SortFilter,
     ShopList,
   },
-  mixins: [loadmoreMixin],
+  mixins: [loadmoreMixin, transitionMixin],
+  beforeRouteLeave(to, from, next) {
+    this[UPDATE_TRANSITION](transition.slideLeft)
+    next()
+  },
   data() {
     return {
       px2rem,
@@ -205,15 +212,17 @@ export default {
 
 <style lang="scss" scoped>
   .home {
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    overflow: hidden;
   }
+
   .home-main {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
   }
+
   .wave-container {
     position: absolute;
     left: 0;
@@ -222,9 +231,11 @@ export default {
     height: px2rem(114);
     background-color: $themeColor;
   }
+
   .constraint {
     padding: 0 px2rem(30);
   }
+
   .super-vip {
     box-sizing: border-box;
     overflow: hidden;
@@ -233,7 +244,7 @@ export default {
     padding: 0 px2rem(14) 0 px2rem(28);
     color: #644f1b;
     line-height: px2rem(80);
-    background-image: linear-gradient(90deg, #ffefc4,  #f3dda0);
+    background-image: linear-gradient(90deg, #ffefc4, #f3dda0);
     border-radius: px2rem(8);
 
     .left {
@@ -242,28 +253,32 @@ export default {
       img {
         width: px2rem(36);
         height: px2rem(36);
-        object-fit: cover;
         vertical-align: sub;
+        object-fit: cover;
       }
+
       .title {
         font-size: px2rem(28);
         font-weight: 700;
       }
+
       .desc {
         font-size: px2rem(24);
       }
     }
+
     .right {
       float: right;
       font-size: px2rem(24);
     }
   }
+
   .guess {
     height: px2rem(96);
     padding-top: px2rem(20);
+    color: $primaryTextColor;
     font-size: px2rem(36);
     font-weight: 700;
     line-height: px2rem(96);
-    color: $primaryTextColor;
   }
 </style>

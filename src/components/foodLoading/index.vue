@@ -54,21 +54,28 @@ export default {
     background-size: cover;
     animation: jump .8s ease-in-out infinite;
   }
+
   @keyframes jump {
     0% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-60%);
     }
+
     100% {
       transform: translateY(0);
     }
   }
-  .food-loading-enter, .food-loading-leave-to {
+
+  .food-loading-enter,
+  .food-loading-leave-to {
     opacity: 0;
   }
-  .food-loading-enter-active, .food-loading-leave-active {
+
+  .food-loading-enter-active,
+  .food-loading-leave-active {
     transition: opacity .8s ease;
   }
 </style>

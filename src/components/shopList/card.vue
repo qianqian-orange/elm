@@ -148,48 +148,55 @@ export default {
     img {
       width: px2rem(160);
       height: px2rem(160);
-      object-fit: cover;
       margin-right: px2rem(30);
+      object-fit: cover;
     }
   }
+
   .content {
+    @include border-bottom-1px();
     position: relative;
     flex: 1;
     padding-bottom: px2rem(30);
 
-    @include border-bottom-1px();
-
     .name {
+      @include single-line-overflow();
       width: px2rem(350);
       margin-bottom: px2rem(12);
+      color: $primaryTextColor;
       font-size: px2rem(32);
       font-weight: 700;
-      color: $primaryTextColor;
       line-height: px2rem(48);
-
-      @include single-line-overflow();
     }
+
     .block {
       display: flex;
       align-items: center;
       height: px2rem(48);
-      font-size: px2rem(24);
       color: #999;
+      font-size: px2rem(24);
     }
+
     .star {
-      margin-right: px2rem(8);
       padding-bottom: px2rem(4);
+      margin-right: px2rem(8);
     }
+
     .rating {
-      color: #ff6300;
       margin-right: px2rem(16);
+      color: #ff6300;
     }
-    .sell, .dilivery-fee {
+
+    .sell,
+    .dilivery-fee {
       flex: 1;
     }
-    .order-amount, .time {
+
+    .order-amount,
+    .time {
       margin-right: px2rem(16);
     }
+
     .tag-list {
       display: flex;
       flex-wrap: wrap;
@@ -201,23 +208,25 @@ export default {
         line-height: px2rem(52);
       }
     }
+
     .omit {
       position: absolute;
       top: 0;
       right: 0;
       width: px2rem(48);
       height: px2rem(48);
-      text-align: center;
       line-height: px2rem(48);
+      text-align: center;
     }
   }
+
   .hate {
     width: px2rem(120);
     height: px2rem(120);
-    text-align: center;
-    font-size: px2rem(24);
     color: $primaryTextColor;
+    font-size: px2rem(24);
     line-height: px2rem(120);
+    text-align: center;
     background-color: #fff;
     border-radius: 50%;
   }

@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const StyleLintPlugin = require('stylelint-webpack-plugin')
 // const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -106,6 +107,10 @@ module.exports = {
         },
       ],
     }),
+    // new StyleLintPlugin({
+    //   context: resolve('../src'),
+    //   files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
+    // }),
     // new AddAssetHtmlPlugin({
     //   outputPath: 'js',
     //   publicPath: '/js/',
