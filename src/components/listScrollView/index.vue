@@ -75,8 +75,8 @@ export default {
     })
   },
   methods: {
-    scrollTo(offsetHeight) {
-      this.$refs.scroll.scrollTo(offsetHeight)
+    scrollTo({ x, y }, duration) {
+      this.$refs.scroll.scrollTo({ x, y }, duration)
     },
   },
 }

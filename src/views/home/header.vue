@@ -16,15 +16,17 @@
         />
       </div>
     </router-link>
-    <div class="input">
-      <elm-icon
-        name="search"
-        color="#999"
-        :font-size="28"
-        :style="{ fontWeight: 700 }"
-      />
-      <span>酸菜鱼</span>
-    </div>
+    <router-link to="/shop/search">
+      <div class="input">
+        <elm-icon
+          name="search"
+          color="#999"
+          :font-size="28"
+          :style="{ fontWeight: 700 }"
+        />
+        <span>酸菜鱼</span>
+      </div>
+    </router-link>
   </div>
 </template>
 

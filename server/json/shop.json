@@ -1,6 +1,543 @@
 {
   "items": [
       {
+        "foods": [
+          {
+              "activities": [
+                  {
+                      "attribute": null,
+                      "background": {
+                          "rgb_from": "ff822d",
+                          "rgb_to": "ff2a00"
+                      },
+                      "border": null,
+                      "description": "9.1折",
+                      "icon_color": "f07373",
+                      "icon_name": "折",
+                      "id": 22823886370,
+                      "image_hash": null,
+                      "is_exclusive_with_food_activity": null,
+                      "name": "立减优惠",
+                      "text_color": null,
+                      "tips": "9.1折",
+                      "type": 502
+                  }
+              ],
+              "cart_link": "https://h5.ele.me/shop/#id=E10511953419827396488&cartOperations=%7B%22add_foods%22%3A%5B%7B%22sku_id%22%3A%22200000490017006223%22%7D%5D%7D?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "category_id": 50458968719,
+              "description": "\n主要原料：鸡肉",
+              "discount_activity": "",
+              "discount_rate": 0.91,
+              "food_id": 200094511291,
+              "food_rate": "28人好评",
+              "icon_name": null,
+              "id": 200094511291,
+              "imagePath": "f874073066691d659d1fc7b99e197e35jpeg",
+              "is_new": false,
+              "item_id": 200000401856092815,
+              "month_sales": 121,
+              "name": "W香辣鸡排堡",
+              "naming_info": null,
+              "original_price": 11,
+              "packing_fee": 0.5,
+              "price": 10,
+              "product_activity_daily_stock": 10000,
+              "product_activity_surplus_stock": 10000,
+              "reason": "",
+              "restaurant_id": "E10511953419827396488",
+              "restaurant_name": null,
+              "satisfy_count": 28,
+              "satisfy_rate": 100,
+              "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488&food_id=200094511291?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "sku_id": "200000490017006223",
+              "stock": 9493,
+              "vfood_id": 1592489371
+          },
+          {
+              "activities": [
+                  {
+                      "attribute": null,
+                      "background": {
+                          "rgb_from": "ff822d",
+                          "rgb_to": "ff2a00"
+                      },
+                      "border": null,
+                      "description": "9.1折",
+                      "icon_color": "f07373",
+                      "icon_name": "折",
+                      "id": 22823886370,
+                      "image_hash": null,
+                      "is_exclusive_with_food_activity": null,
+                      "name": "立减优惠",
+                      "text_color": null,
+                      "tips": "9.1折",
+                      "type": 502
+                  }
+              ],
+              "cart_link": "https://h5.ele.me/shop/#id=E10511953419827396488&cartOperations=%7B%22add_foods%22%3A%5B%7B%22sku_id%22%3A%22200000490041098895%22%7D%5D%7D?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "category_id": 50458968719,
+              "description": " \n主要原料：鸡肉",
+              "discount_activity": "",
+              "discount_rate": 0.91,
+              "food_id": 200094496959,
+              "food_rate": "7人好评",
+              "icon_name": null,
+              "id": 200094496959,
+              "imagePath": "6fe51c340b4ef2f3d2389a8c8df8c7e4jpeg",
+              "is_new": false,
+              "item_id": 200000401872917135,
+              "month_sales": 57,
+              "name": "板烧堡",
+              "naming_info": null,
+              "original_price": 11,
+              "packing_fee": 1,
+              "price": 10,
+              "product_activity_daily_stock": 10000,
+              "product_activity_surplus_stock": 10000,
+              "reason": "",
+              "restaurant_id": "E10511953419827396488",
+              "restaurant_name": null,
+              "satisfy_count": 7,
+              "satisfy_rate": 100,
+              "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488&food_id=200094496959?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "sku_id": "200000490041098895",
+              "stock": 9488,
+              "vfood_id": 1592489370
+          },
+          {
+              "activities": [
+                  {
+                      "attribute": null,
+                      "background": {
+                          "rgb_from": "ff822d",
+                          "rgb_to": "ff2a00"
+                      },
+                      "border": null,
+                      "description": "9.1折",
+                      "icon_color": "f07373",
+                      "icon_name": "折",
+                      "id": 22823886370,
+                      "image_hash": null,
+                      "is_exclusive_with_food_activity": null,
+                      "name": "立减优惠",
+                      "text_color": null,
+                      "tips": "9.1折",
+                      "type": 502
+                  }
+              ],
+              "cart_link": "https://h5.ele.me/shop/#id=E10511953419827396488&cartOperations=%7B%22add_foods%22%3A%5B%7B%22sku_id%22%3A%22200000490041099919%22%7D%5D%7D?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "category_id": 50458968719,
+              "description": "\n主要原料：牛肉",
+              "discount_activity": "",
+              "discount_rate": 0.91,
+              "food_id": 200094496961,
+              "food_rate": "3人好评",
+              "icon_name": null,
+              "id": 200094496961,
+              "imagePath": "aac24e70578209f116097c9c37dd46e4jpeg",
+              "is_new": false,
+              "item_id": 200000401872921231,
+              "month_sales": 38,
+              "name": "牛肉堡",
+              "naming_info": null,
+              "original_price": 11,
+              "packing_fee": 0.5,
+              "price": 10,
+              "product_activity_daily_stock": 10000,
+              "product_activity_surplus_stock": 10000,
+              "reason": "",
+              "restaurant_id": "E10511953419827396488",
+              "restaurant_name": null,
+              "satisfy_count": 3,
+              "satisfy_rate": 75,
+              "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488&food_id=200094496961?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "sku_id": "200000490041099919",
+              "stock": 9716,
+              "vfood_id": 1592468962
+          },
+          {
+              "activities": [
+                  {
+                      "attribute": null,
+                      "background": {
+                          "rgb_from": "ff822d",
+                          "rgb_to": "ff2a00"
+                      },
+                      "border": null,
+                      "description": "8.7折",
+                      "icon_color": "f07373",
+                      "icon_name": "折",
+                      "id": 22823886370,
+                      "image_hash": null,
+                      "is_exclusive_with_food_activity": null,
+                      "name": "立减优惠",
+                      "text_color": null,
+                      "tips": "8.7折",
+                      "type": 502
+                  }
+              ],
+              "cart_link": "https://h5.ele.me/shop/#id=E10511953419827396488&cartOperations=%7B%22add_foods%22%3A%5B%7B%22sku_id%22%3A%22457558925967%22%7D%5D%7D?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "category_id": 50458968719,
+              "description": " \n主要原料：虾",
+              "discount_activity": "",
+              "discount_rate": 0.87,
+              "food_id": 837108327,
+              "food_rate": "8人好评",
+              "icon_name": null,
+              "id": 837108327,
+              "imagePath": "45b13ab37bb5da05e6d0aa00e2fbe102jpeg",
+              "is_new": false,
+              "item_id": 397747440271,
+              "month_sales": 28,
+              "name": "劲脆鲜虾堡",
+              "naming_info": null,
+              "original_price": 11.5,
+              "packing_fee": 0.5,
+              "price": 10,
+              "product_activity_daily_stock": 10000,
+              "product_activity_surplus_stock": 10000,
+              "reason": "",
+              "restaurant_id": "E10511953419827396488",
+              "restaurant_name": null,
+              "satisfy_count": 8,
+              "satisfy_rate": 100,
+              "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488&food_id=837108327?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "sku_id": "457558925967",
+              "stock": 9913,
+              "vfood_id": 791962674
+          },
+          {
+              "activities": [
+                  {
+                      "attribute": null,
+                      "background": {
+                          "rgb_from": "ff822d",
+                          "rgb_to": "ff2a00"
+                      },
+                      "border": null,
+                      "description": "5.3折",
+                      "icon_color": "f07373",
+                      "icon_name": "折",
+                      "id": 23209345955,
+                      "image_hash": null,
+                      "is_exclusive_with_food_activity": null,
+                      "name": "立减优惠",
+                      "text_color": null,
+                      "tips": "5.3折",
+                      "type": 502
+                  }
+              ],
+              "cart_link": "https://h5.ele.me/shop/#id=E10511953419827396488&cartOperations=%7B%22add_foods%22%3A%5B%7B%22sku_id%22%3A%22300000019002063503%22%7D%5D%7D?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "category_id": 300000001343657615,
+              "description": "香辣鸡腿堡+黑椒鸡块+中可\n主要原料：鸡肉",
+              "discount_activity": "",
+              "discount_rate": 0.5,
+              "food_id": 2000000018525187,
+              "food_rate": "3人好评",
+              "icon_name": null,
+              "id": 2000000018525187,
+              "imagePath": "3bda9b2b1a8b1eaa55abad4979184f0bpng",
+              "is_new": false,
+              "item_id": 300000010752363151,
+              "month_sales": 10,
+              "name": "美味香辣鸡腿堡套餐",
+              "naming_info": null,
+              "original_price": 34,
+              "packing_fee": 1.99,
+              "price": 16.9,
+              "product_activity_daily_stock": 20,
+              "product_activity_surplus_stock": 20,
+              "reason": "",
+              "restaurant_id": "E10511953419827396488",
+              "restaurant_name": null,
+              "satisfy_count": 3,
+              "satisfy_rate": 100,
+              "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488&food_id=2000000018525187?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "sku_id": "300000019002063503",
+              "stock": 9990,
+              "vfood_id": 2000000010527453
+          },
+          {
+              "activities": [
+                  {
+                      "attribute": null,
+                      "background": {
+                          "rgb_from": "ff822d",
+                          "rgb_to": "ff2a00"
+                      },
+                      "border": null,
+                      "description": "3.6折",
+                      "icon_color": "f07373",
+                      "icon_name": "折",
+                      "id": 23209345955,
+                      "image_hash": null,
+                      "is_exclusive_with_food_activity": null,
+                      "name": "立减优惠",
+                      "text_color": null,
+                      "tips": "3.6折",
+                      "type": 502
+                  }
+              ],
+              "cart_link": "https://h5.ele.me/shop/#id=E10511953419827396488&cartOperations=%7B%22add_foods%22%3A%5B%7B%22sku_id%22%3A%22200000566494178959%22%7D%5D%7D?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "category_id": 200000060095306383,
+              "description": "蜜汁手扒鸡+2个香辣鸡腿堡+2中可\n主要原料：鸡肉",
+              "discount_activity": "",
+              "discount_rate": 0.9,
+              "food_id": 200169175811,
+              "food_rate": "1人好评",
+              "icon_name": null,
+              "id": 200169175811,
+              "imagePath": "168bb4fc8c0febc87145301df78c9196jpeg",
+              "is_new": false,
+              "item_id": 200000442575968911,
+              "month_sales": 4,
+              "name": "蜜汁鸡双堡套餐",
+              "naming_info": null,
+              "original_price": 49.9,
+              "packing_fee": 1.99,
+              "price": 44.99,
+              "product_activity_daily_stock": 1000,
+              "product_activity_surplus_stock": 1000,
+              "reason": "",
+              "restaurant_id": "E10511953419827396488",
+              "restaurant_name": null,
+              "satisfy_count": 1,
+              "satisfy_rate": 100,
+              "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488&food_id=200169175811?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "sku_id": "200000566494178959",
+              "stock": 9995,
+              "vfood_id": 1632251286
+          },
+          {
+              "activities": [
+                  {
+                      "attribute": null,
+                      "background": {
+                          "rgb_from": "ff822d",
+                          "rgb_to": "ff2a00"
+                      },
+                      "border": null,
+                      "description": "7.2折",
+                      "icon_color": "f07373",
+                      "icon_name": "折",
+                      "id": 23209345955,
+                      "image_hash": null,
+                      "is_exclusive_with_food_activity": null,
+                      "name": "立减优惠",
+                      "text_color": null,
+                      "tips": "7.2折",
+                      "type": 502
+                  }
+              ],
+              "cart_link": "https://h5.ele.me/shop/#id=E10511953419827396488&cartOperations=%7B%22add_foods%22%3A%5B%7B%22sku_id%22%3A%22200000541886060175%22%7D%5D%7D?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "category_id": 200000060078327439,
+              "description": "主食＋小食＋饮料(随心搭配)\n主要原料：鸡肉",
+              "discount_activity": "",
+              "discount_rate": 0.76,
+              "food_id": 200145137235,
+              "food_rate": "37人好评",
+              "icon_name": null,
+              "id": 200145137235,
+              "imagePath": "e355f9f352691c018fafab1840236069jpeg",
+              "is_new": false,
+              "item_id": 200000431030974095,
+              "month_sales": 126,
+              "name": "自选套餐",
+              "naming_info": null,
+              "original_price": 24.99,
+              "packing_fee": 1.99,
+              "price": 18.99,
+              "product_activity_daily_stock": 10000,
+              "product_activity_surplus_stock": 9998,
+              "reason": "",
+              "restaurant_id": "E10511953419827396488",
+              "restaurant_name": null,
+              "satisfy_count": 37,
+              "satisfy_rate": 100,
+              "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488&food_id=200145137235?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%2C%22sourcetype%22%3A%22eitem%22%7D",
+              "sku_id": "200000541886060175",
+              "stock": 9779,
+              "vfood_id": 1620964084
+          }
+      ],
+        "restaurant": {
+          "act_tag": 0,
+          "activities": [
+              {
+                  "description": "满25元减10元，满50元减20元",
+                  "iconColor": "f07373",
+                  "iconName": "减",
+                  "id": 22841040330
+              },
+              {
+                  "description": "配送费立减3元",
+                  "iconColor": "70bc46",
+                  "iconName": "配",
+                  "id": 22861330402
+              },
+              {
+                  "description": "首次光顾本店立减1元",
+                  "iconColor": "70bc46",
+                  "iconName": "首",
+                  "id": 23001138586
+              },
+              {
+                  "description": "饿了么新用户首单立减10元",
+                  "iconColor": "70bc46",
+                  "iconName": "新",
+                  "id": 22939238306
+              },
+              {
+                  "description": "特价商品0.01元起",
+                  "iconColor": "f1884f",
+                  "iconName": "特",
+                  "id": 23199898347
+              }
+          ],
+          "address": null,
+          "authentic_id": 162681441,
+          "average_cost": null,
+          "baidu_id": null,
+          "bidding": null,
+          "brand_id": 4451,
+          "business_info": "{\"pickup_scheme\":\"https://h5.ele.me/shop/#id=E10511953419827396488\",\"ad_info\":{\"isAd\":\"false\"},\"recent_order_num_display\":\"月售1216\"}",
+          "closing_count_down": 46106,
+          "delivery_fee_discount": 3,
+          "delivery_mode": {
+              "border": "",
+              "color": "2395FF",
+              "gradient": {
+                  "rgb_from": "00a6ff",
+                  "rgb_to": "00a6ff"
+              },
+              "icon_hash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+              "id": 1,
+              "is_solid": true,
+              "text": "蜂鸟专送",
+              "text_color": "FFFFFF"
+          },
+          "description": "",
+          "distance": 1274,
+          "favor_time": null,
+          "favored": false,
+          "flavors": [
+              {
+                  "id": 212,
+                  "name": "汉堡薯条"
+              },
+              {
+                  "id": 234,
+                  "name": "炸鸡炸串"
+              }
+          ],
+          "float_delivery_fee": 0,
+          "floatDeliveryFee": 0,
+          "float_minimum_order_amount": 15,
+          "floatMinimumOrderAmount": 15,
+          "folding_restaurant_brand": null,
+          "folding_restaurants": [],
+          "has_story": false,
+          "id": "E10511953419827396488",
+          "imagePath": "377935a47fccaf5a4dd436007baf5206jpeg",
+          "is_new": false,
+          "is_premium": true,
+          "is_star": false,
+          "is_stock_empty": 0,
+          "is_valid": 1,
+          "latitude": 23.250097,
+          "longitude": 116.433632,
+          "max_applied_quantity_per_order": -1,
+          "name": "华莱士·全鸡汉堡(鲤鱼店)",
+          "next_business_time": "明天 10:00",
+          "only_use_poi": null,
+          "opening_hours": [
+              "10:00/1:30"
+          ],
+          "order_lead_time": 30,
+          "orderLeadTime": 30,
+          "out_of_range": false,
+          "phone": null,
+          "piecewise_agent_fee": {
+              "description": "免配送费",
+              "extra_fee": 0,
+              "is_extra": false,
+              "no_subsidy_fee": "¥3",
+              "rules": [
+                  {
+                      "fee": 0,
+                      "price": 15
+                  }
+              ],
+              "tips": "免配送费"
+          },
+          "platform": 0,
+          "posters": [],
+          "promotion_info": "亲爱的顾客们，本店所有套餐食物搭配为固定的，无法更换，口味辣度为提前腌制好的，介意者慎点，不足之处还请谅解，华莱士期待您的光临，谢谢！",
+          "rating": 4.7,
+          "rating_count": 4339,
+          "recent_order_num": 1216,
+          "recentOrderNumDisplay": "月售1216",
+          "recommend": {
+              "is_ad": false,
+              "reason": ""
+          },
+          "recommendReasons": [
+              {
+                  "reason": "回头客多"
+              },
+              {
+                  "reason": "配送飞快"
+              }
+          ],
+          "regular_customer_count": 0,
+          "restaurant_info": null,
+          "scheme": "https://h5.ele.me/shop/#id=E10511953419827396488?o2o_extra_param=%7B%22rank_id%22%3A%22bdd8298502124051b1795643fc555319%22%7D",
+          "status": 1,
+          "supportTags": [
+              {
+                  "border": "dddddd",
+                  "color": "666666",
+                  "icon": "4e20966ca2a516de3f02fb9c7fd1bc6dpng",
+                  "text": "汉堡薯条",
+                  "type": 1
+              }
+          ],
+          "supports": [
+              {
+                  "border": "dddddd",
+                  "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                  "icon_color": "666666",
+                  "icon_name": "保",
+                  "id": 7,
+                  "name": "食无忧",
+                  "text_color": "666666",
+                  "two_characters_icon_name": "保险"
+              },
+              {
+                  "border": "dddddd",
+                  "description": "该商家支持开发票，请在下单时填写好发票抬头",
+                  "icon_color": "666666",
+                  "icon_name": "票",
+                  "id": 4,
+                  "name": "开发票",
+                  "text_color": "666666",
+                  "two_characters_icon_name": "发票"
+              }
+          ],
+          "target_tag_path": "d53fc0cb4dc67973038cbc591938a1b6png",
+          "theme": {
+              "default_color": "",
+              "header_style": 3,
+              "hongbao_style": 0,
+              "logo_sub": "",
+              "price_color": "ff5339",
+              "third_tab_name": "商家",
+              "vanish_fields": []
+          },
+          "type": 0
+      }
+      },
+      {
           "activityId": null,
           "foods": null,
           "restaurant": {
@@ -366,274 +903,6 @@
                   }
               ],
               "targetTagPath": null,
-              "theme": {
-                  "defaultColor": "2395ff",
-                  "headerStyle": 3,
-                  "hongbaoStyle": 0,
-                  "logoSub": null,
-                  "logoSubV2": null,
-                  "logoSubV3": null,
-                  "priceColor": "ff5339",
-                  "thirdTabName": "商家",
-                  "vanishFields": []
-              },
-              "totalDiscount": null
-          },
-          "trackMap": {
-              "data_source": "swarm"
-          },
-          "type": null
-      },
-      {
-          "activityId": null,
-          "foods": null,
-          "restaurant": {
-              "activityCombination": null,
-              "adInfo": {
-                  "isAd": "false"
-              },
-              "address": null,
-              "averageCost": null,
-              "baiduId": null,
-              "bidding": null,
-              "billBoard": null,
-              "brandId": 4451,
-              "brandName": "华莱士",
-              "closingCountDown": 23211,
-              "customizeBenefit": null,
-              "deliveryMode": {
-                  "badge": null,
-                  "border": "",
-                  "color": "2395FF",
-                  "gradient": {
-                      "rgbFrom": "00a6ff",
-                      "rgbTo": "00a6ff"
-                  },
-                  "iconHash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
-                  "id": 1,
-                  "isSolid": true,
-                  "text": "蜂鸟专送",
-                  "textColor": "FFFFFF"
-              },
-              "description": "",
-              "distance": 369,
-              "favorTime": null,
-              "floatDeliveryFee": 0,
-              "floatMinimumOrderAmount": 15,
-              "foldingRestaurantBrand": "华莱士",
-              "foldingRestaurants": [
-                  {
-                      "adInfo": null,
-                      "baiduId": null,
-                      "brandId": null,
-                      "distance": 1274,
-                      "id": "E6621569458858030593",
-                      "imagePath": "377935a47fccaf5a4dd436007baf5206jpeg",
-                      "isRetailShop": false,
-                      "name": "华莱士·全鸡汉堡(鲤鱼店)",
-                      "orderLeadTime": 30,
-                      "scheme": "https://h5.ele.me/shop/#id=E6621569458858030593?o2o_extra_param=%7B%22rank_id%22%3A%221127f76a7a0141f581496a6a02234fd2%22%7D",
-                      "status": 1,
-                      "type": 0
-                  },
-                  {
-                      "adInfo": null,
-                      "baiduId": null,
-                      "brandId": null,
-                      "distance": 2777,
-                      "id": "E11299451332211553825",
-                      "imagePath": "6b510bf4d2dae1f2883c12cb18f9430cpng",
-                      "isRetailShop": false,
-                      "name": "华莱士·全鸡汉堡(金祥店)",
-                      "orderLeadTime": 30,
-                      "scheme": "https://h5.ele.me/shop/#id=E11299451332211553825?o2o_extra_param=%7B%22rank_id%22%3A%221127f76a7a0141f581496a6a02234fd2%22%7D",
-                      "status": 1,
-                      "type": 0
-                  },
-                  {
-                      "adInfo": null,
-                      "baiduId": null,
-                      "brandId": null,
-                      "distance": 3697,
-                      "id": "E6594569101354125114",
-                      "imagePath": "6b510bf4d2dae1f2883c12cb18f9430cpng",
-                      "isRetailShop": false,
-                      "name": "华莱士·全鸡汉堡(广华店)",
-                      "orderLeadTime": 30,
-                      "scheme": "https://h5.ele.me/shop/#id=E6594569101354125114?o2o_extra_param=%7B%22rank_id%22%3A%221127f76a7a0141f581496a6a02234fd2%22%7D",
-                      "status": 1,
-                      "type": 0
-                  },
-                  {
-                      "adInfo": null,
-                      "baiduId": null,
-                      "brandId": null,
-                      "distance": 3960,
-                      "id": "E489070787481146357",
-                      "imagePath": "377935a47fccaf5a4dd436007baf5206jpeg",
-                      "isRetailShop": false,
-                      "name": "华莱士·全鸡汉堡(义西路店)",
-                      "orderLeadTime": 33,
-                      "scheme": "https://h5.ele.me/shop/#id=E489070787481146357?o2o_extra_param=%7B%22rank_id%22%3A%221127f76a7a0141f581496a6a02234fd2%22%7D",
-                      "status": 1,
-                      "type": 0
-                  }
-              ],
-              "id": "E15424303662507144692",
-              "imagePath": "6b510bf4d2dae1f2883c12cb18f9430cpng",
-              "imageShowType": null,
-              "isNew": false,
-              "isPremium": true,
-              "isRetailShop": false,
-              "isStockEmpty": false,
-              "isValid": 1,
-              "latitude": 23.240315,
-              "longitude": 116.436958,
-              "name": "华莱士·全鸡汉堡(金都店)",
-              "newShopTag": null,
-              "newShopType": null,
-              "nextBusinessTime": "明天 10:05",
-              "onlyUsePoi": null,
-              "openingHours": [
-                  "10:05/23:55"
-              ],
-              "orderLeadTime": 30,
-              "phone": null,
-              "piecewiseAgentFee": {
-                  "description": "免配送费",
-                  "extraFee": 0,
-                  "isExtra": false,
-                  "noSubsidyFee": "¥3",
-                  "rules": [
-                      {
-                          "fee": 0,
-                          "price": 15
-                      }
-                  ],
-                  "subsidyFee": "3.0",
-                  "tips": "免配送费"
-              },
-              "promotionInfo": "",
-              "rating": 4.6,
-              "ratingCount": 5086,
-              "ratingInfo": {
-                  "likesAmount": null,
-                  "packageScore": 4.6337199211120605,
-                  "riderScore": 4.972869873046875,
-                  "shopScore": null,
-                  "tasteScore": 4.625969886779785
-              },
-              "recentOrderNum": 615,
-              "recentOrderNumDisplay": "月售615",
-              "recommend": {
-                  "color": null,
-                  "iconTag": null,
-                  "imageHash": null,
-                  "isAd": false,
-                  "noneAdWithTrackableReason": false,
-                  "reason": "",
-                  "track": null
-              },
-              "recommendReasons": [
-                  {
-                      "displayFoods": [],
-                      "reason": "牛气红茶套餐好评！",
-                      "reasonType": 2,
-                      "reasonUrl": null
-                  },
-                  {
-                      "displayFoods": [],
-                      "reason": "潮南区汉堡薯条实惠第7名",
-                      "reasonType": 5,
-                      "reasonUrl": null
-                  }
-              ],
-              "satisfyCount": null,
-              "saveDeliveryFee": null,
-              "scheme": "https://h5.ele.me/shop/#id=E15424303662507144692?o2o_extra_param=%7B%22rank_id%22%3A%221127f76a7a0141f581496a6a02234fd2%22%7D",
-              "shopDeliveryTags": null,
-              "shopTags": null,
-              "star": false,
-              "status": 1,
-              "supportTags": [
-                  {
-                      "background": null,
-                      "bizCode": 50,
-                      "border": "FFC9C1",
-                      "color": "FF4B33",
-                      "desc": "",
-                      "extension": null,
-                      "icon": null,
-                      "tagCode": "REDUCE",
-                      "text": "25减11",
-                      "type": 1
-                  },
-                  {
-                      "background": null,
-                      "bizCode": 50,
-                      "border": "FFC9C1",
-                      "color": "FF4B33",
-                      "desc": "",
-                      "extension": null,
-                      "icon": null,
-                      "tagCode": "REDUCE",
-                      "text": "50减20",
-                      "type": 1
-                  },
-                  {
-                      "background": null,
-                      "bizCode": 50,
-                      "border": "FFC9C1",
-                      "color": "FF4B33",
-                      "desc": "",
-                      "extension": null,
-                      "icon": null,
-                      "tagCode": "REDUCE",
-                      "text": "80减25",
-                      "type": 1
-                  },
-                  {
-                      "background": {
-                          "rgbFrom": "FFE6B5",
-                          "rgbTo": "F9D793"
-                      },
-                      "bizCode": 160,
-                      "border": "E8D6C3",
-                      "color": "B47738",
-                      "desc": "",
-                      "extension": null,
-                      "icon": null,
-                      "tagCode": "VIP_COUPON",
-                      "text": "7.5元无门槛红包",
-                      "type": 1
-                  },
-                  {
-                      "background": null,
-                      "bizCode": 70,
-                      "border": "FFC9C1",
-                      "color": "FF4B33",
-                      "desc": "",
-                      "extension": null,
-                      "icon": null,
-                      "tagCode": "FOOD_ACTIVITY",
-                      "text": "7.1折",
-                      "type": 1
-                  },
-                  {
-                      "background": null,
-                      "bizCode": 71,
-                      "border": "FFC9C1",
-                      "color": "FF4B33",
-                      "desc": "",
-                      "extension": null,
-                      "icon": null,
-                      "tagCode": "FOOD_ACTIVITY_FIX_PRICE_WITHOUT_CONDITION",
-                      "text": "0.01元特价",
-                      "type": 1
-                  }
-              ],
-              "supports": null,
-              "targetTagPath": "d53fc0cb4dc67973038cbc591938a1b6png",
               "theme": {
                   "defaultColor": "2395ff",
                   "headerStyle": 3,

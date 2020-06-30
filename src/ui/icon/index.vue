@@ -41,6 +41,7 @@ export default {
         star: 'icon-star',
         omit: 'icon-shenglvehao',
         success: 'icon-success',
+        trash: 'icon-laji2',
       },
     }
   },

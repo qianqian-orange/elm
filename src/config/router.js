@@ -23,4 +23,8 @@ export const routes = {
       },
     },
   },
+  shopSearch: {
+    path: '/shop/search',
+    name: 'shop-search',
+  },
 }

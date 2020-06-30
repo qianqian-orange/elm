@@ -1,29 +1,15 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "rules": {
-    "selector-pseudo-element-no-unknown": [
-      false
-    ],
-    "selector-no-vendor-prefix": false,
-    "number-leading-zero": false,
-    "property-no-unknown": [
-      false
-    ],
-    "scss/dollar-variable-pattern": [
-      false
-    ],
-    "string-quotes": {
-      "string": "double"
-    },
-    "max-nesting-depth": {
-      "int": 2
-    },
-    "selector-max-id": {
-      "int": 1
-    },
-    "order/properties-alphabetical-order": [
-      false
-    ],
+    "selector-pseudo-element-no-unknown": null,
+    "selector-no-vendor-prefix": null,
+    "number-leading-zero": null,
+    "property-no-unknown": null,
+    "scss/dollar-variable-pattern": null,
+    "string-quotes": "double",
+    "max-nesting-depth": 2,
+    "selector-max-id": 1,
+    "order/properties-alphabetical-order": null,
     "order/properties-order": [
       "box-sizing",
       "float",

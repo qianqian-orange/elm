@@ -17,13 +17,13 @@
     <div class="scroll-wrapper">
       <scroll-view ref="scroll">
         <!-- 当前定位城市 -->
-        <p class="title">当前定位城市</p>
+        <h1 class="title">当前定位城市</h1>
         <p
           class="content"
           @click.stop="locate(currentCity)"
         >{{ currentCity }}</p>
         <!-- 热门城市 -->
-        <p class="title">热门城市</p>
+        <h1 class="title">热门城市</h1>
         <ul class="hot-city-list">
           <li
             v-for="{ id, name } in hotCity"
@@ -37,10 +37,10 @@
           v-for="{ letter, cities } in groupCity"
           :key="letter"
         >
-          <p
+          <h1
             ref="letters"
             class="title"
-          >{{ letter }}</p>
+          >{{ letter }}</h1>
           <list
             :data-source="cities"
             @locate="locate"
@@ -223,6 +223,7 @@ export default {
     padding-left: px2rem(30);
     color: $secondaryTextColor;
     font-size: px2rem(28);
+    font-weight: 400;
     line-height: px2rem(72);
     background-color: #f1f1f1;
   }

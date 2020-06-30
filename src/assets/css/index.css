@@ -1,9 +1,10 @@
-@import url("//at.alicdn.com/t/font_1878848_ndlt9ldm6o9.css");
+@import url("//at.alicdn.com/t/font_1878848_tmjsn84u3ts.css");
 
 html,
 body {
   width: 100%;
   height: 100%;
+  text-size-adjust: none;
 }
 
 p {
@@ -21,6 +22,15 @@ a {
   text-decoration: none;
   /* 去除a标签点击高亮效果 */
   -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 /* util */
@@ -108,7 +118,7 @@ a {
 }
 
 .slide-left-leave-to {
-  position: absolute;
+  position: absolute !important;
   transform: translateX(-100%);
 }
 
@@ -118,10 +128,10 @@ a {
 
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: transform .4s linear;
+  transition: transform .2s linear;
 }
 
 .slide-right-leave-to {
-  position: absolute;
+  position: absolute !important;
   transform: translateX(100%);
 }

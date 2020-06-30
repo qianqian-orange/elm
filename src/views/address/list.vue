@@ -66,6 +66,7 @@ export default {
   },
   methods: {
     process(val) {
+      if (!val) return ''
       const index = val.indexOf(this.search)
       return val.substring(0, index) + `<strong style="color:${variable.themeColor};">${this.search}</strong>` + val.substring(index + this.search.length)
     },

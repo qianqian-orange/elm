@@ -7,7 +7,7 @@
       <div class="search-container">
         <router-link
           to="/city"
-          class="border-1px border-right-1px link"
+          class="link"
         >{{ city }}</router-link>
         <router-link
           to="/address/search"
@@ -23,7 +23,7 @@
         </router-link>
       </div>
     </elm-header>
-    <p class="title">当前位置</p>
+    <h1 class="title">当前位置</h1>
     <p class="content">
       <span @click.stop="ensure(current)">
         <elm-icon
@@ -37,7 +37,7 @@
         @click.stop="locate"
       >重新定位</span>
     </p>
-    <p class="title">附近地址</p>
+    <h1 class="title">附近地址</h1>
     <div class="scroll-wrapper">
       <list
         :loading="loading"
@@ -183,6 +183,7 @@ export default {
     border-radius: px2rem(48);
 
     .link {
+      @include border-right-1px();
       @include single-line-overflow();
       position: absolute;
       top: 50%;
@@ -217,6 +218,7 @@ export default {
     padding-left: px2rem(30);
     color: $secondaryTextColor;
     font-size: px2rem(28);
+    font-weight: 400;
     line-height: px2rem(72);
     background-color: #f1f1f1;
   }

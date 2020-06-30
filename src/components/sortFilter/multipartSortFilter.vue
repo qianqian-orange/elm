@@ -37,7 +37,7 @@
       </ul>
       <div class="block" />
     </scroll-view>
-    <div class="border-1px border-top-1px btn">
+    <div class="btn">
       <div
         class="clear"
         @click.stop="clear"
@@ -166,6 +166,7 @@ export default {
   }
 
   .btn {
+    @include border-top-1px();
     position: absolute;
     bottom: 0;
     left: 0;

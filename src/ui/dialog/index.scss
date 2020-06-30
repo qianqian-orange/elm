@@ -1,0 +1,41 @@
+.elm-dialog {
+  overflow: hidden;
+  width: 70%;
+  height: px2rem(210);
+  background-color: #fff;
+  border-radius: px2rem(16);
+}
+
+.elm-dialog-title {
+  @include single-line-overflow();
+  padding: 0 px2rem(60);
+  color: $primaryTextColor;
+  font-size: px2rem(28);
+  line-height: px2rem(120);
+  text-align: center;
+}
+
+.elm-dialog-btn {
+  @include border-top-1px();
+  display: flex;
+  width: 100%;
+  height: px2rem(90);
+
+  .cancel,
+  .ensure {
+    flex: 1;
+    height: 100%;
+    font-size: px2rem(28);
+    line-height: px2rem(90);
+    text-align: center;
+  }
+
+  .cancel {
+    color: #999;
+  }
+
+  .ensure {
+    color: #fff;
+    background-color: $themeColor;
+  }
+}

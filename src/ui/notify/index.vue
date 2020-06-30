@@ -59,13 +59,14 @@ export default {
       this.bindTransitionEnd = this.transitionEnd.bind(this)
       this.$el.addEventListener('transitionend', this.bindTransitionEnd, false)
     },
-    async transition() {
-      await delay(20)
-      this.hidden = false
-      this.$el.style.transform = 'translateY(0)'
-      await delay(this.duration)
-      this.hidden = true
-      this.$el.style.transform = 'translateY(-100%)'
+    transition() {
+      setTimeout(async () => {
+        this.hidden = false
+        this.$el.style.transform = 'translateY(0)'
+        await delay(this.duration)
+        this.hidden = true
+        this.$el.style.transform = 'translateY(-100%)'
+      })
     },
   },
 }

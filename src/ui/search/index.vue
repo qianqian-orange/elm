@@ -6,6 +6,7 @@
       class="elm-search-input"
       type="text"
       :placeholder="placeholder"
+      @focus="focus"
       @input="onInput"
       @compositionstart="onCompositionStart"
       @compositionend="onCompositionEnd"
@@ -64,10 +65,14 @@ export default {
       this.$refs.input.dispatchEvent(event)
     },
     clear() {
+      this.$emit('clear')
       this.$emit('input', '')
     },
     blur() {
       this.$refs.input.blur()
+    },
+    focus() {
+      this.$emit('focus')
     },
   },
 }

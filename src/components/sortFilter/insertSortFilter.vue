@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
   .insert-sort-filter-list {
-    padding: 0 px2rem(30) px2rem(30);
+    padding: 0 px2rem(30) px2rem(20);
     background-color: #fff;
   }
 

@@ -44,10 +44,14 @@ export default {
   },
   methods: {
     start(e) {
+      e.preventDefault()
+      e.stopPropagation()
       const index = Math.floor((e.touches[0].clientY - this.clientY) / this.height)
       this.transform(index)
     },
     move(e) {
+      e.preventDefault()
+      e.stopPropagation()
       let index = Math.floor((e.touches[0].clientY - this.clientY) / this.height)
       if (index < 0) index = 0
       else if (index > this.letters.length - 1) index = this.letters.length - 1

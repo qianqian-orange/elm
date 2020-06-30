@@ -36,5 +36,11 @@ export default {
         this.contentHeight = el.offsetHeight
       })
     },
+    computedParentHeight() {
+      this.$nextTick(() => {
+        const el = this.$refs.scroll.$el
+        this.parentHeight = el.parentNode.offsetHeight
+      })
+    },
   },
 }

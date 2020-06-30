@@ -1,69 +1,58 @@
 <template>
-  <list-scroll-view
-    ref="list"
-    :probe-type="1"
-    :data-source="shopList"
-    :loading="loading"
-    :finish="finish"
-    @loadmore="getData"
-  >
+  <div>
     <ul>
       <shop-card
         v-for="shop in shopList"
         :key="shop.id"
         :shop="shop"
-        :extra="extra"
         @expand="expand"
         @hate="hate"
       />
     </ul>
-  </list-scroll-view>
+    <elm-loading v-show="loading" />
+    <elm-finish v-show="shopList.length && finish" />
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
-import { resolveImageUrl } from '@/utils'
-import ListScrollView from '@/components/listScrollView/index.vue'
 import ShopCard from '@/components/shopCard/index.vue'
+import ElmFinish from '@/components/finish/index.vue'
+import { resolveImageUrl } from '@/utils'
 
 export default {
   name: 'ShopList',
   components: {
-    ListScrollView,
     ShopCard,
-  },
-  props: {
-    init: {
-      type: Boolean,
-      default: true,
-    },
-    extra: {
-      type: Boolean,
-      default: false,
-    },
+    ElmFinish,
   },
   data() {
     return {
-      shopList: [],
       currentPage: 1,
       pageSize: 8,
+      shopList: [],
       loading: false,
       finish: false,
     }
   },
   mounted() {
-    if (this.init) this.getData()
+    this.getData()
   },
   methods: {
     hate(id) {
       const index = this.shopList.findIndex(shop => shop.id === id)
       if (index === -1) return
       this.shopList.splice(index, 1)
-      this.$refs.list.reset()
+      this.$emit('hate')
     },
     getData(more = true) {
-      if (this.finish) return
+      if (this.loading || this.finish) return
+      // 注意这里需要先设置loading为true再触发reset事件
+      // 因为修改loading值,会添加一个重新渲染的回调函数，执行时机就是nextTick,
+      // 而触发reset事件，reset的目的也是添加一个scroll重新reset的回调，执行时机也是nextTick
+      // 所以需要先重新渲染再执行scroll的reset，这样获取的节点的高度才能最新的
       this.loading = true
+      this.$emit('reset')
       return axios.get('/api/shop/recommend', {
         params: {
           currentPage: this.currentPage,
@@ -116,22 +105,17 @@ export default {
         else this.shopList = result
       }).finally(() => {
         this.loading = false
+        this.$emit('reset')
       })
     },
     expand() {
-      this.$refs.list.reset()
+      this.$emit('expand')
     },
     search() {
       this.finish = false
       this.currentPage = 1
       this.loading = false
-      this.getData(false)
-        .then(() => {
-          this.$refs.list.scrollTo({ y: 0 })
-        })
-    },
-    computedParentHeight() {
-      this.$refs.list.computedParentHeight()
+      return this.getData(false)
     },
   },
 }

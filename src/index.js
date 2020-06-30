@@ -14,6 +14,7 @@ import {
   Mask,
   Search,
   Empty,
+  Dialog,
 } from './ui'
 import 'normalize.css'
 import '@/config/axios'
@@ -28,6 +29,7 @@ Vue.use(Fold)
 Vue.use(Mask)
 Vue.use(Search)
 Vue.use(Empty)
+Vue.use(Dialog)
 
 new Vue({
   router,

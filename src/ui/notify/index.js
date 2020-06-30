@@ -1,5 +1,4 @@
 import ElmNotify from './index.vue'
-import { delay } from '@/utils'
 
 const types = {
   success: 'success',
@@ -47,13 +46,14 @@ function notify({ type, message, duration = 3000 }) {
 
 async function transition(el, duration) {
   pending = true
-  await delay(20)
-  hidden = false
-  el.style.transform = 'translateY(0)'
-  id = setTimeout(() => {
-    hidden = true
-    el.style.transform = 'translateY(-100%)'
-  }, duration)
+  setTimeout(() => {
+    hidden = false
+    el.style.transform = 'translateY(0)'
+    id = setTimeout(() => {
+      hidden = true
+      el.style.transform = 'translateY(-100%)'
+    }, duration)
+  })
 }
 
 function createElement(type, message) {

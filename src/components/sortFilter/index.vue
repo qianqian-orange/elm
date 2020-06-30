@@ -32,7 +32,10 @@
         :color="filterActive ? variable.themeColor : variable.primaryTextColor"
       /></span>
     </div>
-    <ul class="outside-filter-list">
+    <ul
+      v-if="!hidden"
+      class="outside-filter-list"
+    >
       <li
         v-for="{ id, name } in outsideFilters"
         :key="id"
@@ -83,6 +86,13 @@ export default {
     InsertSortFilter,
     MultipartSortFilter,
   },
+  props: {
+    // 是否隐藏outside-filter
+    hidden: {
+      type: Boolean,
+      default: false,
+    },
+  },
   computed: {
     variable() {
       return variable
@@ -96,9 +106,6 @@ export default {
     filterActive() {
       return this.activityIds.length || this.supportIds.length || this.averageCostId !== -1
     },
-    ...mapState('global', {
-      location: state => state.location,
-    }),
     ...mapState('shop', {
       filter: state => state.filter,
       sortFilter: state => state.filter.sortFilter,
@@ -118,32 +125,27 @@ export default {
   },
   methods: {
     getData() {
-      // longitude=116.437356&latitude=23.242659
-      return axios.get('/api/shop/sort', {
-        params: {
-          longitude: this.location.longitude || 116.437356,
-          latitude: this.location.latitude || 23.242659,
-        },
-      }).then(({ data }) => {
-        if (data.code !== 0) {
-          this.$notify({ type: 'danger', message: '获取数据失败' })
-          return
-        }
-        const { sortList, filterList } = data.data
-        this[SAVE_FILTER_DATA]({
-          insideSortFilter: sortList.insideSortFilter,
-          outsideSortFilter: sortList.outsideSortFilter,
-          outsideFilters: sortList.outsideFilters,
-          supports: filterList.supports.map(support => ({
-            id: support.id,
-            name: support.name,
-            imagePath: resolveImageUrl(support.iconHash),
-          })),
-          activities: filterList.activityTypes,
-          averageCosts: filterList.averageCosts,
+      return axios.get('/api/shop/sort')
+        .then(({ data }) => {
+          if (data.code !== 0) {
+            this.$notify({ type: 'danger', message: '获取数据失败' })
+            return
+          }
+          const { sortList, filterList } = data.data
+          this[SAVE_FILTER_DATA]({
+            insideSortFilter: sortList.insideSortFilter,
+            outsideSortFilter: sortList.outsideSortFilter,
+            outsideFilters: sortList.outsideFilters,
+            supports: filterList.supports.map(support => ({
+              id: support.id,
+              name: support.name,
+              imagePath: resolveImageUrl(support.iconHash),
+            })),
+            activities: filterList.activityTypes,
+            averageCosts: filterList.averageCosts,
+          })
+          this.$emit('reset')
         })
-        this.$emit('reset')
-      })
     },
     toggle(sortFilter) {
       if (this.sortFilter === sortFilter) this[UPDATE_FILTER_DATA]({ sortFilter: '' })

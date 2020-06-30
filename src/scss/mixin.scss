@@ -57,3 +57,17 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin expand {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: px2rem(-20);
+  }
+}

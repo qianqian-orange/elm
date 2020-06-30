@@ -1,0 +1,154 @@
+{
+  "restaurants": [
+      {
+          "distance": 369,
+          "float_delivery_fee": 1,
+          "float_minimum_order_amount": 15,
+          "id": "E3634209099209259882",
+          "image_path": "6b510bf4d2dae1f2883c12cb18f9430cpng",
+          "name": "华莱士·全鸡汉堡(金都店)",
+          "next_business_time": "10:05",
+          "rating": 4.7,
+          "recent_order_num": 564,
+          "scheme": "https://h5.ele.me/shop/#id=E3634209099209259882",
+          "tags": [
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "满减",
+                  "name_color": "FA7047"
+              },
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "蜂鸟",
+                  "name_color": "2395FF"
+              }
+          ],
+          "type": 0
+      },
+      {
+          "distance": 1274,
+          "float_delivery_fee": 1,
+          "float_minimum_order_amount": 15,
+          "id": "E3221095102264782291",
+          "image_path": "377935a47fccaf5a4dd436007baf5206jpeg",
+          "name": "华莱士·全鸡汉堡(鲤鱼店)",
+          "next_business_time": "10:00",
+          "rating": 4.7,
+          "recent_order_num": 1222,
+          "scheme": "https://h5.ele.me/shop/#id=E3221095102264782291",
+          "tags": [
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "满减",
+                  "name_color": "FA7047"
+              },
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "蜂鸟",
+                  "name_color": "2395FF"
+              }
+          ],
+          "type": 0
+      },
+      {
+          "distance": 3697,
+          "float_delivery_fee": 1.5,
+          "float_minimum_order_amount": 15,
+          "id": "E7864896765195837046",
+          "image_path": "6b510bf4d2dae1f2883c12cb18f9430cpng",
+          "name": "华莱士·全鸡汉堡(广华店)",
+          "next_business_time": "10:15",
+          "rating": 4.6,
+          "recent_order_num": 979,
+          "scheme": "https://h5.ele.me/shop/#id=E7864896765195837046",
+          "tags": [
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "满减",
+                  "name_color": "FA7047"
+              },
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "蜂鸟",
+                  "name_color": "2395FF"
+              }
+          ],
+          "type": 0
+      },
+      {
+          "distance": 3960,
+          "float_delivery_fee": 2,
+          "float_minimum_order_amount": 15,
+          "id": "E14785480076199390587",
+          "image_path": "377935a47fccaf5a4dd436007baf5206jpeg",
+          "name": "华莱士·全鸡汉堡(义西路店)",
+          "next_business_time": "10:30",
+          "rating": 4.7,
+          "recent_order_num": 860,
+          "scheme": "https://h5.ele.me/shop/#id=E14785480076199390587",
+          "tags": [
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "满减",
+                  "name_color": "FA7047"
+              },
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "蜂鸟",
+                  "name_color": "2395FF"
+              }
+          ],
+          "type": 0
+      },
+      {
+          "distance": 3446,
+          "float_delivery_fee": 1.5,
+          "float_minimum_order_amount": 15,
+          "id": "E7412717324151131909",
+          "image_path": "c52f6c82215e7d4ce7a3689567e08861jpeg",
+          "name": "德客隆汉堡炸鸡(峡山店)",
+          "next_business_time": "10:30",
+          "rating": 4.7,
+          "recent_order_num": 1175,
+          "scheme": "https://h5.ele.me/shop/#id=E7412717324151131909",
+          "tags": [
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "满减",
+                  "name_color": "FA7047"
+              },
+              {
+                  "background": null,
+                  "id": null,
+                  "name": "蜂鸟",
+                  "name_color": "2395FF"
+              }
+          ],
+          "type": 0
+      }
+  ],
+  "words": [
+      "汉堡",
+      "汉堡包",
+      "牛肉汉堡",
+      "芝士汉堡",
+      "米汉堡",
+      "巨无霸汉堡",
+      "田园汉堡",
+      "鸡肉汉堡",
+      "鸡蛋汉堡",
+      "鸡柳汉堡",
+      "双层吉士汉堡",
+      "麦辣鸡腿汉堡",
+      "香辣鸡腿堡"
+  ]
+}

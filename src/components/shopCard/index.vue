@@ -3,9 +3,14 @@
     <img
       v-lazy="shop.imagePath"
       alt="shop"
+      class="shop-image"
+      :style="{
+        width: px2rem(extra ? 120 : 180),
+        height: px2rem(extra ? 120 : 180),
+      }"
     >
     <div class="content">
-      <p class="name">{{ shop.name }}</p>
+      <p class="shop-name">{{ shop.name }}</p>
       <div class="block">
         <elm-icon
           name="star"
@@ -27,13 +32,14 @@
         <span class="time">{{ shop.orderLeadTime | time }}</span>
         <span class="distance">{{ shop.distance | distance }}</span>
       </div>
+      <!-- 好评 -->
       <elm-fold
         :height="60"
         @expand="expand"
       >
         <ul class="tag-list">
           <li
-            v-for="{ reason } in shop.recommendReasons"
+            v-for="reason in shop.recommendReasons"
             :key="reason"
             class="tag-item"
           >
@@ -47,6 +53,7 @@
           </li>
         </ul>
       </elm-fold>
+      <!-- 标签 -->
       <elm-fold
         :height="60"
         @expand="expand"
@@ -67,6 +74,52 @@
           </li>
         </ul>
       </elm-fold>
+      <!-- 优惠 -->
+      <elm-fold
+        v-if="extra && shop.activities.length"
+        :height="92"
+        @expand="expand"
+      >
+        <ul>
+          <li
+            v-for="activity in shop.activities"
+            :key="activity.id"
+            class="activity-item"
+          >
+            <span
+              :style="{
+                backgroundColor: `#${activity.iconColor}`,
+              }"
+              class="icon"
+            >{{ activity.iconName }}</span>
+            <span class="desc">{{ activity.description }}</span>
+          </li>
+        </ul>
+      </elm-fold>
+      <!-- 爆款推荐 -->
+      <div v-if="extra && shop.foods.length">
+        <scroll-view
+          :scroll-x="true"
+          :scroll-y="false"
+          :stop-propagation="true"
+        >
+          <ul class="food-list">
+            <li
+              v-for="food in shop.foods"
+              :key="food.id"
+            >
+              <img
+                class="food-image"
+                :src="food.imagePath"
+                alt="food"
+              >
+              <p class="food-name">{{ food.name }}</p>
+              <p class="food-price">
+                <span class="prefix">¥</span>{{ food.price }}</p>
+            </li>
+          </ul>
+        </scroll-view>
+      </div>
       <elm-icon
         class="omit"
         name="omit"
@@ -82,7 +135,7 @@
     >
       <div
         class="hate"
-        @click="hate"
+        @click.stop="hate"
       >不喜欢</div>
     </elm-mask>
   </li>
@@ -91,6 +144,7 @@
 <script>
 import px2rem from '@/utils/px2rem'
 import variable from '@/scss/var.scss'
+import ScrollView from '@/components/scrollView/index.vue'
 
 export default {
   name: 'ShopCard',
@@ -108,10 +162,17 @@ export default {
       return `${h}小时${m}分钟`
     },
   },
+  components: {
+    ScrollView,
+  },
   props: {
     shop: {
       type: Object,
       required: true,
+    },
+    extra: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -130,7 +191,7 @@ export default {
       this.hidden = !this.hidden
     },
     hate() {
-      this.$emit('hate')
+      this.$emit('hate', this.shop.id)
     },
     expand() {
       this.$emit('expand')
@@ -144,22 +205,21 @@ export default {
     position: relative;
     display: flex;
     padding-top: px2rem(30);
+  }
 
-    img {
-      width: px2rem(160);
-      height: px2rem(160);
-      margin-right: px2rem(30);
-      object-fit: cover;
-    }
+  .shop-image {
+    margin-right: px2rem(30);
+    object-fit: cover;
   }
 
   .content {
     @include border-bottom-1px();
     position: relative;
+    overflow: hidden;
     flex: 1;
     padding-bottom: px2rem(30);
 
-    .name {
+    .shop-name {
       @include single-line-overflow();
       width: px2rem(350);
       margin-bottom: px2rem(12);
@@ -217,6 +277,56 @@ export default {
       height: px2rem(48);
       line-height: px2rem(48);
       text-align: center;
+    }
+
+    .activity-item {
+      height: px2rem(42);
+      margin-bottom: px2rem(8);
+      line-height: px2rem(42);
+
+      .icon {
+        padding: 0 px2rem(4);
+        color: #fff;
+        font-size: px2rem(24);
+        border-radius: px2rem(4);
+      }
+
+      .desc {
+        color: #999;
+        font-size: px2rem(24);
+      }
+    }
+
+    .food-list {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-top: px2rem(20);
+
+      .food-image {
+        width: px2rem(180);
+        height: px2rem(180);
+        margin-right: px2rem(16);
+        border-radius: px2rem(12);
+        object-fit: cover;
+      }
+
+      .food-name {
+        @include single-line-overflow();
+        width: px2rem(180);
+        color: $primaryTextColor;
+        font-size: px2rem(24);
+        line-height: px2rem(36);
+      }
+
+      .food-price {
+        color: #ff5339;
+        font-size: px2rem(32);
+      }
+
+      .prefix {
+        font-size: px2rem(24);
+        vertical-align: bottom;
+      }
     }
   }
 

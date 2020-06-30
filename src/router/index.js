@@ -7,6 +7,7 @@ const {
   home,
   city,
   address,
+  shopSearch,
 } = routes
 
 const addressSearch = address.children.search
@@ -30,13 +31,6 @@ const router = new VueRouter({
       path: '/address',
       name: address.name,
       component: () => import('@/views/address/index.vue'),
-      // children: [
-      //   {
-      //     path: 'search',
-      //     name: addressSearch.name,
-      //     component: () => import('@/views/address/search.vue'),
-      //   },
-      // ],
     },
     {
       path: '/address/search',
@@ -54,6 +48,15 @@ const router = new VueRouter({
           component: () => import('@/views/city/search.vue'),
         },
       ],
+    },
+    {
+      path: '/shop',
+      redirect: '/shop/search',
+    },
+    {
+      path: '/shop/search',
+      name: shopSearch.name,
+      component: () => import('@/views/shop/search/index.vue'),
     },
   ],
 })

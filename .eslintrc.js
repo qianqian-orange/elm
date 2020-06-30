@@ -23,7 +23,7 @@ module.exports = {
     'vue/no-deprecated-filter': 0,
   },
   extends: [
-    'eslint:recommended',
+    'plugin:vue/vue3-recommended',
     'standard',
   ],
 }

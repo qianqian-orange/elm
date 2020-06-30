@@ -77,6 +77,7 @@
             ref="list"
             @reset="reset"
             @expand="reset"
+            @hate="hate"
           />
         </div>
       </main>
@@ -92,7 +93,7 @@ import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
 import { transition } from '@/config'
 import px2rem from '@/utils/px2rem'
 import SortFilter from '@/components/sortFilter/index.vue'
-import ShopList from '@/components/shopList/index.vue'
+import ShopList from './shopList.vue'
 import HomeHeader from './header.vue'
 import ScrollView from '@/components/scrollView/index.vue'
 import Wave from '@/components/wave/index.vue'
@@ -192,19 +193,22 @@ export default {
     loadmore() {
       this.$refs.list.getData()
     },
-    toTop(sortFilter) {
+    toTop() {
       const { locationHeight } = this.$refs.header.height()
       this.$refs.scroll.scrollTo(-locationHeight)
       this.translateY = -locationHeight
       this.hidden = false
-      this.$refs.scroll.scrollTo(-(this.offsetTop - this.inputHeight), 300)
+      this.$refs.scroll.scrollTo({ y: -(this.offsetTop - this.inputHeight) }, 300)
     },
     search() {
       this.$refs.list.search()
         .then(() => {
           if (this.hidden) return
-          this.$refs.scroll.scrollTo(-(this.offsetTop - this.inputHeight), 0)
+          this.$refs.scroll.scrollTo({ y: -(this.offsetTop - this.inputHeight) })
         })
+    },
+    hate() {
+      this.reset()
     },
   },
 }

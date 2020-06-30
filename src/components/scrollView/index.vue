@@ -1,5 +1,10 @@
 <template>
-  <div ref="scroll-container">
+  <div
+    ref="scroll-container"
+    :style="{
+      display: scrollX ? 'inline-block' : 'block',
+    }"
+  >
     <slot />
   </div>
 </template>
@@ -23,6 +28,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    scrollX: {
+      type: Boolean,
+      default: false,
+    },
+    scrollY: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -44,6 +57,8 @@ export default {
       probeType: this.probeType,
       click: this.click,
       stopPropagation: this.stopPropagation,
+      scrollX: this.scrollX,
+      scrollY: this.scrollY,
     })
   },
   beforeDestroy() {
@@ -55,8 +70,8 @@ export default {
         this.scroll.reset()
       })
     },
-    scrollTo(offsetHeight, duration) {
-      this.scroll.scrollTo(offsetHeight, duration)
+    scrollTo({ x, y }, duration) {
+      this.scroll.scrollTo({ x, y }, duration)
     },
     scrollToElement(el, duration) {
       this.scroll.scrollToElement(el, duration)

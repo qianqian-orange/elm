@@ -26,6 +26,8 @@ class Scroll {
     probeType = 0,
     click = true,
     stopPropagation = false,
+    scrollY = true,
+    scrollX = false,
   } = {}) {
     this.el = typeof el === 'string' ? document.querySelector(el) : el
     if (!this.el) {
@@ -41,14 +43,19 @@ class Scroll {
       el: this.el,
       probeType: probeType,
       eventEmitter: this.eventEmitter,
+      scrollX,
+      scrollY,
     })
     this.transition = new Transition({
       el: this.el,
       probeType: probeType,
       eventEmitter: this.eventEmitter,
       translate: this.translate,
+      scrollX,
+      scrollY,
     })
     this.clientY = 0
+    this.pending = false
     this.origins = [this.translate, this.transition]
     this.init()
   }
@@ -56,6 +63,7 @@ class Scroll {
   start(e) {
     e.preventDefault()
     if (this.stopPropagation) e.stopPropagation()
+    this.pending = this.transition.run()
     this.clientY = e.touches[0].clientY
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchstart, e)
@@ -76,6 +84,8 @@ class Scroll {
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchend, e)
     })
+    // 如果处于过渡状态那么不触发点击事件
+    if (this.pending) return
     if (this.click && Math.abs(e.changedTouches[0].clientY - this.clientY) <= 8) {
       const event = new Event('click')
       let stop = false
@@ -115,16 +125,18 @@ class Scroll {
 
   scrollToElement(el, duration = 0) {
     let node = el
-    let scrollHeight = 0
+    let y = 0
+    let x = 0
     do {
-      scrollHeight += node.offsetTop
+      y += node.offsetTop
+      x += node.offsetLeft
       node = node.offsetParent
     } while (node !== this.el && node !== null)
-    this.transition.to(-scrollHeight, duration)
+    this.transition.to({ x: -x, y: -y }, duration)
   }
 
-  scrollTo(scrollHeight, duration = 0) {
-    this.transition.to(scrollHeight, duration)
+  scrollTo({ x, y }, duration = 0) {
+    this.transition.to({ x, y }, duration)
   }
 
   reset() {

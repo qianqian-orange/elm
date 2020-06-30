@@ -107,10 +107,10 @@ module.exports = {
         },
       ],
     }),
-    // new StyleLintPlugin({
-    //   context: resolve('../src'),
-    //   files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
-    // }),
+    new StyleLintPlugin({
+      context: resolve('../src'),
+      files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
+    }),
     // new AddAssetHtmlPlugin({
     //   outputPath: 'js',
     //   publicPath: '/js/',

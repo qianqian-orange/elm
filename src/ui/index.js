@@ -6,5 +6,6 @@ export * from './fold'
 export * from './mask'
 export * from './search'
 export * from './empty'
+export * from './dialog'
 
 export default {}

@@ -55,7 +55,7 @@ export default {
   },
   watch: {
     search(val) {
-      this.$refs.list.scrollTo(0)
+      this.$refs.list.scrollTo({ y: 0 })
       if (val === '') {
         this.result = []
         return

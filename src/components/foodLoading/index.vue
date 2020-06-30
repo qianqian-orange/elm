@@ -49,7 +49,7 @@ export default {
   .food-loading-icon {
     width: px2rem(100);
     height: px2rem(100);
-    background-image: url('~@/assets/image/icon.png');
+    background-image: url("~@/assets/image/icon.png");
     background-repeat: no-repeat;
     background-size: cover;
     animation: jump .8s ease-in-out infinite;

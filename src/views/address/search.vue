@@ -4,7 +4,7 @@
       <div class="search-container">
         <router-link
           to="/city"
-          class="border-1px border-right-1px link"
+          class="link"
         >{{ city }}</router-link>
         <elm-search
           ref="search"
@@ -66,7 +66,7 @@ export default {
     search(val) {
       this.finish = false
       this.currentPage = 1
-      this.$refs.list.scrollTo(0)
+      this.$refs.list.scrollTo({ y: 0 })
       if (val === '') {
         this.result = []
         return
@@ -174,6 +174,7 @@ export default {
     border-radius: px2rem(48);
 
     .link {
+      @include border-right-1px();
       @include single-line-overflow();
       position: absolute;
       top: 50%;
