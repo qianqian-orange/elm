@@ -4,6 +4,7 @@ export const isDev = process.env.NODE_ENV === 'development'
 
 export const sessionStorageKey = {
   city: 'city',
+  category: 'category',
 }
 
 export const localStorageKey = {

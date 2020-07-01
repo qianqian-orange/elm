@@ -16,7 +16,7 @@
         />
       </div>
     </router-link>
-    <router-link to="/shop/search">
+    <router-link to="/shop/search?from=/home">
       <div class="input">
         <elm-icon
           name="search"

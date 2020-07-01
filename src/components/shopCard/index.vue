@@ -5,8 +5,8 @@
       alt="shop"
       class="shop-image"
       :style="{
-        width: px2rem(extra ? 120 : 180),
-        height: px2rem(extra ? 120 : 180),
+        width: px2rem(140),
+        height: px2rem(140),
       }"
     >
     <div class="content">
@@ -97,7 +97,12 @@
         </ul>
       </elm-fold>
       <!-- 爆款推荐 -->
-      <div v-if="extra && shop.foods.length">
+      <div
+        v-if="extra && shop.foods.length"
+        :style="{
+          whiteSpace: 'nowrap',
+        }"
+      >
         <scroll-view
           :scroll-x="true"
           :scroll-y="false"
@@ -221,7 +226,7 @@ export default {
 
     .shop-name {
       @include single-line-overflow();
-      width: px2rem(350);
+      width: px2rem(380);
       margin-bottom: px2rem(12);
       color: $primaryTextColor;
       font-size: px2rem(32);

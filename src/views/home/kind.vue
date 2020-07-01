@@ -16,6 +16,7 @@
             :key="kind.title"
             :style="styleObj"
             class="kind-item"
+            @click.stop="jump(kind.id)"
           >
             <img
               :src="kind.img"
@@ -62,6 +63,15 @@ export default {
       }
     },
   },
+  methods: {
+    jump(id) {
+      if (!id) {
+        this.$notify({ type: 'primary', message: '功能正在开发中' })
+        return
+      }
+      this.$router.push(`/kind/${id}`)
+    },
+  },
 }
 </script>
 
@@ -99,6 +109,7 @@ export default {
       margin-top: px2rem(8);
       color: $secondaryTextColor;
       font-size: px2rem(24);
+      text-align: center;
     }
   }
 

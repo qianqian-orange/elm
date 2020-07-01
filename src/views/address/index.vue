@@ -6,7 +6,7 @@
     >
       <div class="search-container">
         <router-link
-          to="/city"
+          to="/city?from=/address"
           class="link"
         >{{ city }}</router-link>
         <router-link
@@ -72,15 +72,14 @@ export default {
     const {
       home,
       city,
-      address,
+      addressSearch,
     } = routes
-    const search = address.children.search
     switch (to.name) {
       case home.name:
         this[UPDATE_TRANSITION](transition.slideRight)
         break
       case city.name:
-      case search.name:
+      case addressSearch.name:
         this[UPDATE_TRANSITION](transition.slideLeft)
         break
     }

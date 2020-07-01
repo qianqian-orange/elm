@@ -6,12 +6,10 @@ export const routes = {
   address: {
     path: '/address',
     name: 'address',
-    children: {
-      search: {
-        path: 'search',
-        name: 'address-search',
-      },
-    },
+  },
+  addressSearch: {
+    path: '/address/search',
+    name: 'address-search',
   },
   city: {
     path: '/city',
@@ -26,5 +24,9 @@ export const routes = {
   shopSearch: {
     path: '/shop/search',
     name: 'shop-search',
+  },
+  kind: {
+    path: '/kind/:id',
+    name: 'kind',
   },
 }

@@ -9,6 +9,7 @@ class Slider {
     duration = 400,
     loop = true,
     bounce = true,
+    click = true,
     stopPropagation = true,
   } = {}) {
     // 这个的el传的是上面HTML文档结构中的div
@@ -17,6 +18,7 @@ class Slider {
       console.error('the el is not exist')
       return
     }
+    this.click = click
     this.stopPropagation = stopPropagation
     // 记录开始触碰div的触点的clientX, 即touches[0].clientX
     this.clientX = 0
@@ -142,6 +144,21 @@ class Slider {
           this.ul.style.transitionDuration = '0ms'
           this.eventEmitter.emit(eventType.scrollEnd)
         }
+      }
+    }
+    // 这里处理click事件
+    if (this.pending) return
+    if (this.click && Math.abs(e.changedTouches[0].clientX - this.clientX) <= 8) {
+      const event = new Event('click')
+      let stop = false
+      event.stopPropagation = function () {
+        stop = true
+      }
+      let el = e.target
+      while (el !== this.el) {
+        el.dispatchEvent(event)
+        if (stop) break
+        el = el.parentNode
       }
     }
   }

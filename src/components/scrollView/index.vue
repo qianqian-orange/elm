@@ -73,7 +73,7 @@ export default {
     scrollTo({ x, y }, duration) {
       this.scroll.scrollTo({ x, y }, duration)
     },
-    scrollToElement(el, duration) {
+    scrollToElement(el, duration = 0) {
       this.scroll.scrollToElement(el, duration)
     },
     on(type, fn) {

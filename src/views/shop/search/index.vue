@@ -1,6 +1,6 @@
 <template>
   <div class="shop-search">
-    <elm-header to="/home">
+    <elm-header :to="$route.query.from">
       <div class="search-container">
         <elm-search
           ref="search"
@@ -81,8 +81,10 @@ export default {
   },
   mixins: [transitionMixin],
   beforeRouteLeave(to, from, next) {
+    const { home, kind } = routes
     switch (to.name) {
-      case routes.home.name:
+      case home.name:
+      case kind.name:
         this[UPDATE_TRANSITION](transition.slideRight)
         break
     }

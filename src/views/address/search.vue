@@ -3,7 +3,7 @@
     <elm-header to="/address">
       <div class="search-container">
         <router-link
-          to="/city"
+          to="/city?from=/address/search"
           class="link"
         >{{ city }}</router-link>
         <elm-search
@@ -40,6 +40,7 @@ import addressMixin from './mixin'
 import { UPDATE_LOCATION, UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
 import { get } from '@/utils/sessionStorage'
 import { AmapKey, sessionStorageKey, transition } from '@/config'
+import { routes } from '@/config/router'
 import ElmHeader from '@/components/header/index.vue'
 import List from './list.vue'
 
@@ -82,7 +83,15 @@ export default {
     },
   },
   beforeRouteLeave(to, from, next) {
-    this[UPDATE_TRANSITION](transition.slideRight)
+    const { address, city } = routes
+    switch (to.name) {
+      case address.name:
+        this[UPDATE_TRANSITION](transition.slideRight)
+        break
+      case city.name:
+        this[UPDATE_LOCATION](transition.slideLeft)
+        break
+    }
     next()
   },
   mounted() {

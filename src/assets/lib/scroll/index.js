@@ -55,6 +55,9 @@ class Scroll {
       scrollY,
     })
     this.clientY = 0
+    this.clientX = 0
+    // 滑动距离小于该值时判定为click
+    this.min = 8
     this.pending = false
     this.origins = [this.translate, this.transition]
     this.init()
@@ -65,6 +68,7 @@ class Scroll {
     if (this.stopPropagation) e.stopPropagation()
     this.pending = this.transition.run()
     this.clientY = e.touches[0].clientY
+    this.clientX = e.touches[0].clientX
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchstart, e)
     })
@@ -86,7 +90,8 @@ class Scroll {
     })
     // 如果处于过渡状态那么不触发点击事件
     if (this.pending) return
-    if (this.click && Math.abs(e.changedTouches[0].clientY - this.clientY) <= 8) {
+    if (this.click && Math.abs(e.changedTouches[0].clientY - this.clientY) <= this.min &&
+      Math.abs(e.changedTouches[0].clientX - this.clientX) <= this.min) {
       const event = new Event('click')
       let stop = false
       event.stopPropagation = function () {

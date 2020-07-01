@@ -1,6 +1,6 @@
 <template>
   <div class="city-container">
-    <elm-header to="/address">
+    <elm-header :to="$route.query.from">
       <div class="search-container">
         <router-link to="/city/search">
           <p class="placeholder">
@@ -65,7 +65,6 @@ import axios from 'axios'
 import { mapState } from 'vuex'
 import cache from '@/cache'
 import { AmapKey, transition } from '@/config'
-import { routes } from '@/config/router'
 import transitionMixin from '@/mixins/transition'
 import cityMixin from './mixin'
 import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
@@ -83,6 +82,10 @@ export default {
     List,
   },
   mixins: [cityMixin, transitionMixin],
+  beforeRouteLeave(to, from, next) {
+    this[UPDATE_TRANSITION](transition.slideRight)
+    next()
+  },
   data() {
     return {
       currentCity: '',
@@ -98,11 +101,6 @@ export default {
     ...mapState('global', {
       location: state => state.location,
     }),
-  },
-  beforeRouteLeave(to, from, next) {
-    const { address } = routes
-    if (to.name === address.name) this[UPDATE_TRANSITION](transition.slideRight)
-    next()
   },
   mounted() {
     if (this.location.initial) {

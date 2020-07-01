@@ -126,7 +126,7 @@ class Transition {
   }
 
   to({ x, y }, duration) {
-    if (this.duration > 0) this.pending = true
+    if (duration > 0) this.pending = true
     this.el.style.transitionDuration = `${duration}ms`
     this.translate.to({ x, y })
   }

@@ -21,7 +21,7 @@ export default {
         const { adcode, location } = data.geocodes[0]
         const [longitude, latitude] = location.split(',')
         this.saveData({ city, adcode, longitude, latitude })
-        this.$router.push('/address')
+        this.$router.push(this.$route.query.from)
       })
     },
   },
