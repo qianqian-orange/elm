@@ -51,8 +51,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-import { UPDATE_FILTER_DATA } from '@/store/modules/shop/mutation-types'
+import { mapState } from 'vuex'
 import ScrollView from '@/components/scrollView/index.vue'
 
 export default {
@@ -60,54 +59,47 @@ export default {
   components: {
     ScrollView,
   },
-  data() {
-    return {
-      activityIds: [],
-      supportIds: [],
-      averageCostId: -1,
-    }
+  props: {
+    activityIds: {
+      type: Array,
+      required: true,
+    },
+    supportIds: {
+      type: Array,
+      required: true,
+    },
+    averageCostId: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
     ...mapState('shop', {
-      filter: state => state.filter,
       supports: state => state.filter.supports,
       activities: state => state.filter.activities,
       averageCosts: state => state.filter.averageCosts,
     }),
   },
-  mounted() {
-    this.activityIds = [...this.filter.activityIds]
-    this.supportIds = [...this.filter.supportIds]
-    this.averageCostId = this.filter.averageCostId
-  },
   methods: {
     multipleSelect(key, id) {
-      const index = this[key].findIndex(item => item === id)
-      if (index === -1) this[key].push(id)
-      else this[key].splice(index, 1)
+      this.$emit('multiple-select', {
+        key,
+        id,
+      })
     },
     singleSelect(id) {
-      this.averageCostId = this.averageCostId === id ? -1 : id
+      this.$emit('single-select', id)
     },
     clear() {
-      this[UPDATE_FILTER_DATA]({
-        sortFilter: '',
-        activityIds: [],
-        supportIds: [],
-        averageCostId: -1,
-      })
-      this.$emit('search')
+      this.$emit('clear')
     },
     ensure() {
-      this[UPDATE_FILTER_DATA]({
-        sortFilter: '',
-        activityIds: this.activityIds,
+      this.$emit('ensure', {
+        activityIds: this.activities,
         supportIds: this.supportIds,
         averageCostId: this.averageCostId,
       })
-      this.$emit('search')
     },
-    ...mapMutations('shop', [UPDATE_FILTER_DATA]),
   },
 }
 </script>

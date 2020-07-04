@@ -51,23 +51,24 @@ export default {
   watch: {
     visible(val) {
       if (!val) return
-      // 由于手机端高度易变，会触发绑定的resize事件，修改parentHeight的值
-      // 同时由于触发的时候元素并没有挂载在页面上，那么修改后的值就是不正确的
-      // 所以当元素显示时就重新继续一下parentHeight的值
+      // 由于使用了v-show，当visble为false时节点的diplay为none, 导致list-scroll-view获取不到
+      // 正确的parentHeight, 会影响list-scroll-view的布局和loadmore逻辑
       this.$refs.list.computedParentHeight()
       this.$refs.list.search()
     },
   },
-  mounted() {
-    // 监听hidden值的变化只是为了获取filter的高度，当获取高度后
-    // 便可以取消对hidden的监听了，提高性能
+  created() {
+    // 这里需要注意，如果v-show="false"是放在当前模版的div上，那么就需要调用$nextTick
+    // 但是如果v-show放在组件标签上, 如<shop v-show="visible" />
+    // 那么就不需要调用$nextTick
+    // 我们知道v-show本质是修改元素的display值，通常情况下user watch是优先于render watch的
+    // 如果v-show放在模版的div上，那么当user watch执行的时候节点的dipslay值为none, 那么就无法获取到值
+    // 如果放在组件标签上，那么user watch执行的时候display的值已经是block了，那么就可以正常获取值
     const unwatch = this.$watch('visible', function () {
       this.$nextTick(() => {
-        if (this.filterHeight === 0) {
-          this.filterHeight = this.$refs.filter.$el.offsetHeight
-          unwatch()
-        }
+        this.filterHeight = this.$refs.filter.$el.offsetHeight
       })
+      unwatch()
     })
   },
   methods: {

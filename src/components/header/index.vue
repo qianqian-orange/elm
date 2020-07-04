@@ -1,18 +1,19 @@
 <template>
   <header class="elm-header">
     <slot name="left">
-      <router-link :to="to">
-        <div
-          class="arrow-container"
-          @click="jump"
-        >
-          <elm-icon
-            name="arrow"
-            :font-size="44"
-            :rotate="-90"
-          />
-        </div>
-      </router-link>
+      <!-- <router-link :to="to"> -->
+      <!--
+        elm-icon默认是会对click事件调用e.stopPropagation方法,
+        那么router-link会无法正常工作，原因是router-link
+        有监听click事件，做了一些逻辑处理
+      -->
+      <elm-icon
+        name="arrow"
+        :font-size="44"
+        :rotate="-90"
+        @click="jump"
+      />
+      <!-- </router-link> -->
     </slot>
     <slot />
     <slot name="right" />
@@ -25,12 +26,14 @@ export default {
   props: {
     to: {
       type: String,
-      default: '/',
+      default: '',
     },
   },
   methods: {
     jump() {
       this.$emit('jump')
+      if (this.to) this.$router.push(this.to)
+      else this.$router.go(-1)
     },
   },
 }
@@ -50,7 +53,7 @@ export default {
     background-image: linear-gradient(90deg, #1db5ff, #008cff);
   }
 
-  .arrow-container {
+  .elm-icon {
     width: px2rem(72);
     height: px2rem(72);
     line-height: px2rem(72);

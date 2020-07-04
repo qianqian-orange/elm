@@ -6,19 +6,26 @@ import Home from '@/views/home/index.vue'
 const {
   home,
   city,
+  citySearch,
   address,
   addressSearch,
   shopSearch,
+  shopOrder,
+  shopComment,
+  shopDetail,
+  food,
   kind,
 } = routes
-
-const citySearch = city.children.search
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
   routes: [
+    {
+      path: '/test',
+      component: () => import('@/views/test/index.vue'),
+    },
     {
       path: '/',
       redirect: '/home',
@@ -58,11 +65,42 @@ const router = new VueRouter({
       path: '/shop/search',
       name: shopSearch.name,
       component: () => import('@/views/shop/search/index.vue'),
+      meta: {
+        search: '',
+      },
+    },
+    {
+      path: '/shop/:id',
+      redirect: '/shop/:id/order',
+    },
+    {
+      path: '/shop/:id/order',
+      name: shopOrder.name,
+      component: () => import('@/views/shop/order/index.vue'),
+    },
+    {
+      path: '/shop/:id/comment',
+      name: shopComment.name,
+      component: () => import('@/views/shop/comment/index.vue'),
+    },
+    {
+      path: '/shop/:id/detail',
+      name: shopDetail.name,
+      component: () => import('@/views/shop/detail/index.vue'),
+    },
+    {
+      path: '/food/:id',
+      name: food.name,
+      component: () => import('@/views/food/index.vue'),
     },
     {
       path: '/kind/:id',
       name: kind.name,
       component: () => import('@/views/kind/index.vue'),
+    },
+    {
+      path: '*',
+      component: () => import('@/views/page/404.vue'),
     },
   ],
 })

@@ -14,16 +14,30 @@ export const routes = {
   city: {
     path: '/city',
     name: 'city',
-    children: {
-      search: {
-        path: 'search',
-        name: 'city-search',
-      },
-    },
+  },
+  citySearch: {
+    path: '/city/search',
+    name: 'city-search',
   },
   shopSearch: {
     path: '/shop/search',
     name: 'shop-search',
+  },
+  shopOrder: {
+    path: '/shop/:id/order',
+    name: 'shop-order',
+  },
+  shopComment: {
+    path: '/shop/:id/comment',
+    name: 'shop-comment',
+  },
+  shopDetail: {
+    path: '/shop/:id/detail',
+    name: 'shop-detail',
+  },
+  food: {
+    path: '/food/:id',
+    name: 'food',
   },
   kind: {
     path: '/kind/:id',

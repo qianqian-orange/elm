@@ -15,6 +15,8 @@ import {
   Search,
   Empty,
   Dialog,
+  Drawer,
+  Badge,
 } from './ui'
 import 'normalize.css'
 import '@/config/axios'
@@ -30,6 +32,8 @@ Vue.use(Mask)
 Vue.use(Search)
 Vue.use(Empty)
 Vue.use(Dialog)
+Vue.use(Drawer)
+Vue.use(Badge)
 
 new Vue({
   router,

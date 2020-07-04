@@ -1,0 +1,58 @@
+.elm-drawer-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1999;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.elm-drawer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 84%;
+  background-color: #fff;
+  transition: transform .2s ease;
+  border-radius: px2rem(16);
+}
+
+.elm-drawer-header {
+  @include single-line-overflow();
+  position: relative;
+  height: px2rem(36);
+  padding: px2rem(30) px2rem(120);
+  color: $primaryTextColor;
+  font-size: px2rem(32);
+  line-height: px2rem(36);
+  text-align: center;
+
+  .elm-icon {
+    position: absolute;
+    top: px2rem(24);
+    right: px2rem(30);
+  }
+}
+
+.elm-drawer-content {
+  overflow: hidden;
+  flex: 1;
+}
+
+.elm-drawer-enter,
+.elm-drawer-leave-to {
+  opacity: 0;
+
+  .elm-drawer-container {
+    transform: translateY(100%);
+  }
+}
+
+.elm-drawer-enter-active,
+.elm-drawer-leave-active {
+  transition: opacity .2s linear;
+}

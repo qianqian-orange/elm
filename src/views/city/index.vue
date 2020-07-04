@@ -1,6 +1,6 @@
 <template>
   <div class="city-container">
-    <elm-header :to="$route.query.from">
+    <elm-header>
       <div class="search-container">
         <router-link to="/city/search">
           <p class="placeholder">
@@ -54,7 +54,7 @@
       :letters="letters"
       @transform="transform"
     />
-    <transition name="drawer">
+    <transition name="drawer-left">
       <router-view :group-city="groupCity" />
     </transition>
   </div>

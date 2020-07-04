@@ -3,7 +3,7 @@
     <transition
       :name="transition"
     >
-      <keep-alive include="Home">
+      <keep-alive :include="['Home']">
         <router-view />
       </keep-alive>
     </transition>

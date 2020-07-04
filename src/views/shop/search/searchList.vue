@@ -31,8 +31,6 @@
               color="#fff"
               :font-size="20"
               :style="{
-                padding: px2rem(4),
-                marginLeft: px2rem(12),
                 backgroundColor: `#${tag.bgColor}`,
                 borderWidth: 0,
               }"
@@ -66,7 +64,6 @@
 <script>
 import axios from 'axios'
 import { resolveImageUrl } from '@/utils'
-import px2rem from '@/utils/px2rem'
 import variable from '@/scss/var.scss'
 import ListScrollView from '@/components/listScrollView/index.vue'
 
@@ -83,7 +80,6 @@ export default {
   },
   data() {
     return {
-      px2rem,
       loading: false,
       restaurants: [],
       words: [],
@@ -105,9 +101,8 @@ export default {
       this.getData()
     },
     visible(val) {
-      // 由于手机端高度易变，会触发绑定的resize事件，修改parentHeight的值
-      // 同时由于触发的时候元素并没有挂载在页面上，那么修改后的值就是不正确的
-      // 所以当元素显示时就重新继续一下parentHeight的值
+      // 由于使用了v-show，当visble为false时节点的diplay为none, 导致list-scroll-view获取不到
+      // 正确的parentHeight, 会影响list-scroll-view的布局和loadmore的逻辑
       if (val) this.$refs.list.computedParentHeight()
     },
   },
@@ -214,5 +209,10 @@ export default {
       font-size: px2rem(28);
       line-height: px2rem(100);
     }
+  }
+
+  .elm-tag {
+    padding: px2rem(4);
+    margin-left: px2rem(12);
   }
 </style>

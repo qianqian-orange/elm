@@ -88,7 +88,7 @@ export default {
     position: relative;
   }
 
-  ::v-deep .elm-finish {
+  .elm-finish {
     position: absolute;
     right: 0;
     bottom: 0;

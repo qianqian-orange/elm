@@ -1,9 +1,9 @@
 <template>
-  <div class="address-search fullscreen-fixed-container">
-    <elm-header to="/address">
+  <div class="address-search">
+    <elm-header>
       <div class="search-container">
         <router-link
-          to="/city?from=/address/search"
+          to="/city"
           class="link"
         >{{ city }}</router-link>
         <elm-search
@@ -26,7 +26,7 @@
         :loading="loading"
         :finish="finish"
         @loadmore="loadmore"
-        @ensure="ensure"
+        @ensure="jump"
       />
     </main>
   </div>
@@ -89,7 +89,7 @@ export default {
         this[UPDATE_TRANSITION](transition.slideRight)
         break
       case city.name:
-        this[UPDATE_LOCATION](transition.slideLeft)
+        this[UPDATE_TRANSITION](transition.slideLeft)
         break
     }
     next()
@@ -98,7 +98,7 @@ export default {
     const data = get(sessionStorageKey.city)
     if (!data) {
       this.$notify({ type: 'danger', message: '数据异常' })
-      this.$router.replace('/adress')
+      this.$router.replace('/address')
       return
     }
     this.city = data.city
@@ -155,6 +155,10 @@ export default {
           this.result.push(...data)
         })
     },
+    jump(poi) {
+      this.ensure(poi)
+      this.$router.push('/home')
+    },
     ...mapMutations('global', [UPDATE_LOCATION]),
   },
 }
@@ -162,6 +166,9 @@ export default {
 
 <style lang="scss" scoped>
   .address-search {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
     padding-top: px2rem($headerHeight);
   }
 

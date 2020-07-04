@@ -92,7 +92,8 @@
       "box-shadow",
       "clear",
       "object-fit",
-      "appearance"
+      "appearance",
+      "will-change"
     ]
   }
 }

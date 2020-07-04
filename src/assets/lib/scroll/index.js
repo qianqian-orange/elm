@@ -63,6 +63,21 @@ class Scroll {
     this.init()
   }
 
+  init() {
+    this.el.style.transitionProperty = 'transform'
+    this.el.style.transitionTimingFunction = 'cubic-bezier(0.165, 0.84, 0.44, 1)'
+    this.el.style.transitionDuration = '0ms'
+    this.el.style.transform = 'translate(0, 0)'
+    this.el.style.willChange = 'transform'
+    this.bindStart = this.start.bind(this)
+    this.bindMove = this.move.bind(this)
+    this.bindEnd = this.end.bind(this)
+    this.transition.addEventListener()
+    this.el.addEventListener(eventType.touchstart, this.bindStart, false)
+    this.el.addEventListener(eventType.touchmove, this.bindMove, false)
+    this.el.addEventListener(eventType.touchend, this.bindEnd, false)
+  }
+
   start(e) {
     e.preventDefault()
     if (this.stopPropagation) e.stopPropagation()
@@ -106,20 +121,6 @@ class Scroll {
     }
   }
 
-  init() {
-    this.el.style.transitionProperty = 'transform'
-    this.el.style.transitionTimingFunction = 'cubic-bezier(0.165, 0.84, 0.44, 1)'
-    this.el.style.transitionDuration = '0ms'
-    this.el.style.willChange = 'transform'
-    this.bindStart = this.start.bind(this)
-    this.bindMove = this.move.bind(this)
-    this.bindEnd = this.end.bind(this)
-    this.transition.addEventListener()
-    this.el.addEventListener(eventType.touchstart, this.bindStart, false)
-    this.el.addEventListener(eventType.touchmove, this.bindMove, false)
-    this.el.addEventListener(eventType.touchend, this.bindEnd, false)
-  }
-
   destroy() {
     remove(this)
     this.transition.removeEventListener()
@@ -129,6 +130,7 @@ class Scroll {
   }
 
   scrollToElement(el, duration = 0) {
+    duration = duration < 0 ? 0 : duration
     let node = el
     let y = 0
     let x = 0
@@ -141,6 +143,7 @@ class Scroll {
   }
 
   scrollTo({ x, y }, duration = 0) {
+    duration = duration < 0 ? 0 : duration
     this.transition.to({ x, y }, duration)
   }
 
@@ -150,6 +153,14 @@ class Scroll {
 
   on(type, fn) {
     this.eventEmitter.on(type, fn)
+  }
+
+  off(type, fn) {
+    this.eventEmitter.off(type, fn)
+  }
+
+  getCurrent() {
+    return this.translate.getCurrent()
   }
 }
 

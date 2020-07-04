@@ -1,6 +1,6 @@
 <template>
   <div class="shop-search">
-    <elm-header :to="$route.query.from">
+    <elm-header :to="`${$route.query.from || '/home'}`">
       <div class="search-container">
         <elm-search
           ref="search"
@@ -51,7 +51,9 @@
       @click="searchShop"
     />
     <!-- 商店列表 -->
-    <shop :visible="visible" />
+    <shop
+      :visible="visible"
+    />
     <elm-dialog
       v-if="dialog"
       title="确认删除全部历史记录吗?"
@@ -81,14 +83,30 @@ export default {
   },
   mixins: [transitionMixin],
   beforeRouteLeave(to, from, next) {
-    const { home, kind } = routes
+    const { home, kind, shopOrder } = routes
     switch (to.name) {
       case home.name:
       case kind.name:
         this[UPDATE_TRANSITION](transition.slideRight)
         break
+      case shopOrder.name:
+        from.meta.search = this.search
+        this[UPDATE_TRANSITION](transition.slideLeft)
+        break
     }
     next()
+  },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      const { shopOrder, shopComment } = routes
+      switch (from.name) {
+        case shopOrder.name:
+        case shopComment.name:
+          vm.search = to.meta.search
+          if (vm.search) vm.visible = true
+          break
+      }
+    })
   },
   data() {
     return {
@@ -124,7 +142,7 @@ export default {
       set(localStorageKey.historySearch, this.historyWords)
     },
     searchShop() {
-      if (this.search === '') this.search = this.hotWords[0].word
+      if (this.search === '') this.search = this.hotWords.length ? this.hotWords[0].word : '汉堡'
       this.visible = true
     },
     toggle() {

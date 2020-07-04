@@ -1,5 +1,9 @@
 <template>
-  <div class="inside-category">
+  <div
+    v-show="visible"
+    class="inside-category"
+    @click.stop.self="close"
+  >
     <p class="tip">请选择分类</p>
     <div class="category-container">
       <div class="main-category">
@@ -51,8 +55,6 @@
 </template>
 
 <script>
-import { sessionStorageKey } from '@/config'
-import { get, set } from '@/utils/sessionStorage'
 import ScrollView from '@/components/scrollView/index.vue'
 
 export default {
@@ -65,6 +67,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    visible: {
+      type: Boolean,
+      required: true,
+    },
   },
   data() {
     return {
@@ -76,7 +82,6 @@ export default {
     subCategory() {
       if (this.mainActiveId === -1) return []
       const data = this.dataSource.find(item => item.id === this.mainActiveId)
-      if (!data) return []
       return data.subs
     },
   },
@@ -85,35 +90,24 @@ export default {
       this.$refs['sub-scroll'].scrollTo({ y: 0 })
       this.$refs['sub-scroll'].reset()
     },
-  },
-  beforeDestroy() {
-    set(sessionStorageKey.category, {
-      mainActiveId: this.mainActiveId,
-      subActiveId: this.subActiveId,
-    })
-  },
-  mounted() {
-    const data = get(sessionStorageKey.category)
-    if (data) {
-      this.mainActiveId = data.mainActiveId
-      this.subActiveId = data.subActiveId
-    } else if (this.dataSource.length > 0) {
-      this.mainActiveId = this.dataSource[0].id
-      this.subActiveId = this.dataSource[0].subs[0].id
-    }
-    if (this.dataSource.length === 0) {
-      const unwatch = this.$watch('dataSource', function (val) {
-        if (!data) {
-          this.mainActiveId = val[0].id
-          this.subActiveId = this.dataSource[0].subs[0].id
-        }
-        this.$refs['main-scroll'].reset()
-        this.$nextTick(() => {
-          this.scrollToElement()
-        })
-        unwatch()
+    visible(val) {
+      if (!val) return
+      this.$nextTick(() => {
+        this.scrollToElement()
       })
-    } else this.scrollToElement()
+    },
+  },
+  created() {
+    const visibleWatch = this.$watch('visible', function (val) {
+      this.$refs['main-scroll'].reset()
+      this.$refs['sub-scroll'].reset()
+      visibleWatch()
+    })
+    const dataSourceWatch = this.$watch('dataSource', function (val) {
+      this.mainActiveId = val[0].id
+      this.subActiveId = this.dataSource[0].subs[0].id
+      dataSourceWatch()
+    })
   },
   methods: {
     close() {
@@ -121,22 +115,22 @@ export default {
     },
     selectMainCategory(id) {
       this.mainActiveId = id
-      set()
     },
     selectSubCategory(id) {
       this.subActiveId = id
       this.$emit('toggle')
-      this.$emit('search')
+      this.$emit('search', {
+        id,
+        subCategory: this.subCategory,
+      })
     },
     scrollToElement() {
       let index = this.dataSource.findIndex(item => item.id === this.mainActiveId)
       this.$refs['main-scroll'].scrollToElement(this.$refs['main-category-item'][index])
       index = this.dataSource[index].subs.findIndex(item => item.id === this.subActiveId)
+      // subAcitveId对应的子菜单可能不存在
       if (index === -1) return
-      this.$refs['sub-scroll'].reset()
-      this.$nextTick(() => {
-        this.$refs['sub-scroll'].scrollToElement(this.$refs['sub-category-item'][index])
-      })
+      this.$refs['sub-scroll'].scrollToElement(this.$refs['sub-category-item'][index])
     },
   },
 }

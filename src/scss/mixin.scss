@@ -71,3 +71,10 @@
     margin: px2rem(-20);
   }
 }
+
+@mixin bg($url) {
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

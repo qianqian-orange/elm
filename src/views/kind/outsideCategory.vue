@@ -10,6 +10,8 @@
           <li
             v-for="{ id, name } in dataSource"
             :key="id"
+            ref="item"
+            :data-id="id"
             class="outside-category-item"
             :class="id === activeId ? 'active' : ''"
             @click.stop="search(id)"
@@ -69,6 +71,11 @@ export default {
     },
     expand() {
       this.$emit('expand')
+    },
+    scrollToElement(id) {
+      this.activeId = id
+      const item = this.$refs.item.find(item => +item.dataset.id === id)
+      this.$refs.scroll.scrollToElement(item)
     },
   },
 }

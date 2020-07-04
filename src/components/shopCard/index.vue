@@ -1,149 +1,153 @@
 <template>
-  <li class="shop-card">
-    <img
-      v-lazy="shop.imagePath"
-      alt="shop"
-      class="shop-image"
-      :style="{
-        width: px2rem(140),
-        height: px2rem(140),
-      }"
-    >
-    <div class="content">
-      <p class="shop-name">{{ shop.name }}</p>
-      <div class="block">
-        <elm-icon
-          name="star"
-          color="#ff6300"
-          class="star"
-        />
-        <span class="rating">{{ shop.rating }}</span>
-        <span class="sell">{{ shop.recentOrderNumDisplay }}</span>
-        <elm-tag
-          color="#fff"
-          :style="{
-            backgroundColor: variable.themeColor,
-          }"
-        >蜂鸟专送</elm-tag>
-      </div>
-      <div class="block">
-        <span class="order-amount">起送¥{{ shop.floatMinimumOrderAmount }}</span>
-        <span class="dilivery-fee">{{ shop.floatDeliveryFee | deliveryFee }}</span>
-        <span class="time">{{ shop.orderLeadTime | time }}</span>
-        <span class="distance">{{ shop.distance | distance }}</span>
-      </div>
-      <!-- 好评 -->
-      <elm-fold
-        :height="60"
-        @expand="expand"
-      >
-        <ul class="tag-list">
-          <li
-            v-for="reason in shop.recommendReasons"
-            :key="reason"
-            class="tag-item"
-          >
-            <elm-tag
-              color="#fe7100"
-              :style="{
-                borderColor: 'rgba(255,114,0,.12)',
-                backgroundColor: 'rgba(255,114,0,.12)',
-              }"
-            >{{ reason }}</elm-tag>
-          </li>
-        </ul>
-      </elm-fold>
-      <!-- 标签 -->
-      <elm-fold
-        :height="60"
-        @expand="expand"
-      >
-        <ul class="tag-list">
-          <li
-            v-for="(support, index) in shop.supportTags"
-            :key="index"
-            class="tag-item"
-          >
-            <elm-tag
-              :color="`#${support.color}`"
-              :style="{
-                borderColor: `#${support.border}`,
-                backgroundImage: support.background ? `linear-gradient(to right, #${support.background.rgbFrom}, #${support.background.rgbTo})` : 'transparent',
-              }"
-            >{{ support.text }}</elm-tag>
-          </li>
-        </ul>
-      </elm-fold>
-      <!-- 优惠 -->
-      <elm-fold
-        v-if="extra && shop.activities.length"
-        :height="92"
-        @expand="expand"
-      >
-        <ul>
-          <li
-            v-for="activity in shop.activities"
-            :key="activity.id"
-            class="activity-item"
-          >
-            <span
-              :style="{
-                backgroundColor: `#${activity.iconColor}`,
-              }"
-              class="icon"
-            >{{ activity.iconName }}</span>
-            <span class="desc">{{ activity.description }}</span>
-          </li>
-        </ul>
-      </elm-fold>
-      <!-- 爆款推荐 -->
-      <div
-        v-if="extra && shop.foods.length"
+  <router-link :to="`/shop/${shop.id}?from=${$route.path}`">
+    <li class="shop-card">
+      <img
+        v-lazy="shop.imagePath"
+        alt="shop"
+        class="shop-image"
         :style="{
-          whiteSpace: 'nowrap',
+          width: px2rem(140),
+          height: px2rem(140),
         }"
       >
-        <scroll-view
-          :scroll-x="true"
-          :scroll-y="false"
-          :stop-propagation="true"
+      <div class="content">
+        <p class="shop-name">{{ shop.name }}</p>
+        <div class="block">
+          <elm-icon
+            name="star"
+            color="#ff6300"
+            class="star"
+          />
+          <span class="rating">{{ shop.rating }}</span>
+          <span class="sell">{{ shop.recentOrderNumDisplay }}</span>
+          <elm-tag
+            color="#fff"
+            :style="{
+              backgroundColor: variable.themeColor,
+            }"
+          >蜂鸟专送</elm-tag>
+        </div>
+        <div class="block">
+          <span class="order-amount">起送¥{{ shop.floatMinimumOrderAmount }}</span>
+          <span class="dilivery-fee">{{ shop.floatDeliveryFee | deliveryFee }}</span>
+          <span class="time">{{ shop.orderLeadTime | time }}</span>
+          <span class="distance">{{ shop.distance | distance }}</span>
+        </div>
+        <!-- 好评 -->
+        <elm-fold
+          :height="60"
+          @expand="expand"
         >
-          <ul class="food-list">
+          <ul class="tag-list">
             <li
-              v-for="food in shop.foods"
-              :key="food.id"
+              v-for="reason in shop.recommendReasons"
+              :key="reason"
+              class="tag-item"
             >
-              <img
-                class="food-image"
-                :src="food.imagePath"
-                alt="food"
-              >
-              <p class="food-name">{{ food.name }}</p>
-              <p class="food-price">
-                <span class="prefix">¥</span>{{ food.price }}</p>
+              <elm-tag
+                color="#fe7100"
+                :style="{
+                  borderColor: 'rgba(255,114,0,.12)',
+                  backgroundColor: 'rgba(255,114,0,.12)',
+                }"
+              >{{ reason }}</elm-tag>
             </li>
           </ul>
-        </scroll-view>
+        </elm-fold>
+        <!-- 标签 -->
+        <elm-fold
+          :height="60"
+          @expand="expand"
+        >
+          <ul class="tag-list">
+            <li
+              v-for="(support, index) in shop.supportTags"
+              :key="index"
+              class="tag-item"
+            >
+              <elm-tag
+                :color="`#${support.color}`"
+                :style="{
+                  borderColor: `#${support.border}`,
+                  backgroundImage: support.background ? `linear-gradient(to right, #${support.background.rgbFrom}, #${support.background.rgbTo})` : 'transparent',
+                }"
+              >{{ support.text }}</elm-tag>
+            </li>
+          </ul>
+        </elm-fold>
+        <!-- 优惠 -->
+        <elm-fold
+          v-if="extra && shop.activities.length"
+          :height="92"
+          @expand="expand"
+        >
+          <ul>
+            <li
+              v-for="activity in shop.activities"
+              :key="activity.id"
+              class="activity-item"
+            >
+              <span
+                :style="{
+                  backgroundColor: `#${activity.iconColor}`,
+                }"
+                class="icon"
+              >{{ activity.iconName }}</span>
+              <span class="desc">{{ activity.description }}</span>
+            </li>
+          </ul>
+        </elm-fold>
+        <!-- 爆款推荐 -->
+        <div
+          v-if="extra && shop.foods.length"
+          :style="{
+            whiteSpace: 'nowrap',
+          }"
+        >
+          <scroll-view
+            :scroll-x="true"
+            :scroll-y="false"
+            :stop-propagation="true"
+          >
+            <ul class="food-list">
+              <li
+                v-for="food in shop.foods"
+                :key="food.id"
+                class="food-item"
+              >
+                <img
+                  class="food-image"
+                  :src="food.imagePath"
+                  alt="food"
+                >
+                <p class="food-name">{{ food.name }}</p>
+                <p class="food-price">
+                  <span class="prefix">¥</span>{{ food.price }}</p>
+              </li>
+            </ul>
+          </scroll-view>
+        </div>
+        <elm-icon
+          class="omit"
+          name="omit"
+          color="#999"
+          :stop-propagation="true"
+          :font-size="32"
+          @click="toggle"
+        />
       </div>
-      <elm-icon
-        class="omit"
-        name="omit"
-        color="#999"
-        :font-size="32"
+      <elm-mask
+        v-if="!hidden"
+        :style="{ margin: `0 -${px2rem(30)}` }"
         @click="toggle"
-      />
-    </div>
-    <elm-mask
-      v-if="!hidden"
-      :style="{ margin: `0 -${px2rem(30)}` }"
-      @click="toggle"
-    >
-      <div
-        class="hate"
-        @click.stop="hate"
-      >不喜欢</div>
-    </elm-mask>
-  </li>
+      >
+        <div
+          class="hate"
+          @click.stop="hate"
+        >不喜欢</div>
+      </elm-mask>
+    </li>
+  </router-link>
 </template>
 
 <script>
@@ -243,7 +247,7 @@ export default {
     }
 
     .star {
-      padding-bottom: px2rem(4);
+      padding-bottom: px2rem(8);
       margin-right: px2rem(8);
     }
 
@@ -285,14 +289,20 @@ export default {
     }
 
     .activity-item {
-      height: px2rem(42);
+      position: relative;
+      padding-left: px2rem(42);
       margin-bottom: px2rem(8);
       line-height: px2rem(42);
 
       .icon {
+        position: absolute;
+        top: px2rem(4);
+        left: 0;
+        height: px2rem(34);
         padding: 0 px2rem(4);
         color: #fff;
         font-size: px2rem(24);
+        line-height: px2rem(34);
         border-radius: px2rem(4);
       }
 
@@ -307,10 +317,17 @@ export default {
       flex-wrap: nowrap;
       padding-top: px2rem(20);
 
+      .food-item {
+        margin-right: px2rem(16);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
       .food-image {
         width: px2rem(180);
         height: px2rem(180);
-        margin-right: px2rem(16);
         border-radius: px2rem(12);
         object-fit: cover;
       }

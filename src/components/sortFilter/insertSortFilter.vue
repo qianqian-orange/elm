@@ -21,13 +21,22 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-import { UPDATE_FILTER_DATA } from '@/store/modules/shop/mutation-types'
+import { mapState } from 'vuex'
 import px2rem from '@/utils/px2rem'
 import varibale from '@/scss/var.scss'
 
 export default {
   name: 'InsertSortFilter',
+  props: {
+    insideSortFilterIndex: {
+      type: Number,
+      required: true,
+    },
+    outsideSortFilterIndex: {
+      type: Number,
+      required: true,
+    },
+  },
   data() {
     return {
       px2rem,
@@ -40,20 +49,12 @@ export default {
     },
     ...mapState('shop', {
       insideSortFilter: state => state.filter.insideSortFilter,
-      insideSortFilterIndex: state => state.filter.insideSortFilterIndex,
-      outsideSortFilterIndex: state => state.filter.outsideSortFilterIndex,
     }),
   },
   methods: {
     selectInsertSortFilter(index) {
-      this[UPDATE_FILTER_DATA]({
-        sortFilter: '',
-        insideSortFilterIndex: index,
-        outsideSortFilterIndex: -1,
-      })
-      this.$emit('search')
+      this.$emit('select-insert-sort-filter', index)
     },
-    ...mapMutations('shop', [UPDATE_FILTER_DATA]),
   },
 }
 </script>

@@ -41,26 +41,20 @@ function reset(scrollX, scrollY) {
   const fns = []
   if (scrollY) {
     fns.push(() => {
-      const previous = this.contentHeight
-      // 获取剩余可以滚动的高度
-      const residue = this.contentHeight + this.preScrollHeight - this.wrapperHeight
       this.wrapperHeight = this.el.parentNode.offsetHeight
       this.contentHeight = this.el.offsetHeight
-      const interval = previous - this.contentHeight
-      // 如果之前的内容高度小于目前的内容高度，那什么都不需要做
-      if (interval <= 0 || residue >= interval) return
-      this.toY(this.preScrollHeight + (interval - residue))
+      const residue = this.contentHeight + this.preScrollHeight - this.wrapperHeight
+      if (residue >= 0) return
+      this.toY(this.preScrollHeight - residue)
     })
   }
   if (scrollX) {
     fns.push(() => {
-      const previous = this.contentWidth
-      const residue = this.contentWidth + this.preScrollWidth - this.wrapperWidth
       this.wrapperWidth = this.el.parentNode.offsetWidth
       this.contentWidth = this.el.offsetWidth
-      const interval = previous - this.contentWidth
-      if (interval <= 0 || residue >= interval) return
-      this.toX(this.preScrollWidth + (interval - residue))
+      const residue = this.contentWidth + this.preScrollWidth - this.wrapperWidth
+      if (residue >= 0) return
+      this.toX(this.preScrollWidth - residue)
     })
   }
   return compose(...fns)
@@ -143,6 +137,10 @@ class Translate {
   offsetX(offset) {
     this.preScrollWidth = this.curScrollWidth = this.ensureX(this.preScrollWidth + offset)
     this.el.style.transform = `translateX(${this.preScrollWidth}px)`
+  }
+
+  getCurrent() {
+    return { x: this.preScrollWidth, y: this.preScrollHeight }
   }
 }
 

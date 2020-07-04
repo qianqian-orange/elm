@@ -29,6 +29,10 @@ export default {
       type: Number,
       default: 0,
     },
+    stopPropagation: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -42,6 +46,9 @@ export default {
         omit: 'icon-shenglvehao',
         success: 'icon-success',
         trash: 'icon-laji2',
+        car: 'icon-cart',
+        increase: 'icon-add',
+        decrease: 'icon-Remove',
       },
     }
   },
@@ -58,8 +65,9 @@ export default {
     },
   },
   methods: {
-    handleClick() {
-      this.$emit('click')
+    handleClick(e) {
+      if (this.stopPropagation) e.stopPropagation()
+      this.$emit('click', e)
     },
   },
 }

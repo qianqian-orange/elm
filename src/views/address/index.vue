@@ -1,12 +1,9 @@
 <template>
   <div class="address-container">
-    <elm-header
-      to="/"
-      @jump="ensure(previous)"
-    >
+    <elm-header @jump="ensure(previous)">
       <div class="search-container">
         <router-link
-          to="/city?from=/address"
+          to="/city"
           class="link"
         >{{ city }}</router-link>
         <router-link

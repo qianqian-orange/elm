@@ -70,6 +70,9 @@ export default {
         this.scroll.reset()
       })
     },
+    getCurrent() {
+      return this.scroll.getCurrent()
+    },
     scrollTo({ x, y }, duration) {
       this.scroll.scrollTo({ x, y }, duration)
     },

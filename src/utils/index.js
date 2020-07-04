@@ -93,5 +93,5 @@ const types = ['png', 'jpg']
 export function resolveImageUrl(imagePath) {
   let ext = imagePath.substr(-3)
   if (!types.includes(ext.toLowerCase())) ext = imagePath.substr(-4)
-  return `https://cube.elemecdn.com/${imagePath[0]}/${imagePath[1]}${imagePath[2]}/${imagePath.substr(3)}.${ext}?x-oss-process=image/resize,m_lfit,w_160,h_160/quality,q_90/format,webp`
+  return `https://cube.elemecdn.com/${imagePath[0]}/${imagePath[1]}${imagePath[2]}/${imagePath.substr(3)}.${ext}`
 }

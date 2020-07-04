@@ -126,9 +126,23 @@ class Transition {
   }
 
   to({ x, y }, duration) {
-    if (duration > 0) this.pending = true
+    const previous = this.translate.getCurrent()
     this.el.style.transitionDuration = `${duration}ms`
     this.translate.to({ x, y })
+    if (duration === 0) return
+    if (this.pending) return
+    const current = this.translate.getCurrent()
+    // 如果目标位置和当前位置相同，那什么都不用做
+    if (previous.x === current.x && previous.y === current.y) {
+      this.el.style.transitionDuration = '0ms'
+      return
+    }
+    this.pending = true
+    if (this.probeType) {
+      this.id = window.requestAnimationFrame(() => {
+        this.step()
+      })
+    }
   }
 
   step() {

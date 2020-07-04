@@ -7,14 +7,14 @@
       }"
     />
     <sort-filter
-      v-show="!hidden"
-      ref="substitute"
+      ref="filter"
       :style="{
         position: 'fixed',
         top: `${top}px`,
         left: 0,
         zIndex: 999,
       }"
+      @top="toTop"
       @search="search"
     />
     <scroll-view
@@ -42,7 +42,7 @@
           <div class="super-vip">
             <div class="left">
               <img
-                src="https://cube.elemecdn.com/8/0e/4dd212d831becab6e3ebd484c0941jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_36,h_36/quality,q_90/format,webp"
+                :src="require('@/assets/image/svip.png')"
                 alt="vip"
               >
               <span class="title">加入超级会员</span>
@@ -60,19 +60,9 @@
           <p
             class="guess"
             :style="{
-              paddingBottom: hidden ? 0 : `${filterHeight}px`,
+              paddingBottom: `${filterHeight}px`,
             }"
           >猜你喜欢</p>
-          <sort-filter
-            v-show="hidden"
-            ref="filter"
-            :style="{
-              padding: 0,
-            }"
-            @reset="reset"
-            @top="toTop"
-            @search="search"
-          />
           <shop-list
             ref="list"
             @reset="reset"
@@ -91,7 +81,6 @@ import loadmoreMixin from '@/mixins/loadmore'
 import transitionMixin from '@/mixins/transition'
 import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
 import { transition } from '@/config'
-import px2rem from '@/utils/px2rem'
 import SortFilter from '@/components/sortFilter/index.vue'
 import ShopList from './shopList.vue'
 import HomeHeader from './header.vue'
@@ -118,7 +107,6 @@ export default {
   },
   data() {
     return {
-      px2rem,
       loading: false,
       advertisement: [],
       kindGroup: [],
@@ -129,7 +117,6 @@ export default {
       filterHeight: 0,
       top: 0,
       inputHeight: 0,
-      hidden: true,
       interval: 600,
     }
   },
@@ -142,9 +129,7 @@ export default {
     ]).then(() => {
       this.reset()
       this.$nextTick(() => {
-        const el = this.$refs.filter.$el
-        this.offsetTop = el.offsetTop
-        this.filterHeight = el.offsetHeight
+        this.top = this.offsetTop = this.$refs.list.$el.offsetTop - this.filterHeight
       })
     }).catch(() => {
       this.$notify({ type: 'danger', message: '获取数据失败' })
@@ -172,38 +157,38 @@ export default {
         })
     },
     scrollHandler() {
+      this.filterHeight = this.$refs.filter.$el.offsetHeight
       const { headerHeight, locationHeight } = this.$refs.header.height()
       this.inputHeight = headerHeight - locationHeight
-      this.top = this.inputHeight
       this.paddingTop = headerHeight
+      this.top = headerHeight // 这里先设置为headerHeight的高度，避免遮住了header，否则页面效果就不好了
       this.$refs.scroll.on('scroll', ({ y }) => {
         y = Math.ceil(y)
         // 处理header
         this.translateY = locationHeight + y <= 0 ? -locationHeight : y
         // 处理filter
-        this.hidden = -y + this.inputHeight < this.offsetTop
+        this.top = this.offsetTop + y <= this.inputHeight ? this.inputHeight : this.offsetTop + y
         // 处理loadmore
         if (this.parentHeight + this.interval >= this.contentHeight + y) this.loadmore()
       })
+      // 为了保证数据精确，监听scrollEnd
       this.$refs.scroll.on('scrollEnd', ({ y }) => {
         y = Math.ceil(y)
         this.translateY = locationHeight + y <= 0 ? -locationHeight : y
+        this.top = this.offsetTop + y <= this.inputHeight ? this.inputHeight : this.offsetTop + y
       })
     },
     loadmore() {
       this.$refs.list.getData()
     },
     toTop() {
-      const { locationHeight } = this.$refs.header.height()
-      this.$refs.scroll.scrollTo(-locationHeight)
-      this.translateY = -locationHeight
-      this.hidden = false
+      if (this.top === this.inputHeight) return
       this.$refs.scroll.scrollTo({ y: -(this.offsetTop - this.inputHeight) }, 300)
     },
     search() {
       this.$refs.list.search()
         .then(() => {
-          if (this.hidden) return
+          if (this.top !== this.inputHeight) return
           this.$refs.scroll.scrollTo({ y: -(this.offsetTop - this.inputHeight) })
         })
     },

@@ -60,4 +60,19 @@ router.get('/search', (req, res) => {
   })
 })
 
+router.get('/detail', (req, res) => {
+  const { id } = req.query
+  if (!id) return res.json({ code: 1 })
+  fs.readFile(path.join(__dirname, '../json/detail', `${id}.json`), 'utf-8', (err, data) => {
+    if (err) {
+      console.log(err)
+      return res.json({ code: 1 })
+    }
+    res.json({
+      code: 0,
+      data: JSON.parse(data),
+    })
+  })
+})
+
 module.exports = router

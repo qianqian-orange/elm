@@ -68,7 +68,7 @@ export default {
             id,
             name,
             rating,
-            recentOrderNumDisplay,
+            recentOrderNumDisplay, // 月销量
             floatMinimumOrderAmount, // 最低起送价
             floatDeliveryFee, // 配送费 0 表示免费配送
             distance, // m km

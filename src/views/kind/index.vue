@@ -15,6 +15,7 @@
       </div>
     </elm-header>
     <outside-category
+      ref="outside-category"
       :data-source="category.outside"
       @search="search"
       @expand="toggle"
@@ -26,7 +27,7 @@
       <shop-list ref="list" />
     </div>
     <inside-category
-      v-if="visible"
+      :visible="visible"
       :data-source="category.inside"
       @toggle="toggle"
       @search="search"
@@ -59,12 +60,13 @@ export default {
   },
   mixins: [transitionMixin],
   beforeRouteLeave(to, from, next) {
-    const { home, shopSearch } = routes
+    const { home, shopSearch, shopOrder } = routes
     switch (to.name) {
       case home.name:
         this[UPDATE_TRANSITION](transition.slideRight)
         break
       case shopSearch.name:
+      case shopOrder.name:
         this[UPDATE_TRANSITION](transition.slideLeft)
         break
     }
@@ -115,7 +117,13 @@ export default {
         }
       })
     },
-    search() {
+    search(payload) {
+      if (payload) {
+        this.category.outside = payload.subCategory
+        this.$nextTick(() => {
+          this.$refs['outside-category'].scrollToElement(payload.id)
+        })
+      }
       this.$refs.list.search()
     },
     toggle() {

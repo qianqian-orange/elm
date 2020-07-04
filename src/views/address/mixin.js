@@ -14,7 +14,6 @@ export default {
         latitude: poi.latitude,
         address: poi.name || poi.address,
       })
-      this.$router.push('/home')
     },
   },
 }

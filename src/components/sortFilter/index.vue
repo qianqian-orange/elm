@@ -53,11 +53,19 @@
     >
       <insert-sort-filter
         v-if="sortFilter === sortFilters.insert"
-        @search="search"
+        :inside-sort-filter-index="insideSortFilterIndex"
+        :outside-sort-filter-index="outsideSortFilterIndex"
+        @select-insert-sort-filter="selectInsertSortFilter"
       />
       <multipart-sort-filter
         v-if="sortFilter === sortFilters.multipart"
-        @search="search"
+        :activity-ids="activityIds"
+        :support-ids="supportIds"
+        :average-cost-id="averageCostId"
+        @clear="clear"
+        @ensure="ensure"
+        @multiple-select="multipleSelect"
+        @single-select="singleSelect"
       />
     </div>
   </div>
@@ -70,7 +78,6 @@ import InsertSortFilter from './insertSortFilter.vue'
 import MultipartSortFilter from './multipartSortFilter.vue'
 import {
   SAVE_FILTER_DATA,
-  UPDATE_FILTER_DATA,
 } from '@/store/modules/shop/mutation-types'
 import { resolveImageUrl } from '@/utils'
 import variable from '@/scss/var.scss'
@@ -93,6 +100,16 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      sortFilter: '',
+      outsideSortFilterIndex: -1,
+      insideSortFilterIndex: -1,
+      activityIds: [],
+      supportIds: [],
+      averageCostId: -1,
+    }
+  },
   computed: {
     variable() {
       return variable
@@ -108,19 +125,16 @@ export default {
     },
     ...mapState('shop', {
       filter: state => state.filter,
-      sortFilter: state => state.filter.sortFilter,
       insideSortFilter: state => state.filter.insideSortFilter,
       outsideSortFilter: state => state.filter.outsideSortFilter,
       outsideFilters: state => state.filter.outsideFilters,
-      insideSortFilterIndex: state => state.filter.insideSortFilterIndex,
-      outsideSortFilterIndex: state => state.filter.outsideSortFilterIndex,
-      activityIds: state => state.filter.activityIds,
-      supportIds: state => state.filter.supportIds,
-      averageCostId: state => state.filter.averageCostId,
     }),
   },
   mounted() {
-    if (this.filter.initial) return
+    if (this.filter.initial) {
+      this.insideSortFilterIndex = 0
+      return
+    }
     this.getData()
   },
   methods: {
@@ -144,34 +158,57 @@ export default {
             activities: filterList.activityTypes,
             averageCosts: filterList.averageCosts,
           })
-          this.$emit('reset')
+          this.insideSortFilterIndex = 0
         })
     },
     toggle(sortFilter) {
-      if (this.sortFilter === sortFilter) this[UPDATE_FILTER_DATA]({ sortFilter: '' })
-      else this[UPDATE_FILTER_DATA]({ sortFilter })
+      this.sortFilter = this.sortFilter === sortFilter ? '' : sortFilter
       this.$emit('top')
     },
     selectOutsideSortFilter(index) {
-      this[UPDATE_FILTER_DATA]({
-        sortFilter: '',
-        insideSortFilterIndex: 0,
-        outsideSortFilterIndex: index,
-      })
+      this.sortFilter = ''
+      this.insideSortFilterIndex = 0
+      this.outsideSortFilterIndex = index
       this.search()
     },
     selectOutsideFilter(id) {
-      const activityIds = [...this.activityIds]
-      const index = this.activityIds.findIndex(item => item === id)
-      if (index === -1) activityIds.push(id)
-      else activityIds.splice(index, 1)
-      this[UPDATE_FILTER_DATA]({ activityIds })
-      this.$emit('search')
+      const index = this.activityIds.findIndex(item => item.id === id)
+      if (index === -1) this.activityIds.push(id)
+      else this.activityIds.splice(index, 1)
+      this.search()
+    },
+    selectInsertSortFilter(index) {
+      this.sortFilter = ''
+      this.outsideSortFilterIndex = -1
+      this.insideSortFilterIndex = index
+      this.search()
+    },
+    multipleSelect({ key, id }) {
+      const index = this[key].findIndex(item => item === id)
+      if (index === -1) this[key].push(id)
+      else this[key].splice(index, 1)
+    },
+    singleSelect(id) {
+      this.averageCostId = this.averageCostId === id ? -1 : id
+    },
+    clear() {
+      this.sortFilter = ''
+      this.activityIds = []
+      this.supportIds = []
+      this.averageCostId = -1
+      this.search()
+    },
+    ensure({ activityIds, supportIds, averageCostId }) {
+      this.sortFilter = ''
+      this.activities = activityIds
+      this.supportIds = supportIds
+      this.averageCostId = averageCostId
+      this.search()
     },
     search() {
       this.$emit('search')
     },
-    ...mapMutations('shop', [SAVE_FILTER_DATA, UPDATE_FILTER_DATA]),
+    ...mapMutations('shop', [SAVE_FILTER_DATA]),
   },
 }
 </script>
@@ -220,10 +257,6 @@ export default {
   .filter {
     &.active {
       color: $themeColor;
-    }
-
-    .elm-icon {
-      vertical-align: bottom;
     }
   }
 
