@@ -72,6 +72,7 @@ export default {
     },
     ensure(poi) {
       this.$emit('ensure', poi)
+      this.$router.push('/home')
     },
     scrollTo(offsetHeight) {
       this.$refs.scroll.scrollTo(offsetHeight)
