@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { isDev } from '@/config'
 import { routes } from '@/config/router'
 import Home from '@/views/home/index.vue'
 
@@ -21,6 +22,7 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
+  base: isDev ? '/' : '/elm/',
   routes: [
     {
       path: '/',

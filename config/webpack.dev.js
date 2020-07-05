@@ -24,7 +24,7 @@ module.exports = webpackMerge(baseConfig, {
     //   },
     // },
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/elm/api': 'http://localhost:4000',
     },
     historyApiFallback: true,
   },
