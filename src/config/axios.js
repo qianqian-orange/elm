@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { Notify } from '@/ui'
 
-axios.defaults.timeout = 20000
 axios.defaults.baseURL = '/elm'
 axios.interceptors.request.use(config => config, (e) => {
   Notify({ type: 'danger', message: '请求超时,请稍后再试' })
