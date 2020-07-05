@@ -18,10 +18,11 @@ import {
   Drawer,
   Badge,
 } from './ui'
-import 'normalize.css'
 import '@/config/axios'
+import 'normalize.css'
 import '@/assets/css/index.css'
 import '@/ui/index.scss'
+import '@/assets/font/iconfont.css'
 
 Vue.use(Notify)
 Vue.use(Loading)

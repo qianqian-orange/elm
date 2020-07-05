@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>elm</title>
-  <script src="/js/flexible.js"></script>
+  <script src="<%= htmlWebpackPlugin.options.config.publicPath %>js/flexible.js"></script>
   <style>
     @media (-webkit-min-device-pixel-ratio: 1) {
       body {
@@ -26,6 +26,8 @@
 <body>
   <div id="app"></div>
   <!-- 生成环境下使用 -->
-  <!-- <script src="/dll/vendors.e85cb1.dll.js"></script> -->
+  <% if(!htmlWebpackPlugin.options.config.isDev) { %>
+  <script src="<%= htmlWebpackPlugin.options.config.publicPath %>dll/vendors.e2ec48.dll.js"></script>
+  <% } %>
 </body>
 </html>

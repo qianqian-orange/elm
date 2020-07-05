@@ -13,14 +13,18 @@ module.exports = webpackMerge(baseConfig, {
     clientLogLevel: 'silent',
     overlay: false,
     stats: 'minimal', // verbose minimal errors-only none normal
-    contentBase: path.join(__dirname, '../dist'),
+    contentBase: path.join(__dirname, '../server/public/static'),
+    // contentBase: path.join(__dirname, '../dist'),
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:3000',
+    //     pathRewrite: {
+    //       '^/api': '',
+    //     },
+    //   },
+    // },
     proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
-        pathRewrite: {
-          '^/api': '',
-        },
-      },
+      '/api': 'http://localhost:3000',
     },
     historyApiFallback: true,
   },

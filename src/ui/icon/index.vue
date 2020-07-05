@@ -48,7 +48,7 @@ export default {
         trash: 'icon-laji2',
         car: 'icon-cart',
         increase: 'icon-add',
-        decrease: 'icon-Remove',
+        decrease: 'icon-remove',
       },
     }
   },

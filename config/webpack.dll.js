@@ -9,7 +9,7 @@ module.exports = {
     vendors: ['vue', 'vue-router', 'vuex', 'axios'],
   },
   output: {
-    path: path.join(__dirname, '../dist', 'dll'),
+    path: path.join(__dirname, '../server/public/static/dll'),
     filename: '[name].[hash:6].dll.js',
     library: '[name]_dll',
   },
@@ -17,7 +17,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new webpack.DllPlugin({
       name: '[name]_dll',
-      path: path.join(__dirname, '../dist', 'dll', 'manifest.json'),
+      path: path.join(__dirname, '../server/public/static/dll/manifest.json'),
     }),
   ],
 }

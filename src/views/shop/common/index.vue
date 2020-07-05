@@ -132,7 +132,9 @@ export default {
           return
         }
         // worker.js在public/js目录下
-        this.worker = new Worker('/js/worker.js')
+        // PUBLICPATH是使用webpack.definePlugin定义的变量
+        // eslint-disable-next-line
+        this.worker = new Worker(`${PUBLICPATH}js/worker.js`)
         this.worker.onmessage = (e) => {
           this[SAVE_RESTAURANT_DATA](e.data)
           this.loading = false
