@@ -1,0 +1,1 @@
+export const GET_SHOPLIST_DATA = 'GET_SHOPLIST_DATA'

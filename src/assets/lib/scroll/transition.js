@@ -172,6 +172,13 @@ class Transition {
   run() {
     return this.pending
   }
+
+  destroy() {
+    // 如果在过渡过程中组件销毁，那么会调用destroy方法，那么需要调用stop方法
+    // 否则step函数会执行，那么由于scroll已经销毁，会报错
+    this.stop()
+    this.removeEventListener()
+  }
 }
 
 export default Transition

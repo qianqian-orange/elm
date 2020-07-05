@@ -63,40 +63,39 @@ export default {
           this.$notify({ type: 'danger', message: '获取数据失败' })
           return
         }
-        const result = data.data.map((shop) => {
-          const {
-            id,
-            name,
-            rating,
-            recentOrderNumDisplay, // 月销量
-            floatMinimumOrderAmount, // 最低起送价
-            floatDeliveryFee, // 配送费 0 表示免费配送
-            distance, // m km
-            orderLeadTime, // 配送时间 分钟 xx小时xx分钟
-            recommendReasons,
-            supportTags,
-            imagePath,
-            activities = [],
-          } = shop.restaurant
+        const result = data.data.map(({ restaurant, foods }) => {
           return {
-            id,
-            name,
-            rating,
-            recentOrderNumDisplay,
-            floatMinimumOrderAmount,
-            floatDeliveryFee,
-            distance,
-            orderLeadTime,
-            recommendReasons: recommendReasons.map(({ reason }) => reason),
-            supportTags,
-            imagePath: resolveImageUrl(imagePath),
-            activities,
-            foods: shop.foods ? shop.foods.map((food) => ({
+            id: restaurant.id,
+            name: restaurant.name,
+            rating: restaurant.rating,
+            recentOrderNum: restaurant.recent_order_num,
+            floatMinimumOrderAmount: restaurant.float_minimum_order_amount,
+            floatDeliveryFee: restaurant.float_delivery_fee,
+            distance: restaurant.distance,
+            orderLeadTime: restaurant.order_lead_time,
+            recommendReasons: restaurant.recommend_reasons.map(({ reason }) => reason),
+            supportTags: restaurant.support_tags.map(item => ({
+              color: item.color,
+              border: item.border,
+              text: item.text,
+              background: item.background ? {
+                rgbFrom: item.background.rgb_from,
+                rgbTo: item.background.rgb_to,
+              } : null,
+            })),
+            imagePath: resolveImageUrl(restaurant.image_path),
+            activities: restaurant.activities.map(item => ({
+              description: item.description,
+              iconColor: item.icon_color,
+              iconName: item.icon_name,
+              id: item.id,
+            })),
+            foods: foods.map((food) => ({
               id: food.id,
               name: food.name,
               price: food.price,
-              imagePath: resolveImageUrl(food.imagePath),
-            })) : [],
+              imagePath: resolveImageUrl(food.image_path),
+            })),
           }
         })
         if (result.length === 0 || result.length < this.pageSize) this.finish = true

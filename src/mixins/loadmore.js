@@ -21,6 +21,7 @@ export default {
   mounted() {
     // 这里需要留意，如果元素的display为none，那么是取不到高度的
     const el = this.$refs.scroll.$el
+    this.contentHeight = el.offsetHeight
     this.parentHeight = el.parentNode.offsetHeight
     // 高度改变时需要重新获取parentHeight
     this.resize = debounce(() => {
@@ -31,14 +32,12 @@ export default {
   methods: {
     reset() {
       this.$refs.scroll.reset()
+      this.computedHeight()
+    },
+    computedHeight() {
       this.$nextTick(() => {
         const el = this.$refs.scroll.$el
         this.contentHeight = el.offsetHeight
-      })
-    },
-    computedParentHeight() {
-      this.$nextTick(() => {
-        const el = this.$refs.scroll.$el
         this.parentHeight = el.parentNode.offsetHeight
       })
     },

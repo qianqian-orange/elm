@@ -78,6 +78,9 @@ export default {
     scrollTo({ x, y }, duration) {
       this.$refs.scroll.scrollTo({ x, y }, duration)
     },
+    getScroll() {
+      return this.$refs.scroll
+    },
   },
 }
 </script>

@@ -23,10 +23,6 @@ const router = new VueRouter({
   mode: 'history',
   routes: [
     {
-      path: '/test',
-      component: () => import('@/views/test/index.vue'),
-    },
-    {
       path: '/',
       redirect: '/home',
     },
@@ -67,6 +63,7 @@ const router = new VueRouter({
       component: () => import('@/views/shop/search/index.vue'),
       meta: {
         search: '',
+        scrollHeight: 0,
       },
     },
     {
@@ -77,6 +74,9 @@ const router = new VueRouter({
       path: '/shop/:id/order',
       name: shopOrder.name,
       component: () => import('@/views/shop/order/index.vue'),
+      meta: {
+        scrollHeight: 0,
+      },
     },
     {
       path: '/shop/:id/comment',
@@ -97,6 +97,9 @@ const router = new VueRouter({
       path: '/kind/:id',
       name: kind.name,
       component: () => import('@/views/kind/index.vue'),
+      meta: {
+        scrollHeight: 0,
+      },
     },
     {
       path: '*',

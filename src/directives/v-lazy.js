@@ -15,6 +15,10 @@ Vue.directive('lazy', {
     el.dataset.src = binding.value
     io.observe(el)
   },
+  update(el, binding) {
+    el.dataset.src = binding.value
+    if (el.src) el.src = binding.value
+  },
 })
 
 export default io

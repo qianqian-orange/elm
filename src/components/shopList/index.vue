@@ -21,8 +21,9 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { resolveImageUrl } from '@/utils'
+import { mapState, mapMutations, mapActions } from 'vuex'
+import { SAVE_SHOPLIST_DATA, CLEAR_SHOPLIST_DATA } from '@/store/modules/shop/mutation-types'
+import { GET_SHOPLIST_DATA } from '@/store/modules/shop/action-types'
 import ListScrollView from '@/components/listScrollView/index.vue'
 import ShopCard from '@/components/shopCard/index.vue'
 
@@ -44,15 +45,18 @@ export default {
   },
   data() {
     return {
-      shopList: [],
-      currentPage: 1,
-      pageSize: 8,
       loading: false,
-      finish: false,
     }
   },
+  computed: {
+    ...mapState('shop', {
+      shopList: state => state.shopList.data,
+      finish: state => state.shopList.finish,
+    }),
+  },
   mounted() {
-    if (this.init) this.getData()
+    if (!this.init || this.shopList.length) return
+    this.getData()
   },
   methods: {
     hate(id) {
@@ -61,78 +65,28 @@ export default {
       this.shopList.splice(index, 1)
       this.$refs.list.reset()
     },
-    getData(more = true) {
-      if (this.finish) return
+    getData() {
       this.loading = true
-      return axios.get('/api/shop/recommend', {
-        params: {
-          currentPage: this.currentPage,
-          pageSize: this.pageSize,
-        },
-      }).then(({ data }) => {
-        if (data.code !== 0) {
-          this.$notify({ type: 'danger', message: '获取数据失败' })
-          return
-        }
-        const result = data.data.map((shop) => {
-          const {
-            id,
-            name,
-            rating,
-            recentOrderNumDisplay,
-            floatMinimumOrderAmount, // 最低起送价
-            floatDeliveryFee, // 配送费 0 表示免费配送
-            distance, // m km
-            orderLeadTime, // 配送时间 分钟 xx小时xx分钟
-            recommendReasons,
-            supportTags,
-            imagePath,
-            activities = [],
-          } = shop.restaurant
-          return {
-            id,
-            name,
-            rating,
-            recentOrderNumDisplay,
-            floatMinimumOrderAmount,
-            floatDeliveryFee,
-            distance,
-            orderLeadTime,
-            recommendReasons: recommendReasons.map(({ reason }) => reason),
-            supportTags,
-            imagePath: resolveImageUrl(imagePath),
-            activities,
-            foods: shop.foods ? shop.foods.map((food) => ({
-              id: food.id,
-              name: food.name,
-              price: food.price,
-              imagePath: resolveImageUrl(food.imagePath),
-            })) : [],
-          }
+      return this[GET_SHOPLIST_DATA]()
+        .then(() => {
+          this.loading = false
         })
-        if (result.length === 0 || result.length < this.pageSize) this.finish = true
-        this.currentPage += 1
-        if (more) this.shopList.push(...result)
-        else this.shopList = result
-      }).finally(() => {
-        this.loading = false
-      })
     },
     expand() {
       this.$refs.list.reset()
     },
     search() {
-      this.finish = false
-      this.currentPage = 1
-      this.loading = false
-      this.getData(false)
-        .then(() => {
-          this.$refs.list.scrollTo({ y: 0 })
-        })
+      this[CLEAR_SHOPLIST_DATA]()
+      this.getData()
     },
-    computedParentHeight() {
-      this.$refs.list.computedParentHeight()
+    computedHeight() {
+      this.$refs.list.computedHeight()
     },
+    getScroll() {
+      return this.$refs.list.getScroll()
+    },
+    ...mapActions('shop', [GET_SHOPLIST_DATA]),
+    ...mapMutations('shop', [SAVE_SHOPLIST_DATA, CLEAR_SHOPLIST_DATA]),
   },
 }
 </script>

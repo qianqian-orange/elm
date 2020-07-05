@@ -29,7 +29,7 @@
       @click.stop="expand('activity')"
     >
       <li
-        v-for="(tag, index) in restaurant.tags"
+        v-for="(tag, index) in restaurant.tags.slice(0, 4)"
         :key="index"
         class="tag-item"
       >
@@ -205,6 +205,7 @@ export default {
     .tag-list {
       display: flex;
       flex-wrap: wrap;
+      height: px2rem(60);
     }
 
     .tag-item {

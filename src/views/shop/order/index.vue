@@ -115,22 +115,18 @@ export default {
       restaurant: state => state.restaurant,
     }),
   },
-  created() {
-    if (!this.restaurant) {
-      const unwatch = this.$watch('restaurant', function () {
-        this.$nextTick(() => {
-          this.init()
-        })
-        unwatch()
+  watch: {
+    restaurant() {
+      this.$nextTick(() => {
+        this.init()
       })
-    }
+    },
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.resize, false)
   },
   mounted() {
-    if (!this.restaurant) return
-    this.init()
+    if (this.restaurant && this.$route.params.id === this.restaurant.id) this.init()
   },
   methods: {
     init() {
@@ -140,13 +136,13 @@ export default {
         navOffsetTop,
         menuTop,
       } = this.$refs.common.rect()
-      this.scroller = this.$refs.common.getScroll()
       this.headerHeight = headerHeight
       this.navHeight = navHeight
       this.navOffsetTop = navOffsetTop
       this.menuTop = menuTop
       this.height = this.menuHeight = document.body.offsetHeight - this.menuTop
       this.$refs.title.style.top = `${this.headerHeight + this.navHeight}px`
+      this.scroller = this.$refs.common.getScroll()
       this.shopCarHeight = this.$refs['shop-car'].$el.offsetHeight
       this.$refs.common.reset()
       this.scroller.on('scroll', this.scroll)
@@ -178,9 +174,7 @@ export default {
       const y = -(el.offsetTop - this.headerHeight - this.navHeight)
       this.scroller.scrollTo({ y })
       this.$refs.common.scroll({ y })
-      const residue = this.menuTop - this.headerHeight - this.navHeight
-      this.translateY = -residue
-      this.menuHeight = this.height + residue
+      this.scroll({ y })
     },
     toggle() {
       this.foodDrawer = !this.foodDrawer

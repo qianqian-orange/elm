@@ -19,7 +19,7 @@
             class="star"
           />
           <span class="rating">{{ shop.rating }}</span>
-          <span class="sell">{{ shop.recentOrderNumDisplay }}</span>
+          <span class="sell">月售{{ shop.recentOrderNum }}</span>
           <elm-tag
             color="#fff"
             :style="{
@@ -110,20 +110,23 @@
             :stop-propagation="true"
           >
             <ul class="food-list">
-              <li
+              <router-link
                 v-for="food in shop.foods"
                 :key="food.id"
+                :to="`/shop/${shop.id}?from=${$route.path}`"
                 class="food-item"
               >
-                <img
-                  class="food-image"
-                  :src="food.imagePath"
-                  alt="food"
-                >
-                <p class="food-name">{{ food.name }}</p>
-                <p class="food-price">
-                  <span class="prefix">¥</span>{{ food.price }}</p>
-              </li>
+                <li>
+                  <img
+                    class="food-image"
+                    :src="food.imagePath"
+                    alt="food"
+                  >
+                  <p class="food-name">{{ food.name }}</p>
+                  <p class="food-price">
+                    <span class="prefix">¥</span>{{ food.price }}</p>
+                </li>
+              </router-link>
             </ul>
           </scroll-view>
         </div>
@@ -166,7 +169,7 @@ export default {
     },
     time(val) {
       if (val < 60) return `${val}分钟`
-      const h = val / 60
+      const h = Math.floor(val / 60)
       const m = val % 60
       return `${h}小时${m}分钟`
     },

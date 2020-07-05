@@ -39,7 +39,10 @@
         <advertisement :advertisement="advertisement" />
         <kind :data-source="kindGroup" />
         <div class="constraint">
-          <div class="super-vip">
+          <div
+            class="super-vip"
+            @click.stop="noop"
+          >
             <div class="left">
               <img
                 :src="require('@/assets/image/svip.png')"
@@ -194,6 +197,9 @@ export default {
     },
     hate() {
       this.reset()
+    },
+    noop() {
+      this.$notify({ type: 'success', message: '功能正在开发中' })
     },
   },
 }

@@ -123,7 +123,7 @@ class Scroll {
 
   destroy() {
     remove(this)
-    this.transition.removeEventListener()
+    this.transition.destroy()
     this.el.removeEventListener(eventType.touchstart, this.bindStart, false)
     this.el.removeEventListener(eventType.touchmove, this.bindMove, false)
     this.el.removeEventListener(eventType.touchend, this.bindEnd, false)

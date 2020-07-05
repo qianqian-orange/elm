@@ -15,13 +15,13 @@
       >{{ menu.name }}</p>
       <ul class="food-list">
         <li
-          v-for="food in menu.foods"
-          :key="food.id"
+          v-for="(food, index) in menu.foods"
+          :key="index"
           class="food-item"
           @click.stop="jump(food)"
         >
           <img
-            :src="food.imagePath"
+            v-lazy="food.imagePath"
             alt="food"
           >
           <div class="content">
@@ -86,7 +86,9 @@ export default {
   },
   watch: {
     restaurant() {
-      this.init()
+      this.$nextTick(() => {
+        this.init()
+      })
     },
   },
   mounted() {
@@ -95,9 +97,10 @@ export default {
   methods: {
     init() {
       this.height = this.$refs.title[0].offsetHeight
-      this.$refs.title.forEach((item) => {
-        this.offsetTops.push(item.offsetTop)
-      })
+      this.offsetTops = this.$refs.title.reduce((result, cur) => {
+        result.push(cur.offsetTop)
+        return result
+      }, [])
     },
     scroll(y, cb) {
       const index = this.offsetTops.findIndex(item => item > y)

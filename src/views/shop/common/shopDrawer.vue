@@ -5,41 +5,45 @@
   >
     <div class="scroll-wrapper">
       <scroll-view ref="scroll">
-        <p class="title">红包</p>
-        <ul class="redpack-list">
-          <li
-            v-for="(item, index) in restaurant.redpack"
-            :key="index"
-            class="redpack-item"
-            @click.stop="acquire"
-          >
-            <span class="money">{{ item.value }}</span>
-            <div class="content">
-              <p class="primary">超级会员店铺红包</p>
-              <p class="secondary">{{ item.title }}, {{ date | format }}到期</p>
-            </div>
-            <span class="acquire">领取</span>
-          </li>
-        </ul>
-        <p
-          ref="activity"
-          class="title"
-        >优惠</p>
-        <ul class="activity-list">
-          <li
-            v-for="activity in restaurant.activities"
-            :key="activity.id"
-            class="activity-item"
-          >
-            <elm-tag
-              :color="activity.color"
-              :style="{
-                borderColor: activity.border,
-              }"
-            >{{ activity.iconName }}</elm-tag>
-            <p class="desc">{{ activity.description }}</p>
-          </li>
-        </ul>
+        <div v-if="restaurant.redpack.length">
+          <p class="title">红包</p>
+          <ul class="redpack-list">
+            <li
+              v-for="(item, index) in restaurant.redpack"
+              :key="index"
+              class="redpack-item"
+              @click.stop="acquire"
+            >
+              <span class="money">{{ item.value }}</span>
+              <div class="content">
+                <p class="primary">超级会员店铺红包</p>
+                <p class="secondary">{{ item.title }}, {{ date | format }}到期</p>
+              </div>
+              <span class="acquire">领取</span>
+            </li>
+          </ul>
+        </div>
+        <div v-if="restaurant.activities.length">
+          <p
+            ref="activity"
+            class="title"
+          >优惠</p>
+          <ul class="activity-list">
+            <li
+              v-for="activity in restaurant.activities"
+              :key="activity.id"
+              class="activity-item"
+            >
+              <elm-tag
+                :color="activity.color"
+                :style="{
+                  borderColor: activity.border,
+                }"
+              >{{ activity.iconName }}</elm-tag>
+              <p class="desc">{{ activity.description }}</p>
+            </li>
+          </ul>
+        </div>
         <p class="title">商家服务</p>
         <ul class="support-list">
           <li

@@ -52,7 +52,8 @@
     />
     <!-- 商店列表 -->
     <shop
-      :visible="visible"
+      v-if="visible"
+      ref="shop"
     />
     <elm-dialog
       v-if="dialog"
@@ -65,8 +66,10 @@
 
 <script>
 import axios from 'axios'
+import { mapMutations } from 'vuex'
 import transitionMixin from '@/mixins/transition'
 import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
+import { CLEAR_SHOPLIST_DATA } from '@/store/modules/shop/mutation-types'
 import { transition, localStorageKey } from '@/config'
 import { routes } from '@/config/router'
 import { get, set, remove } from '@/utils/localStorage'
@@ -87,10 +90,16 @@ export default {
     switch (to.name) {
       case home.name:
       case kind.name:
+        this[CLEAR_SHOPLIST_DATA]()
         this[UPDATE_TRANSITION](transition.slideRight)
         break
       case shopOrder.name:
         from.meta.search = this.search
+        // 记录离开时的scrollHeight
+        // 这里跳转到商品详情页有两种情况，一种是点击searchList列表，一种是点击shopList列表
+        // 这里只针对点击shopList列表的情况
+        if (this.visible) from.meta.scrollHeight = this.$refs.shop.getScroll().getCurrent().y
+        else from.meta.scrollHeight = 0
         this[UPDATE_TRANSITION](transition.slideLeft)
         break
     }
@@ -98,12 +107,20 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     next((vm) => {
-      const { shopOrder, shopComment } = routes
+      const { shopOrder, shopComment, shopDetail } = routes
+      const { scrollHeight } = to.meta
       switch (from.name) {
         case shopOrder.name:
         case shopComment.name:
+        case shopDetail.name:
           vm.search = to.meta.search
-          if (vm.search) vm.visible = true
+          if (vm.search) {
+            vm.visible = true
+            vm.scrollHeight = scrollHeight
+            vm.$nextTick(() => {
+              vm.$refs.shop.getScroll().scrollTo({ y: scrollHeight })
+            })
+          }
           break
       }
     })
@@ -162,6 +179,7 @@ export default {
     blur() {
       this.$refs.search.blur()
     },
+    ...mapMutations('shop', [CLEAR_SHOPLIST_DATA]),
   },
 }
 </script>

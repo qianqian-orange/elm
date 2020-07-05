@@ -1,5 +1,5 @@
 <template>
-  <elm-mask>
+  <elm-mask style="position: fixed;">
     <transition
       name="elm-dialog"
       appear

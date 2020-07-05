@@ -11,33 +11,37 @@
       :finish="!loading"
     >
       <ul>
-        <li
+        <router-link
           v-for="item in restaurants"
           :key="item.id"
-          class="search-item"
+          to="/shop/E10511953419827396488/order?from=/shop/search"
         >
-          <img
-            :src="item.imagePath"
-            alt="shop"
+          <li
+            class="search-item"
           >
-          <div class="content">
-            <span
-              class="name"
-              v-html="process(item.name)"
-            />
-            <elm-tag
-              v-for="(tag, index) in item.tags"
-              :key="index"
-              color="#fff"
-              :font-size="20"
-              :style="{
-                backgroundColor: `#${tag.bgColor}`,
-                borderWidth: 0,
-              }"
-            >{{ tag.name }}</elm-tag>
-            <span class="rating">评价{{ item.rating }}</span>
-          </div>
-        </li>
+            <img
+              :src="item.imagePath"
+              alt="shop"
+            >
+            <div class="content">
+              <span
+                class="name"
+                v-html="process(item.name)"
+              />
+              <elm-tag
+                v-for="(tag, index) in item.tags"
+                :key="index"
+                color="#fff"
+                :font-size="20"
+                :style="{
+                  backgroundColor: `#${tag.bgColor}`,
+                  borderWidth: 0,
+                }"
+              >{{ tag.name }}</elm-tag>
+              <span class="rating">评价{{ item.rating }}</span>
+            </div>
+          </li>
+        </router-link>
       </ul>
       <ul>
         <li
@@ -103,7 +107,7 @@ export default {
     visible(val) {
       // 由于使用了v-show，当visble为false时节点的diplay为none, 导致list-scroll-view获取不到
       // 正确的parentHeight, 会影响list-scroll-view的布局和loadmore的逻辑
-      if (val) this.$refs.list.computedParentHeight()
+      if (val) this.$refs.list.computedHeight()
     },
   },
   methods: {

@@ -24,7 +24,9 @@
       @search="search"
     />
     <div class="scroll-wrapper">
-      <shop-list ref="list" />
+      <shop-list
+        ref="list"
+      />
     </div>
     <inside-category
       :visible="visible"
@@ -37,10 +39,12 @@
 
 <script>
 import axios from 'axios'
+import { mapMutations } from 'vuex'
 import { routes } from '@/config/router'
 import transitionMixin from '@/mixins/transition'
 import { transition, sessionStorageKey } from '@/config'
 import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
+import { CLEAR_SHOPLIST_DATA } from '@/store/modules/shop/mutation-types'
 import { resolveImageUrl } from '@/utils'
 import { remove } from '@/utils/sessionStorage'
 import ElmHeader from '@/components/header/index.vue'
@@ -63,14 +67,32 @@ export default {
     const { home, shopSearch, shopOrder } = routes
     switch (to.name) {
       case home.name:
+        this[CLEAR_SHOPLIST_DATA]()
         this[UPDATE_TRANSITION](transition.slideRight)
         break
       case shopSearch.name:
+        this[CLEAR_SHOPLIST_DATA]()
+        this[UPDATE_TRANSITION](transition.slideLeft)
+        break
       case shopOrder.name:
+        from.meta.scrollHeight = this.$refs.list.getScroll().getCurrent().y
         this[UPDATE_TRANSITION](transition.slideLeft)
         break
     }
     next()
+  },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      const { shopOrder, shopComment, shopDetail } = routes
+      const { scrollHeight } = to.meta
+      switch (from.name) {
+        case shopOrder.name:
+        case shopComment.name:
+        case shopDetail.name:
+          vm.$refs.list.getScroll().scrollTo({ y: scrollHeight })
+          break
+      }
+    })
   },
   data() {
     return {
@@ -129,6 +151,7 @@ export default {
     toggle() {
       this.visible = !this.visible
     },
+    ...mapMutations('shop', [CLEAR_SHOPLIST_DATA]),
   },
 }
 </script>

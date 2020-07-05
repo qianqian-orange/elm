@@ -1,0 +1,4486 @@
+{
+    "bought_list": {
+        "food_ids": [],
+        "grey_icon_url": "b571e9375597c7dd8e5b7bd32120928epng",
+        "icon_url": "db75a248a885c94c389b5bbc5c8d876apng",
+        "text": "买过"
+    },
+    "menu": [
+        {
+            "activity": null,
+            "anchor": false,
+            "description": "大家喜欢吃，才叫真好吃。",
+            "description_pattern": null,
+            "foods": [
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [
+                        {
+                            "icon_color": "ec9c68",
+                            "icon_name": "招牌"
+                        }
+                    ],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054519457487,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料:猪肉，虾，香肠，菜脯，鸡蛋等\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "21df41d810041b823a47c812f7779646jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350144387791",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 300,
+                    "month_sales_text": "300",
+                    "name": "招牌肠粉",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "21df41d810041b823a47c812f7779646jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhaopaichangfen",
+                    "price": "10",
+                    "rating": 4.17,
+                    "rating_count": 47,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 47,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419775090383,
+                        200000490240697039
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 9,
+                        "小份": 24,
+                        "规格": 9
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 29,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025912923,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350144387791",
+                            "name": "招牌肠粉",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaichangfen",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 29,
+                            "recent_popularity": 200,
+                            "recent_rating": 4.17,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 29,
+                            "sku_groups": null,
+                            "sku_id": "200000419775090383",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 24,
+                            "virtual_food_id": 1541990980,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 18,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094678556,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350144387791",
+                            "name": "招牌肠粉",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaichangfen",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 18,
+                            "recent_popularity": 100,
+                            "recent_rating": 4.17,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 18,
+                            "sku_groups": null,
+                            "sku_id": "200000490240697039",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 9,
+                            "virtual_food_id": 1541990980,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1541990980,
+                    "video": null,
+                    "virtual_food_id": 1541990980
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054519457487,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料:牛肉，鸡蛋，青菜\n主要原料：牛肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "4541fb2e81df185d086e9a9814d71243jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350174349007",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 17,
+                    "materials": "主要原料：牛肉",
+                    "min_purchase": 1,
+                    "month_sales": 19,
+                    "month_sales_text": "19",
+                    "name": "牛肉肠粉",
+                    "origin_price": "17",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "4541fb2e81df185d086e9a9814d71243jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "niurouchangfen",
+                    "price": "17",
+                    "rating": 2.25,
+                    "rating_count": 2,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 2,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000421300390607,
+                        200000480843473615
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 5,
+                        "小份": 4,
+                        "规格": 5
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200027376005,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350174349007",
+                            "name": "牛肉肠粉",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 10,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000421300390607",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 4,
+                            "virtual_food_id": 1541981918,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 2,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200085551476,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350174349007",
+                            "name": "牛肉肠粉",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen",
+                            "price": 21,
+                            "promotion_stock": -1,
+                            "rating": 2,
+                            "recent_popularity": 9,
+                            "recent_rating": 4.5,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 2,
+                            "sku_groups": null,
+                            "sku_id": "200000480843473615",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 5,
+                            "virtual_food_id": 1541981918,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1541981918,
+                    "video": null,
+                    "virtual_food_id": 1541981918
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054529042127,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：猪肉，香肠，虾，鸡蛋，菜脯\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "86118fb50dd912564fa2da8e7659d5f1jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350205660879",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 46,
+                    "month_sales_text": "46",
+                    "name": "招牌蒸面",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "86118fb50dd912564fa2da8e7659d5f1jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhaopaizhengmian",
+                    "price": "10",
+                    "rating": 4.67,
+                    "rating_count": 7,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 7,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419835547343,
+                        200000490212768463
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 10,
+                        "小份": 10,
+                        "规格": 10
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 6,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025947161,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350205660879",
+                            "name": "招牌蒸面",
+                            "original_price": null,
+                            "packing_fee": 0.5,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaizhengmian",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 6,
+                            "recent_popularity": 41,
+                            "recent_rating": 4.33,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 6,
+                            "sku_groups": null,
+                            "sku_id": "200000419835547343",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 10,
+                            "virtual_food_id": 1542032364,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 1,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094678655,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350205660879",
+                            "name": "招牌蒸面",
+                            "original_price": null,
+                            "packing_fee": 0.5,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaizhengmian",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 1,
+                            "recent_popularity": 5,
+                            "recent_rating": 5,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 1,
+                            "sku_groups": null,
+                            "sku_id": "200000490212768463",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 10,
+                            "virtual_food_id": 1542032364,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542032364,
+                    "video": null,
+                    "virtual_food_id": 1542032364
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054551669455,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：猪肉，鸡蛋，香肠，虾，菜脯\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "c9076a8db36515c931755ac6ddce0260jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350245168847",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 100,
+                    "month_sales_text": "100",
+                    "name": "猪肉肠粉➕面",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "c9076a8db36515c931755ac6ddce0260jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhurouchangfen➕mian",
+                    "price": "10",
+                    "rating": 4.17,
+                    "rating_count": 17,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 17,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419851913935,
+                        200000490240863951
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 9,
+                        "小份": 8,
+                        "规格": 9
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 10,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025995214,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350245168847",
+                            "name": "猪肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhurouchangfen➕mian",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 10,
+                            "recent_popularity": 92,
+                            "recent_rating": 4.2,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 10,
+                            "sku_groups": null,
+                            "sku_id": "200000419851913935",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 8,
+                            "virtual_food_id": 1542042502,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 7,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094688153,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350245168847",
+                            "name": "猪肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhurouchangfen➕mian",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 7,
+                            "recent_popularity": 39,
+                            "recent_rating": 4.14,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 7,
+                            "sku_groups": null,
+                            "sku_id": "200000490240863951",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 9,
+                            "virtual_food_id": 1542042502,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542042502,
+                    "video": null,
+                    "virtual_food_id": 1542042502
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054551669455,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：牛肉，鸡蛋\n主要原料：牛肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "040e1618ed18c3159d03b23e85656d61jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350473177807",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 17,
+                    "materials": "主要原料：牛肉",
+                    "min_purchase": 1,
+                    "month_sales": 14,
+                    "month_sales_text": "14",
+                    "name": "牛肉肠粉➕面",
+                    "origin_price": "17",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "040e1618ed18c3159d03b23e85656d61jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "niurouchangfen➕mian",
+                    "price": "17",
+                    "rating": 4.5,
+                    "rating_count": 3,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 3,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000420148360911,
+                        200000480843659983
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 3,
+                        "小份": 4,
+                        "规格": 3
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 1,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200026276453,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350473177807",
+                            "name": "牛肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen➕mian",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "rating": 1,
+                            "recent_popularity": 9,
+                            "recent_rating": 5,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 1,
+                            "sku_groups": null,
+                            "sku_id": "200000420148360911",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 4,
+                            "virtual_food_id": 1542293352,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 2,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200085544658,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350473177807",
+                            "name": "牛肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen➕mian",
+                            "price": 21,
+                            "promotion_stock": -1,
+                            "rating": 2,
+                            "recent_popularity": 5,
+                            "recent_rating": 4,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 2,
+                            "sku_groups": null,
+                            "sku_id": "200000480843659983",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 3,
+                            "virtual_food_id": 1542293352,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542293352,
+                    "video": null,
+                    "virtual_food_id": 1542293352
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054529042127,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "\n主要原料：牛肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "c83c1b2c18b6e537982c88a4c3685444jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000352403643087",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 17,
+                    "materials": "主要原料：牛肉",
+                    "min_purchase": 1,
+                    "month_sales": 7,
+                    "month_sales_text": "7",
+                    "name": "牛肉蒸面",
+                    "origin_price": "17",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "c83c1b2c18b6e537982c88a4c3685444jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "niurouzhengmian",
+                    "price": "17",
+                    "rating": 0,
+                    "rating_count": 0,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "satisfy_rate_text": "",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000422404473551,
+                        200000480843566799
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 5,
+                        "小份": 4,
+                        "规格": 5
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200028446606,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000352403643087",
+                            "name": "牛肉蒸面",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouzhengmian",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 4,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000422404473551",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 4,
+                            "virtual_food_id": 1544161102,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200085528739,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000352403643087",
+                            "name": "牛肉蒸面",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouzhengmian",
+                            "price": 21,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 3,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000480843566799",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 5,
+                            "virtual_food_id": 1544161102,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1544161102,
+                    "video": null,
+                    "virtual_food_id": 1544161102
+                }
+            ],
+            "global_id": "-1",
+            "grey_icon_url": "aba732b4ca103b2521c872442d7e5d4epng",
+            "grey_icon_url_v2": null,
+            "highlight": false,
+            "icon_url": "06a05b267f338acfeb8bd682d16e836dpng",
+            "icon_url_v2": null,
+            "id": -1,
+            "index": 0,
+            "is_activity": null,
+            "is_selected": true,
+            "item_ids": [],
+            "member_guide": null,
+            "name": "热销",
+            "name_desc": "热销",
+            "rank_id": "fcc4c28eb3764ddb9f346b9a869e4813",
+            "restaurant_id": 170061011,
+            "sold_out": false,
+            "sticky": false,
+            "sticky_time": null,
+            "sub_categories": null,
+            "template_id": null,
+            "total_preferential_price": null,
+            "trace_data": null,
+            "type": 2
+        },
+        {
+            "activity": null,
+            "anchor": false,
+            "description": "",
+            "description_pattern": null,
+            "foods": [
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": null,
+                        "sub_items": null
+                    },
+                    "category_id": 200000063253485263,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "❤️建议收藏图片，每天下单扫一扫❤️\n😋可与满减共享😋\n😋好而不贵，有滋有味😋\n主要原料：其他",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "9859cc3ff82541674a1d53d67509a43cjpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000430007850703",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 66.66,
+                    "materials": "主要原料：其他",
+                    "min_purchase": 1,
+                    "month_sales": 0,
+                    "month_sales_text": "",
+                    "name": "扫码领取优惠卷",
+                    "origin_price": "66.66",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "9859cc3ff82541674a1d53d67509a43cjpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "saomalingquyouhuijuan",
+                    "price": "66.66",
+                    "rating": 0,
+                    "rating_count": 0,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "satisfy_rate_text": "",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000540388589263
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {},
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200143680104,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000430007850703",
+                            "name": "扫码领取优惠卷",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "saomalingquyouhuijuan",
+                            "price": 66.66,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 0,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000540388589263",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 10000,
+                            "virtual_food_id": 1619957733,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "specifications2": [],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1619957733,
+                    "video": null,
+                    "virtual_food_id": 1619957733
+                }
+            ],
+            "global_id": "200000063253485263",
+            "grey_icon_url": "",
+            "grey_icon_url_v2": null,
+            "highlight": false,
+            "icon_url": "",
+            "icon_url_v2": null,
+            "id": 200000063253485263,
+            "index": null,
+            "is_activity": 0,
+            "is_selected": false,
+            "item_ids": [
+                200000430007850703
+            ],
+            "member_guide": null,
+            "name": "❤️每天领红包",
+            "name_desc": "❤️每天领红包",
+            "rank_id": null,
+            "restaurant_id": 170061011,
+            "sold_out": false,
+            "sticky": false,
+            "sticky_time": null,
+            "sub_categories": null,
+            "template_id": null,
+            "total_preferential_price": null,
+            "trace_data": null,
+            "type": 1
+        },
+        {
+            "activity": null,
+            "anchor": false,
+            "description": "主要原料:猪肉",
+            "description_pattern": null,
+            "foods": [
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [
+                        {
+                            "icon_color": "ec9c68",
+                            "icon_name": "招牌"
+                        }
+                    ],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054519457487,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料:猪肉，虾，香肠，菜脯，鸡蛋等\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "21df41d810041b823a47c812f7779646jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350144387791",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 300,
+                    "month_sales_text": "300",
+                    "name": "招牌肠粉",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "21df41d810041b823a47c812f7779646jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhaopaichangfen",
+                    "price": "10",
+                    "rating": 4.17,
+                    "rating_count": 47,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 47,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419775090383,
+                        200000490240697039
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 9,
+                        "小份": 24,
+                        "规格": 9
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 29,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025912923,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350144387791",
+                            "name": "招牌肠粉",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaichangfen",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 29,
+                            "recent_popularity": 200,
+                            "recent_rating": 4.17,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 29,
+                            "sku_groups": null,
+                            "sku_id": "200000419775090383",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 24,
+                            "virtual_food_id": 1541990980,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 18,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094678556,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350144387791",
+                            "name": "招牌肠粉",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaichangfen",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 18,
+                            "recent_popularity": 100,
+                            "recent_rating": 4.17,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 18,
+                            "sku_groups": null,
+                            "sku_id": "200000490240697039",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 9,
+                            "virtual_food_id": 1541990980,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1541990980,
+                    "video": null,
+                    "virtual_food_id": 1541990980
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054519457487,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料:牛肉，鸡蛋，青菜\n主要原料：牛肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "4541fb2e81df185d086e9a9814d71243jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350174349007",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 17,
+                    "materials": "主要原料：牛肉",
+                    "min_purchase": 1,
+                    "month_sales": 19,
+                    "month_sales_text": "19",
+                    "name": "牛肉肠粉",
+                    "origin_price": "17",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "4541fb2e81df185d086e9a9814d71243jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "niurouchangfen",
+                    "price": "17",
+                    "rating": 2.25,
+                    "rating_count": 2,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 2,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000421300390607,
+                        200000480843473615
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 5,
+                        "小份": 4,
+                        "规格": 5
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200027376005,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350174349007",
+                            "name": "牛肉肠粉",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 10,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000421300390607",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 4,
+                            "virtual_food_id": 1541981918,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 2,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200085551476,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350174349007",
+                            "name": "牛肉肠粉",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen",
+                            "price": 21,
+                            "promotion_stock": -1,
+                            "rating": 2,
+                            "recent_popularity": 9,
+                            "recent_rating": 4.5,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 2,
+                            "sku_groups": null,
+                            "sku_id": "200000480843473615",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 5,
+                            "virtual_food_id": 1541981918,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1541981918,
+                    "video": null,
+                    "virtual_food_id": 1541981918
+                }
+            ],
+            "global_id": "200000054519457487",
+            "grey_icon_url": "",
+            "grey_icon_url_v2": null,
+            "highlight": false,
+            "icon_url": "",
+            "icon_url_v2": null,
+            "id": 200000054519457487,
+            "index": null,
+            "is_activity": 0,
+            "is_selected": false,
+            "item_ids": [
+                200000350144387791,
+                200000350174349007
+            ],
+            "member_guide": null,
+            "name": "肠粉",
+            "name_desc": "肠粉",
+            "rank_id": null,
+            "restaurant_id": 170061011,
+            "sold_out": false,
+            "sticky": false,
+            "sticky_time": null,
+            "sub_categories": null,
+            "template_id": null,
+            "total_preferential_price": null,
+            "trace_data": null,
+            "type": 1
+        },
+        {
+            "activity": null,
+            "anchor": false,
+            "description": "",
+            "description_pattern": null,
+            "foods": [
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054529042127,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：猪肉，香肠，虾，鸡蛋，菜脯\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "86118fb50dd912564fa2da8e7659d5f1jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350205660879",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 46,
+                    "month_sales_text": "46",
+                    "name": "招牌蒸面",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "86118fb50dd912564fa2da8e7659d5f1jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhaopaizhengmian",
+                    "price": "10",
+                    "rating": 4.67,
+                    "rating_count": 7,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 7,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419835547343,
+                        200000490212768463
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 10,
+                        "小份": 10,
+                        "规格": 10
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 6,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025947161,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350205660879",
+                            "name": "招牌蒸面",
+                            "original_price": null,
+                            "packing_fee": 0.5,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaizhengmian",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 6,
+                            "recent_popularity": 41,
+                            "recent_rating": 4.33,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 6,
+                            "sku_groups": null,
+                            "sku_id": "200000419835547343",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 10,
+                            "virtual_food_id": 1542032364,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 1,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094678655,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350205660879",
+                            "name": "招牌蒸面",
+                            "original_price": null,
+                            "packing_fee": 0.5,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaizhengmian",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 1,
+                            "recent_popularity": 5,
+                            "recent_rating": 5,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 1,
+                            "sku_groups": null,
+                            "sku_id": "200000490212768463",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 10,
+                            "virtual_food_id": 1542032364,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542032364,
+                    "video": null,
+                    "virtual_food_id": 1542032364
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054529042127,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "\n主要原料：牛肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "c83c1b2c18b6e537982c88a4c3685444jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000352403643087",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 17,
+                    "materials": "主要原料：牛肉",
+                    "min_purchase": 1,
+                    "month_sales": 7,
+                    "month_sales_text": "7",
+                    "name": "牛肉蒸面",
+                    "origin_price": "17",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "c83c1b2c18b6e537982c88a4c3685444jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "niurouzhengmian",
+                    "price": "17",
+                    "rating": 0,
+                    "rating_count": 0,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "satisfy_rate_text": "",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000422404473551,
+                        200000480843566799
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 5,
+                        "小份": 4,
+                        "规格": 5
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200028446606,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000352403643087",
+                            "name": "牛肉蒸面",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouzhengmian",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 4,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000422404473551",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 4,
+                            "virtual_food_id": 1544161102,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200085528739,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000352403643087",
+                            "name": "牛肉蒸面",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouzhengmian",
+                            "price": 21,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 3,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000480843566799",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 5,
+                            "virtual_food_id": 1544161102,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1544161102,
+                    "video": null,
+                    "virtual_food_id": 1544161102
+                }
+            ],
+            "global_id": "200000054529042127",
+            "grey_icon_url": "",
+            "grey_icon_url_v2": null,
+            "highlight": false,
+            "icon_url": "",
+            "icon_url_v2": null,
+            "id": 200000054529042127,
+            "index": null,
+            "is_activity": 0,
+            "is_selected": false,
+            "item_ids": [
+                200000350205660879,
+                200000352403643087
+            ],
+            "member_guide": null,
+            "name": "蒸面",
+            "name_desc": "蒸面",
+            "rank_id": null,
+            "restaurant_id": 170061011,
+            "sold_out": false,
+            "sticky": false,
+            "sticky_time": null,
+            "sub_categories": null,
+            "template_id": null,
+            "total_preferential_price": null,
+            "trace_data": null,
+            "type": 1
+        },
+        {
+            "activity": null,
+            "anchor": false,
+            "description": "",
+            "description_pattern": null,
+            "foods": [
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054551669455,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：猪肉，鸡蛋，香肠，虾，菜脯\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "c9076a8db36515c931755ac6ddce0260jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350245168847",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 100,
+                    "month_sales_text": "100",
+                    "name": "猪肉肠粉➕面",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "c9076a8db36515c931755ac6ddce0260jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhurouchangfen➕mian",
+                    "price": "10",
+                    "rating": 4.17,
+                    "rating_count": 17,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 17,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419851913935,
+                        200000490240863951
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 9,
+                        "小份": 8,
+                        "规格": 9
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 10,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025995214,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350245168847",
+                            "name": "猪肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhurouchangfen➕mian",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 10,
+                            "recent_popularity": 92,
+                            "recent_rating": 4.2,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 10,
+                            "sku_groups": null,
+                            "sku_id": "200000419851913935",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 8,
+                            "virtual_food_id": 1542042502,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 7,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094688153,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350245168847",
+                            "name": "猪肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhurouchangfen➕mian",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 7,
+                            "recent_popularity": 39,
+                            "recent_rating": 4.14,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 7,
+                            "sku_groups": null,
+                            "sku_id": "200000490240863951",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 9,
+                            "virtual_food_id": 1542042502,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542042502,
+                    "video": null,
+                    "virtual_food_id": 1542042502
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054551669455,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：牛肉，鸡蛋\n主要原料：牛肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "040e1618ed18c3159d03b23e85656d61jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350473177807",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 17,
+                    "materials": "主要原料：牛肉",
+                    "min_purchase": 1,
+                    "month_sales": 14,
+                    "month_sales_text": "14",
+                    "name": "牛肉肠粉➕面",
+                    "origin_price": "17",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "040e1618ed18c3159d03b23e85656d61jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "niurouchangfen➕mian",
+                    "price": "17",
+                    "rating": 4.5,
+                    "rating_count": 3,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 3,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000420148360911,
+                        200000480843659983
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 3,
+                        "小份": 4,
+                        "规格": 3
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 1,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200026276453,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350473177807",
+                            "name": "牛肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen➕mian",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "rating": 1,
+                            "recent_popularity": 9,
+                            "recent_rating": 5,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 1,
+                            "sku_groups": null,
+                            "sku_id": "200000420148360911",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 4,
+                            "virtual_food_id": 1542293352,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 2,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200085544658,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350473177807",
+                            "name": "牛肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "niurouchangfen➕mian",
+                            "price": 21,
+                            "promotion_stock": -1,
+                            "rating": 2,
+                            "recent_popularity": 5,
+                            "recent_rating": 4,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 2,
+                            "sku_groups": null,
+                            "sku_id": "200000480843659983",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 3,
+                            "virtual_food_id": 1542293352,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542293352,
+                    "video": null,
+                    "virtual_food_id": 1542293352
+                }
+            ],
+            "global_id": "200000054551669455",
+            "grey_icon_url": "",
+            "grey_icon_url_v2": null,
+            "highlight": false,
+            "icon_url": "",
+            "icon_url_v2": null,
+            "id": 200000054551669455,
+            "index": null,
+            "is_activity": 0,
+            "is_selected": false,
+            "item_ids": [
+                200000350245168847,
+                200000350473177807
+            ],
+            "member_guide": null,
+            "name": "肠粉➕面",
+            "name_desc": "肠粉➕面",
+            "rank_id": null,
+            "restaurant_id": 170061011,
+            "sold_out": false,
+            "sticky": false,
+            "sticky_time": null,
+            "sub_categories": null,
+            "template_id": null,
+            "total_preferential_price": null,
+            "trace_data": null,
+            "type": 1
+        },
+        {
+            "activity": null,
+            "anchor": false,
+            "description": "",
+            "description_pattern": null,
+            "foods": [
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": null,
+                        "sub_items": null
+                    },
+                    "category_id": 200000054561887951,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "\n主要原料：可乐",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "c16baae1a66a2009996b25f1c88954c2jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000358218468047",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 4,
+                    "materials": "主要原料：可乐",
+                    "min_purchase": 1,
+                    "month_sales": 6,
+                    "month_sales_text": "6",
+                    "name": "百事可乐",
+                    "origin_price": "4",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "c16baae1a66a2009996b25f1c88954c2jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "baishikele",
+                    "price": "4",
+                    "rating": 0,
+                    "rating_count": 0,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "satisfy_rate_text": "",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000429783378639
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {},
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200035700359,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000358218468047",
+                            "name": "百事可乐",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "baishikele",
+                            "price": 4,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 6,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000429783378639",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 70,
+                            "virtual_food_id": 1549879406,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "specifications2": [],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1549879406,
+                    "video": null,
+                    "virtual_food_id": 1549879406
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": null,
+                        "sub_items": null
+                    },
+                    "category_id": 200000054561887951,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "\n主要原料：汽水",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "afd4116b316011e23a5aba37a060946ejpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350666933967",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 4,
+                    "materials": "主要原料：汽水",
+                    "min_purchase": 1,
+                    "month_sales": 8,
+                    "month_sales_text": "8",
+                    "name": "雪碧",
+                    "origin_price": "4",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "afd4116b316011e23a5aba37a060946ejpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "xuebi",
+                    "price": "4",
+                    "rating": 4,
+                    "rating_count": 1,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 1,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000420349850319
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {},
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 1,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200026456271,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350666933967",
+                            "name": "雪碧",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "xuebi",
+                            "price": 4,
+                            "promotion_stock": -1,
+                            "rating": 1,
+                            "recent_popularity": 8,
+                            "recent_rating": 4,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 1,
+                            "sku_groups": null,
+                            "sku_id": "200000420349850319",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 35,
+                            "virtual_food_id": 1542446159,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "specifications2": [],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542446159,
+                    "video": null,
+                    "virtual_food_id": 1542446159
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": null,
+                        "sub_items": null
+                    },
+                    "category_id": 200000054561887951,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "\n主要原料：红茶",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "cd3e490bf77036b1927b37b6e8511052jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350245909199",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 5,
+                    "materials": "主要原料：红茶",
+                    "min_purchase": 1,
+                    "month_sales": 16,
+                    "month_sales_text": "16",
+                    "name": "维他柠檬茶",
+                    "origin_price": "5",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "cd3e490bf77036b1927b37b6e8511052jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "weitaningmengcha",
+                    "price": "5",
+                    "rating": 4,
+                    "rating_count": 3,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 3,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419852741327
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {},
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 3,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025977950,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350245909199",
+                            "name": "维他柠檬茶",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "weitaningmengcha",
+                            "price": 5,
+                            "promotion_stock": -1,
+                            "rating": 3,
+                            "recent_popularity": 16,
+                            "recent_rating": 4,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 3,
+                            "sku_groups": null,
+                            "sku_id": "200000419852741327",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 29,
+                            "virtual_food_id": 1542070734,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "specifications2": [],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542070734,
+                    "video": null,
+                    "virtual_food_id": 1542070734
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": null,
+                        "sub_items": null
+                    },
+                    "category_id": 200000054561887951,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "\n主要原料：橙汁汽水",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "76fa859cdc46ecc5d8c7176aba967d0fjpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350235031247",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 4,
+                    "materials": "主要原料：橙汁汽水",
+                    "min_purchase": 1,
+                    "month_sales": 26,
+                    "month_sales_text": "26",
+                    "name": "新奇士",
+                    "origin_price": "4",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "76fa859cdc46ecc5d8c7176aba967d0fjpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "xinqishi",
+                    "price": "4",
+                    "rating": 4,
+                    "rating_count": 8,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 8,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419870168783
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {},
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 8,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025969219,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350235031247",
+                            "name": "新奇士",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "xinqishi",
+                            "price": 4,
+                            "promotion_stock": -1,
+                            "rating": 8,
+                            "recent_popularity": 26,
+                            "recent_rating": 4,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 8,
+                            "sku_groups": null,
+                            "sku_id": "200000419870168783",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 100,
+                            "virtual_food_id": 1542061685,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "specifications2": [],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542061685,
+                    "video": null,
+                    "virtual_food_id": 1542061685
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": null,
+                        "sub_items": null
+                    },
+                    "category_id": 200000054561887951,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "ed61af6aa5336b94bfb8230fe3f1914cjpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350225991375",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 4,
+                    "materials": "",
+                    "min_purchase": 1,
+                    "month_sales": 8,
+                    "month_sales_text": "8",
+                    "name": "王老吉",
+                    "origin_price": "4",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "ed61af6aa5336b94bfb8230fe3f1914cjpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "wanglaoji",
+                    "price": "4",
+                    "rating": 4,
+                    "rating_count": 1,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 1,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": null,
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419875557071
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {},
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 1,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025977742,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350225991375",
+                            "name": "王老吉",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "wanglaoji",
+                            "price": 4,
+                            "promotion_stock": -1,
+                            "rating": 1,
+                            "recent_popularity": 8,
+                            "recent_rating": 4,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 1,
+                            "sku_groups": null,
+                            "sku_id": "200000419875557071",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 97,
+                            "virtual_food_id": 1542051276,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "specifications2": [],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "",
+                    "type": 0,
+                    "vfood_id": 1542051276,
+                    "video": null,
+                    "virtual_food_id": 1542051276
+                }
+            ],
+            "global_id": "200000054561887951",
+            "grey_icon_url": "",
+            "grey_icon_url_v2": null,
+            "highlight": false,
+            "icon_url": "",
+            "icon_url_v2": null,
+            "id": 200000054561887951,
+            "index": null,
+            "is_activity": 0,
+            "is_selected": false,
+            "item_ids": [
+                200000358218468047,
+                200000350666933967,
+                200000350245909199,
+                200000350235031247,
+                200000350225991375
+            ],
+            "member_guide": null,
+            "name": "饮料",
+            "name_desc": "饮料",
+            "rank_id": null,
+            "restaurant_id": 170061011,
+            "sold_out": false,
+            "sticky": false,
+            "sticky_time": null,
+            "sub_categories": null,
+            "template_id": null,
+            "total_preferential_price": null,
+            "trace_data": null,
+            "type": 1
+        }
+    ],
+    "recommend": [
+        {
+            "items": [
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": null,
+                        "sub_items": null
+                    },
+                    "category_id": 200000063253485263,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "❤️建议收藏图片，每天下单扫一扫❤️\n😋可与满减共享😋\n😋好而不贵，有滋有味😋\n主要原料：其他",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "9859cc3ff82541674a1d53d67509a43cjpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000430007850703",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 66.66,
+                    "materials": "主要原料：其他",
+                    "min_purchase": 1,
+                    "month_sales": 0,
+                    "month_sales_text": "",
+                    "name": "扫码领取优惠卷",
+                    "origin_price": "66.66",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "9859cc3ff82541674a1d53d67509a43cjpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "saomalingquyouhuijuan",
+                    "price": "66.66",
+                    "rating": 0,
+                    "rating_count": 0,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "satisfy_rate_text": "",
+                    "scheme": "https://h5.ele.me/shop/#id=E14843040781629752558&food_id=200143680104",
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000540388589263
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {},
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 0,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200143680104,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000430007850703",
+                            "name": "扫码领取优惠卷",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "saomalingquyouhuijuan",
+                            "price": 66.66,
+                            "promotion_stock": -1,
+                            "rating": 0,
+                            "recent_popularity": 0,
+                            "recent_rating": 0,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 0,
+                            "sku_groups": null,
+                            "sku_id": "200000540388589263",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 10000,
+                            "virtual_food_id": 1619957733,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "specifications2": [],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "0评价 月售0份",
+                    "type": 0,
+                    "vfood_id": 1619957733,
+                    "video": null,
+                    "virtual_food_id": 1619957733
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [
+                        {
+                            "icon_color": "ec9c68",
+                            "icon_name": "招牌"
+                        }
+                    ],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054519457487,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料:猪肉，虾，香肠，菜脯，鸡蛋等\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "21df41d810041b823a47c812f7779646jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 1,
+                    "item_id": "200000350144387791",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 347,
+                    "month_sales_text": "347",
+                    "name": "招牌肠粉",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "21df41d810041b823a47c812f7779646jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhaopaichangfen",
+                    "price": "10",
+                    "rating": 4.17,
+                    "rating_count": 47,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 47,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": "https://h5.ele.me/shop/#id=E14843040781629752558&food_id=200025912923",
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419775090383,
+                        200000490240697039
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 9,
+                        "小份": 24,
+                        "规格": 9
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 29,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025912923,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350144387791",
+                            "name": "招牌肠粉",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaichangfen",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 29,
+                            "recent_popularity": 235,
+                            "recent_rating": 4.17,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 29,
+                            "sku_groups": null,
+                            "sku_id": "200000419775090383",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 24,
+                            "virtual_food_id": 1541990980,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 18,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094678556,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350144387791",
+                            "name": "招牌肠粉",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaichangfen",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 18,
+                            "recent_popularity": 112,
+                            "recent_rating": 4.17,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 18,
+                            "sku_groups": null,
+                            "sku_id": "200000490240697039",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 9,
+                            "virtual_food_id": 1541990980,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "47评价 月售347份",
+                    "type": 0,
+                    "vfood_id": 1541990980,
+                    "video": null,
+                    "virtual_food_id": 1541990980
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054529042127,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：猪肉，香肠，虾，鸡蛋，菜脯\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "86118fb50dd912564fa2da8e7659d5f1jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350205660879",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 46,
+                    "month_sales_text": "46",
+                    "name": "招牌蒸面",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "86118fb50dd912564fa2da8e7659d5f1jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhaopaizhengmian",
+                    "price": "10",
+                    "rating": 4.67,
+                    "rating_count": 7,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 7,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": "https://h5.ele.me/shop/#id=E14843040781629752558&food_id=200025947161",
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419835547343,
+                        200000490212768463
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 10,
+                        "小份": 10,
+                        "规格": 10
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 6,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025947161,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350205660879",
+                            "name": "招牌蒸面",
+                            "original_price": null,
+                            "packing_fee": 0.5,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaizhengmian",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 6,
+                            "recent_popularity": 41,
+                            "recent_rating": 4.33,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 6,
+                            "sku_groups": null,
+                            "sku_id": "200000419835547343",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 10,
+                            "virtual_food_id": 1542032364,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 1,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094678655,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350205660879",
+                            "name": "招牌蒸面",
+                            "original_price": null,
+                            "packing_fee": 0.5,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhaopaizhengmian",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 1,
+                            "recent_popularity": 5,
+                            "recent_rating": 5,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 1,
+                            "sku_groups": null,
+                            "sku_id": "200000490212768463",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 10,
+                            "virtual_food_id": 1542032364,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "7评价 月售46份",
+                    "type": 0,
+                    "vfood_id": 1542032364,
+                    "video": null,
+                    "virtual_food_id": 1542032364
+                },
+                {
+                    "activity": null,
+                    "activity_tags": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "attrs2": [],
+                    "brand": {
+                        "attrs2": null,
+                        "ingredient_info": null,
+                        "show_photo_type": 0,
+                        "specifications2": [
+                            {
+                                "details": [
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "小份",
+                                        "photo_hash": null,
+                                        "selected": true
+                                    },
+                                    {
+                                        "linkage_photo_hash": null,
+                                        "name": "大份",
+                                        "photo_hash": null,
+                                        "selected": false
+                                    }
+                                ],
+                                "linkage_status": 0,
+                                "name": "规格"
+                            }
+                        ],
+                        "sub_items": null
+                    },
+                    "category_id": 200000054551669455,
+                    "checkout_mode": 1,
+                    "combo_tag": null,
+                    "coupons": [],
+                    "deliver_alone": true,
+                    "descPhotos": [],
+                    "description": "原料：猪肉，鸡蛋，香肠，虾，菜脯\n主要原料：猪肉",
+                    "discount_rate": "10",
+                    "display_times": [],
+                    "enable_brand_content": false,
+                    "extCode": "",
+                    "featured": null,
+                    "image_mark": {
+                        "watermark_image": "a1a68dec5ca14b55f2efaabb1238cfdepng"
+                    },
+                    "image_path": "c9076a8db36515c931755ac6ddce0260jpeg",
+                    "ingredient_group_info": null,
+                    "ingredient_sku_ids": [],
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "200000350245168847",
+                    "join_hot": true,
+                    "limitation": {},
+                    "lowest_price": 10,
+                    "materials": "主要原料：猪肉",
+                    "min_purchase": 1,
+                    "month_sales": 131,
+                    "month_sales_text": "131",
+                    "name": "猪肉肠粉➕面",
+                    "origin_price": "10",
+                    "package_desc": null,
+                    "package_item_ids": [],
+                    "photos": [
+                        "c9076a8db36515c931755ac6ddce0260jpeg"
+                    ],
+                    "pic_change_type": null,
+                    "pinyin_name": "zhurouchangfen➕mian",
+                    "price": "10",
+                    "rating": 4.17,
+                    "rating_count": 17,
+                    "restaurant_id": "E14843040781629752558",
+                    "sale_status": true,
+                    "satisfy_count": 17,
+                    "satisfy_rate": 100,
+                    "satisfy_rate_text": "100",
+                    "scheme": "https://h5.ele.me/shop/#id=E14843040781629752558&food_id=200025995214",
+                    "selected": null,
+                    "server_utc": 1593931964,
+                    "show_photo_hash_type": 0,
+                    "sku_ids": [
+                        200000419851913935,
+                        200000490240863951
+                    ],
+                    "sold_out": false,
+                    "spec_stock": {
+                        "大份": 9,
+                        "小份": 8,
+                        "规格": 9
+                    },
+                    "specfoods": [
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 10,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200025995214,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350245168847",
+                            "name": "猪肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhurouchangfen➕mian",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "rating": 10,
+                            "recent_popularity": 92,
+                            "recent_rating": 4.2,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 10,
+                            "sku_groups": null,
+                            "sku_id": "200000419851913935",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "小份"
+                                }
+                            ],
+                            "stock": 8,
+                            "virtual_food_id": 1542042502,
+                            "weight": 0
+                        },
+                        {
+                            "acquired_activity": null,
+                            "acquired_price": null,
+                            "activity": null,
+                            "brand_member_tag": null,
+                            "checkout_mode": 1,
+                            "count": 7,
+                            "coupon_id": null,
+                            "extCode": "",
+                            "food_id": 200094688153,
+                            "is_essential": false,
+                            "is_selected": false,
+                            "item_id": "200000350245168847",
+                            "name": "猪肉肠粉➕面",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "photo_hash": "",
+                            "pid": null,
+                            "pinyin_name": "zhurouchangfen➕mian",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "rating": 7,
+                            "recent_popularity": 39,
+                            "recent_rating": 4.14,
+                            "restaurant_id": "E14843040781629752558",
+                            "satisfy": 7,
+                            "sku_groups": null,
+                            "sku_id": "200000490240863951",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大份"
+                                }
+                            ],
+                            "stock": 9,
+                            "virtual_food_id": 1542042502,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "小份",
+                                "大份"
+                            ]
+                        }
+                    ],
+                    "specifications2": [
+                        {
+                            "details": [
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "小份",
+                                    "photo_hash": null,
+                                    "selected": true
+                                },
+                                {
+                                    "linkage_photo_hash": null,
+                                    "name": "大份",
+                                    "photo_hash": null,
+                                    "selected": false
+                                }
+                            ],
+                            "linkage_status": 0,
+                            "name": "规格"
+                        }
+                    ],
+                    "step": null,
+                    "sub_item_ids": [],
+                    "tag_info_detail": null,
+                    "tips": "17评价 月售131份",
+                    "type": 0,
+                    "vfood_id": 1542042502,
+                    "video": null,
+                    "virtual_food_id": 1542042502
+                }
+            ],
+            "name": "商家推荐",
+            "window_type": 0
+        }
+    ],
+    "redpack": [],
+    "rst": {
+        "activities": [
+            {
+                "allowance_amount": null,
+                "attribute": "{30:{\"content\":\"2\",\"type\":1},100:{\"content\":\"5\",\"type\":1}}",
+                "background": {
+                    "rgb_from": "#FFFFFF",
+                    "rgb_to": "#FFFFFF"
+                },
+                "border": "#FFC9C1",
+                "description": "满30元减2元，满100元减5元",
+                "icon_color": "#FFFFFF",
+                "icon_name": "满减",
+                "id": 22779469754,
+                "image_hash": null,
+                "is_exclusive_with_food_activity": true,
+                "is_new_allowance": -1,
+                "name": "自营销复杂满减活动",
+                "super_vip": false,
+                "text_color": "#FF4B33",
+                "tips": "满30元减2元，满100元减5元",
+                "type": 102
+            },
+            {
+                "allowance_amount": null,
+                "attribute": "{0:{\"content\":\"1\",\"type\":7}}",
+                "background": {
+                    "rgb_from": "#FFFFFF",
+                    "rgb_to": "#FFFFFF"
+                },
+                "border": "#FFC9C1",
+                "description": "配送费立减1元",
+                "icon_color": "#FFFFFF",
+                "icon_name": "配送",
+                "id": 23286748037,
+                "image_hash": null,
+                "is_exclusive_with_food_activity": true,
+                "is_new_allowance": -1,
+                "name": "配送费减免",
+                "super_vip": false,
+                "text_color": "#FF4B33",
+                "tips": "配送费立减1元",
+                "type": 901
+            },
+            {
+                "allowance_amount": null,
+                "attribute": "12",
+                "background": {
+                    "rgb_from": "#FFFFFF",
+                    "rgb_to": "#FFFFFF"
+                },
+                "border": "#FFC9C1",
+                "description": "饿了么新用户首单立减12元",
+                "icon_color": "#FFFFFF",
+                "icon_name": "首单",
+                "id": 22939228258,
+                "image_hash": null,
+                "is_exclusive_with_food_activity": true,
+                "is_new_allowance": -1,
+                "name": "新立减-FML-平台补贴8元",
+                "super_vip": false,
+                "text_color": "#FF4B33",
+                "tips": "饿了么新用户首单立减12元",
+                "type": 103
+            }
+        ],
+        "activity_tags": [
+            {
+                "background": null,
+                "border": "#FFC9C1",
+                "color": "#FF4B33",
+                "extension": null,
+                "extension_list": null,
+                "icon": null,
+                "text": "30减2",
+                "type": null
+            },
+            {
+                "background": null,
+                "border": "#FFC9C1",
+                "color": "#FF4B33",
+                "extension": null,
+                "extension_list": null,
+                "icon": null,
+                "text": "100减5",
+                "type": null
+            },
+            {
+                "background": null,
+                "border": "#FFC9C1",
+                "color": "#FF4B33",
+                "extension": null,
+                "extension_list": null,
+                "icon": null,
+                "text": "配送费优惠",
+                "type": null
+            }
+        ],
+        "address": "汕头市潮南区峡山街道沙溪丹凤路401号首层",
+        "albums": [
+            {
+                "count": 1,
+                "cover_image_hash": "3e60b1a7ffe19d7ba0187503ad225a8ejpeg",
+                "name": "大堂",
+                "photos": [
+                    {
+                        "created_at": 0,
+                        "description": "大堂",
+                        "id": 126920810,
+                        "image_hash": "3e60b1a7ffe19d7ba0187503ad225a8ejpeg",
+                        "type": "HALL"
+                    }
+                ]
+            },
+            {
+                "count": 1,
+                "cover_image_hash": "7408249af063e1d243910fb2662a0068jpeg",
+                "name": "门面",
+                "photos": [
+                    {
+                        "created_at": 0,
+                        "description": null,
+                        "id": 126690586,
+                        "image_hash": "7408249af063e1d243910fb2662a0068jpeg",
+                        "type": "FRONT"
+                    }
+                ]
+            }
+        ],
+        "authentic_id": null,
+        "average_cost": null,
+        "baidu_id": null,
+        "bidding": null,
+        "business_info": "{\"recent_order_num_display\":\"月售289\"}",
+        "busy_text": null,
+        "closing_count_down": 12735,
+        "coupon": null,
+        "delivery_mode": {
+            "border": "",
+            "color": "2395FF",
+            "gradient": {
+                "rgb_from": "00AAFF",
+                "rgb_to": "0085FF"
+            },
+            "icon_hash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+            "id": 1,
+            "is_solid": true,
+            "text": "蜂鸟专送",
+            "text_color": "FFFFFF"
+        },
+        "description": "本店是二十年老店，之前在西港市场，订餐13926789849，附近可送",
+        "distance": 1961,
+        "distance_text": "2km",
+        "exist_phone": true,
+        "favored": false,
+        "flavors": [
+            {
+                "icon": null,
+                "id": 362,
+                "is_valid": null,
+                "keywords": null,
+                "name": "肠粉",
+                "parent_id": null,
+                "path": null,
+                "position": null,
+                "ranking_weight": null
+            }
+        ],
+        "float_delivery_fee": 3,
+        "float_minimum_order_amount": 15,
+        "folding_restaurant_brand": null,
+        "folding_restaurants": null,
+        "foodie_town": null,
+        "has_story": false,
+        "id": "E14843040781629752558",
+        "identification": null,
+        "image_path": "6cc3c646764b42a7a19f57392ac5c9efjpeg",
+        "is_new": false,
+        "is_premium": false,
+        "is_star": false,
+        "is_stock_empty": 0,
+        "is_valid": 1,
+        "latitude": 23.236585,
+        "license": null,
+        "longitude": 116.425345,
+        "max_applied_quantity_per_order": null,
+        "name": "普宁老牌肠粉",
+        "next_business_time": "明天 10:30",
+        "only_use_poi": null,
+        "opening_hours": [
+            "10:30/18:25"
+        ],
+        "order_lead_time": 30,
+        "phone": null,
+        "piecewise_agent_fee": {
+            "description": "配送¥3",
+            "extra": false,
+            "extra_fee": 0,
+            "is_extra": false,
+            "no_subsidy_fee": "¥4",
+            "rules": [
+                {
+                    "fee": 3,
+                    "price": 15
+                }
+            ],
+            "tips": "配送¥3"
+        },
+        "platform": 0,
+        "posters": [
+            {
+                "id": 32180826,
+                "image_hash": "e3a8e3ad2f0a66594e6d9e9920611f01jpeg",
+                "name": "天天领红包",
+                "trace_data": {
+                    "trace": "deco:POSTER,shop:170061011,id:32180826"
+                },
+                "type": 3,
+                "url": "eleme://restaurant_promotion?banner_id=32180826&restaurant_id=E14843040781629752558"
+            }
+        ],
+        "promotion_info": "本店是二十年老店，原为西港肠粉",
+        "qualification": {
+            "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=E14843040781629752558",
+            "safety_description": null
+        },
+        "rating": 4.9,
+        "rating_count": 726,
+        "rating_text": "4.9",
+        "recent_order_num": 289,
+        "recent_order_num_text": "289",
+        "recommend": null,
+        "recommend_reasons": [],
+        "regular_customer_count": null,
+        "restaurant_info": null,
+        "scheme": null,
+        "shop_sign": {
+            "brand_story": "",
+            "image_hash": "a9d316ef47cbed658f3b387a24dffb81png"
+        },
+        "status": 1,
+        "support_tags": [],
+        "supports": [
+            {
+                "border": "90dddddd",
+                "description": "该商户已购买食品安全责任险，食品安全有保障",
+                "icon_color": "666666",
+                "icon_name": "保",
+                "id": 7,
+                "name": "食无忧",
+                "text_color": "666666",
+                "two_characters_icon_name": "保险"
+            }
+        ],
+        "tags": null,
+        "target_tag_path": null,
+        "theme": {
+            "default_color": "2395ff",
+            "header_style": 3,
+            "hongbao_style": 0,
+            "logo_sub": null,
+            "price_color": "ff5339",
+            "third_tab_name": "商家",
+            "vanish_fields": []
+        },
+        "top_text_infos": [],
+        "type": 0,
+        "videos": null,
+        "weight": null
+    },
+    "user": {
+        "supervip_status": 2
+    }
+}

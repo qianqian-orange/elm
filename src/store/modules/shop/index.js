@@ -1,3 +1,9 @@
+import axios from 'axios'
+import { Notify } from '@/ui'
+import { resolveImageUrl } from '@/utils'
+import {
+  GET_SHOPLIST_DATA,
+} from './action-types'
 import {
   SAVE_FILTER_DATA,
   SAVE_RESTAURANT_DATA,
@@ -5,6 +11,8 @@ import {
   INCREASE,
   DECREASE,
   CLEAR_SHOPCAR_DATA,
+  SAVE_SHOPLIST_DATA,
+  CLEAR_SHOPLIST_DATA,
 } from './mutation-types'
 
 const initState = {
@@ -19,6 +27,68 @@ const initState = {
   },
   restaurant: null,
   food: null,
+  shopList: {
+    data: [],
+    finish: false,
+    currentPage: 1,
+    pageSize: 8,
+  },
+}
+
+const actions = {
+  [GET_SHOPLIST_DATA]({ commit, state: { shopList } }) {
+    return new Promise((resolve) => {
+      if (shopList.finish) return resolve()
+      axios.get('/api/shop/recommend', {
+        params: {
+          currentPage: shopList.currentPage,
+          pageSize: shopList.pageSize,
+        },
+      }).then(({ data }) => {
+        if (data.code !== 0) {
+          Notify({ type: 'danger', message: '获取数据失败' })
+          return
+        }
+        const result = data.data.map(({ restaurant, foods }) => {
+          return {
+            id: restaurant.id,
+            name: restaurant.name,
+            rating: restaurant.rating,
+            recentOrderNum: restaurant.recent_order_num,
+            floatMinimumOrderAmount: restaurant.float_minimum_order_amount,
+            floatDeliveryFee: restaurant.float_delivery_fee,
+            distance: restaurant.distance,
+            orderLeadTime: restaurant.order_lead_time,
+            recommendReasons: restaurant.recommend_reasons.map(({ reason }) => reason),
+            supportTags: restaurant.support_tags.map(item => ({
+              color: item.color,
+              border: item.border,
+              text: item.text,
+              background: item.background ? {
+                rgbFrom: item.background.rgb_from,
+                rgbTo: item.background.rgb_to,
+              } : null,
+            })),
+            imagePath: resolveImageUrl(restaurant.image_path),
+            activities: restaurant.activities.map(item => ({
+              description: item.description,
+              iconColor: item.icon_color,
+              iconName: item.icon_name,
+              id: item.id,
+            })),
+            foods: foods ? foods.map((food) => ({
+              id: food.id,
+              name: food.name,
+              price: food.price,
+              imagePath: resolveImageUrl(food.image_path),
+            })) : [],
+          }
+        })
+        commit(SAVE_SHOPLIST_DATA, result)
+        resolve()
+      })
+    })
+  },
 }
 
 const mutations = {
@@ -60,10 +130,21 @@ const mutations = {
     })
     shopCar.length = 0
   },
+  [SAVE_SHOPLIST_DATA]({ shopList }, data) {
+    if (data.length === 0 || data.length < shopList.pageSize) shopList.finish = true
+    shopList.currentPage += 1
+    shopList.data.push(...data)
+  },
+  [CLEAR_SHOPLIST_DATA]({ shopList }) {
+    shopList.data = []
+    shopList.finish = false
+    shopList.currentPage = 1
+  },
 }
 
 export default {
   namespaced: true,
   state: initState,
+  actions,
   mutations,
 }
