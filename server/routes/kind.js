@@ -8,49 +8,49 @@ router.get('/list', (req, res) => {
     data: [
       {
         id: 20133249,
-        img: 'https://cube.elemecdn.com/7/d8/a867c870b22bc74c87c348b75528djpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/7/d8/a867c870b22bc74c87c348b75528djpeg.jpeg',
         title: '美食',
       },
       {
         id: 20325914,
-        img: 'https://cube.elemecdn.com/a/7b/b02bd836411c016935d258b300cfejpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/a/7b/b02bd836411c016935d258b300cfejpeg.jpeg',
         title: '大牌惠吃',
       },
       {
-        img: 'https://cube.elemecdn.com/e/58/bceb19258e3264e64fb856722c3c1jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/e/58/bceb19258e3264e64fb856722c3c1jpeg.jpeg',
         title: '跑腿代购',
       },
       {
         id: 20519155,
-        img: 'https://cube.elemecdn.com/b/7f/432619fb21a40b05cd25d11eca02djpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/b/7f/432619fb21a40b05cd25d11eca02djpeg.jpeg',
         title: '汉堡披萨',
       },
       {
         id: 20554315,
-        img: 'https://cube.elemecdn.com/2/35/696aa5cf9820adada9b11a3d14bf5jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/2/35/696aa5cf9820adada9b11a3d14bf5jpeg.jpeg',
         title: '甜品饮品',
       },
       {
-        img: 'https://cube.elemecdn.com/0/1a/314b6da88ab6c7ae9828f91652d40jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/0/1a/314b6da88ab6c7ae9828f91652d40jpeg.jpeg',
         title: '速食简餐',
       },
       {
-        img: 'https://cube.elemecdn.com/7/d6/6f2631288a44ec177204e05cbcb93jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/7/d6/6f2631288a44ec177204e05cbcb93jpeg.jpeg',
         title: '地方小吃',
       },
       {
         id: 20554347,
-        img: 'https://cube.elemecdn.com/e/89/185f7259ebda19e16123884a60ef2jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/e/89/185f7259ebda19e16123884a60ef2jpeg.jpeg',
         title: '米粉面馆',
       },
       {
         id: 20554299,
-        img: 'https://cube.elemecdn.com/5/1a/dc885d2ce022d2ee60495acafb795jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/5/1a/dc885d2ce022d2ee60495acafb795jpeg.jpeg',
         title: '包子粥店',
       },
       {
         id: 20554339,
-        img: 'https://cube.elemecdn.com/a/78/0fb469b2da210827ec16896e00420jpeg.jpeg?x-oss-process=image/resize,m_lfit,w_90,h_90/quality,q_90/format,webp',
+        img: 'https://cube.elemecdn.com/a/78/0fb469b2da210827ec16896e00420jpeg.jpeg',
         title: '炸鸡炸串',
       },
       {
