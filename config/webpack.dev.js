@@ -13,7 +13,7 @@ module.exports = webpackMerge(baseConfig, {
     clientLogLevel: 'silent',
     overlay: false,
     stats: 'minimal', // verbose minimal errors-only none normal
-    contentBase: path.join(__dirname, '../server/public/static'),
+    contentBase: path.join(__dirname, '../server/public'),
     // contentBase: path.join(__dirname, '../dist'),
     // proxy: {
     //   '/api': {

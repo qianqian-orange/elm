@@ -12,13 +12,13 @@ const isDev = process.env.NODE_ENV === 'development'
 
 const resolve = (...paths) => path.resolve(__dirname, ...paths)
 
-const publicPath = isDev ? '/' : '/elm/static/'
+const publicPath = isDev ? '/' : '/elm/'
 
 module.exports = {
   entry: resolve('../src/index.js'),
   output: {
-    path: resolve('../server/public/static'),
-    filename: 'js/[name].[hash:6].js',
+    path: resolve('../server/public'),
+    filename: 'static/js/[name].[hash:6].js',
     publicPath,
   },
   module: {
@@ -77,7 +77,7 @@ module.exports = {
           options: {
             esModule: false,
             limit: 1024 * 10, // 10kb
-            outputPath: 'image',
+            outputPath: 'static/image',
             name: '[name].[hash:6].[ext]',
           },
         },
@@ -89,7 +89,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             esModule: false,
-            outputPath: 'font',
+            outputPath: 'static/font',
             name: '[name].[hash:6].[ext]',
           },
         },
@@ -112,7 +112,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve('../public/index.html'),
       filename: 'index.html',
-      favicon: resolve('../public/favicon.ico'),
+      // favicon: resolve('../public/favicon.ico'),
       config: {
         publicPath,
         isDev,
@@ -120,17 +120,20 @@ module.exports = {
     }),
     // 在开发环境下且使用mini-css-extract-plugin的loader处理样式时注意不要加哈希，不然css热更新会失效
     new MiniCssExtractPlugin({
-      filename: isDev ? 'css/[name].css' : 'css/[name].[hash:6].css',
+      filename: isDev ? 'static/css/[name].css' : 'static/css/[name].[hash:6].css',
     }),
     new VueLoaderPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
           from: resolve('../public/js/*'),
-          // to: resolve('../dist/js'),
           to: resolve('../server/public/static/js'),
           flatten: true,
         },
+        {
+          from: resolve('../public/favicon.ico'),
+          to: resolve('../server/public/favicon.ico'),
+        }
       ],
     }),
     new StyleLintPlugin({

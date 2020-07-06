@@ -19,6 +19,9 @@ Vue.directive('lazy', {
     el.dataset.src = binding.value
     if (el.src) el.src = binding.value
   },
+  unbind(el) {
+    io.unobserve(el)
+  },
 })
 
 export default io
