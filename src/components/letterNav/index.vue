@@ -31,16 +31,19 @@ export default {
   mounted() {
     const letterNav = this.$refs['letter-nav']
     this.height = letterNav.offsetHeight / this.letters.length
-    this.clientY = letterNav.getBoundingClientRect().y
-    this.bindStart = this.start.bind(this)
-    this.bindMove = this.move.bind(this)
-    letterNav.addEventListener('touchstart', this.bindStart, false)
-    letterNav.addEventListener('touchmove', this.bindMove, false)
+    // 这里不使用getBoundingRect()是因为使用了slide的过渡效果，这个过渡效果就是
+    // 出场的页面设置绝对定位，这样就不会占位置，进场页面也就能往上移
+    // 注意这里的往上移，也就是说过渡效果还没开始的时候，那么进场页面是在视窗的下面
+    // 是因为出场页面设置定位后，才上移的，所以mounted钩子触发的时候页面还没往上移，
+    // 所以获取的y值不是想要的
+    this.clientY = letterNav.offsetTop - letterNav.offsetHeight / 2
+    letterNav.addEventListener('touchstart', this.start, false)
+    letterNav.addEventListener('touchmove', this.move, false)
   },
   beforeDestroy() {
     const letterNav = this.$refs['letter-nav']
-    letterNav.removeEventListener('touchstart', this.bindStart, false)
-    letterNav.removeEventListener('touchmove', this.bindMove, false)
+    letterNav.removeEventListener('touchstart', this.start, false)
+    letterNav.removeEventListener('touchmove', this.move, false)
   },
   methods: {
     start(e) {

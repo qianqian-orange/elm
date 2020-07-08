@@ -1,6 +1,6 @@
 <template>
   <div class="city-container">
-    <elm-header>
+    <elm-header to="/address">
       <div class="search-container">
         <router-link to="/city/search">
           <p class="placeholder">

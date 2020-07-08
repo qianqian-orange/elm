@@ -43,7 +43,7 @@ export default {
   mounted() {
     this.filterHeight = this.$refs.filter.$el.offsetHeight
     this.$nextTick(() => {
-      this.$refs.list.getScroll().reset()
+      this.$refs.list.reset()
     })
   },
   methods: {

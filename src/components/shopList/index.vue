@@ -82,6 +82,9 @@ export default {
     computedHeight() {
       this.$refs.list.computedHeight()
     },
+    reset() {
+      this.$refs.list.reset()
+    },
     getScroll() {
       return this.$refs.list.getScroll()
     },

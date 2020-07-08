@@ -26,7 +26,6 @@
         :loading="loading"
         :finish="finish"
         @loadmore="loadmore"
-        @ensure="jump"
       />
     </main>
   </div>
@@ -34,10 +33,9 @@
 
 <script>
 import axios from 'axios'
-import { mapMutations } from 'vuex'
 import transitionMixin from '@/mixins/transition'
 import addressMixin from './mixin'
-import { UPDATE_LOCATION, UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
+import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
 import { get } from '@/utils/sessionStorage'
 import { AmapKey, sessionStorageKey, transition } from '@/config'
 import { routes } from '@/config/router'
@@ -83,8 +81,9 @@ export default {
     },
   },
   beforeRouteLeave(to, from, next) {
-    const { address, city } = routes
+    const { address, city, home } = routes
     switch (to.name) {
+      case home.name:
       case address.name:
         this[UPDATE_TRANSITION](transition.slideRight)
         break
@@ -155,11 +154,6 @@ export default {
           this.result.push(...data)
         })
     },
-    jump(poi) {
-      this.ensure(poi)
-      this.$router.push('/home')
-    },
-    ...mapMutations('global', [UPDATE_LOCATION]),
   },
 }
 </script>

@@ -116,7 +116,6 @@ export default {
           vm.search = to.meta.search
           if (vm.search) {
             vm.visible = true
-            vm.scrollHeight = scrollHeight
             vm.$nextTick(() => {
               vm.$refs.shop.getScroll().scrollTo({ y: scrollHeight })
             })

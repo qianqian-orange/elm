@@ -12,7 +12,7 @@
         v-for="poi in dataSource"
         :key="poi.id"
         class="poi-item"
-        @click.stop="ensure(poi)"
+        @click.stop="jump(poi)"
       >
         <p
           v-if="!highlight"
@@ -30,6 +30,9 @@
 </template>
 
 <script>
+import addressMixin from './mixin'
+import { mapMutations } from 'vuex'
+import { UPDATE_LOCATION } from '@/store/modules/global/mutation-types'
 import variable from '@/scss/var.scss'
 import ListScrollView from '@/components/listScrollView/index.vue'
 
@@ -38,6 +41,7 @@ export default {
   components: {
     ListScrollView,
   },
+  mixins: [addressMixin],
   props: {
     dataSource: {
       type: Array,
@@ -70,8 +74,8 @@ export default {
       const index = val.indexOf(this.search)
       return val.substring(0, index) + `<strong style="color:${variable.themeColor};">${this.search}</strong>` + val.substring(index + this.search.length)
     },
-    ensure(poi) {
-      this.$emit('ensure', poi)
+    jump(poi) {
+      this.ensure(poi)
       this.$router.push('/home')
     },
     scrollTo(offsetHeight) {
@@ -80,6 +84,7 @@ export default {
     loadmore() {
       this.$emit('loadmore')
     },
+    ...mapMutations('global', [UPDATE_LOCATION]),
   },
 }
 </script>

@@ -40,7 +40,6 @@
         :loading="loading"
         :finish="!loading"
         :data-source="pois"
-        @ensure="ensure"
       />
     </div>
   </div>
