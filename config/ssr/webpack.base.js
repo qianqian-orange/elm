@@ -10,7 +10,7 @@ const resolve = (...paths) => path.join(__dirname, ...paths)
 module.exports = {
   mode: 'production',
   output: {
-    path: resolve('../../dist'),
+    path: resolve('../../server/public'),
     publicPath: '/elm/',
   },
   module: {
@@ -90,12 +90,12 @@ module.exports = {
       patterns: [
         {
           from: resolve('../../public/js/*'),
-          to: resolve('../../dist/static/js'),
+          to: resolve('../../server/public/static/js'),
           flatten: true,
         },
         {
           from: resolve('../../public/favicon.ico'),
-          to: resolve('../../dist/favicon.ico'),
+          to: resolve('../../server/public/favicon.ico'),
         },
       ],
     }),
@@ -107,7 +107,7 @@ module.exports = {
       PUBLICPATH: JSON.stringify('/elm/'),
     }),
     new webpack.DllReferencePlugin({
-      manifest: resolve('../../dist/static/dll/manifest.json'),
+      manifest: resolve('../../server/public/static/dll/manifest.json'),
     }),
   ],
   resolve: {

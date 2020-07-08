@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.build.js",
     "build:dll": "webpack --config config/webpack.dll.js",
-    "build:ssr": "rimraf dist && npm run build:dll:ssr && npm run build:client && npm run build:server",
+    "build:ssr": "rimraf server/public && npm run build:dll:ssr && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config config/ssr/webpack.client.js",
     "build:server": "cross-env NODE_ENV=production webpack --config config/ssr/webpack.server.js",
     "build:dll:ssr": "webpack --config config/ssr/webpack.dll.js"

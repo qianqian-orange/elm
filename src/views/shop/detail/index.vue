@@ -14,6 +14,11 @@ import Common from '../common/index.vue'
 
 export default {
   name: 'Detail',
+  title: '饿了么商店基本信息',
+  meta: {
+    keyword: 'elm, detail',
+    description: '这里是饿了么商家基本信息页面',
+  },
   components: {
     Common,
   },

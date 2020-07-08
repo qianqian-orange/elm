@@ -62,6 +62,11 @@ import List from './list.vue'
 
 export default {
   name: 'Address',
+  title: '饿了么地址',
+  meta: {
+    keyword: 'elm, address',
+    description: '这里可以选择您的地址信息，请选择正确的地址哦',
+  },
   components: {
     ElmHeader,
     List,

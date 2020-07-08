@@ -76,6 +76,11 @@ import ShopCar from '@/components/shopCar/index.vue'
 
 export default {
   name: 'Food',
+  title: '饿了么商品详情',
+  meta: {
+    keyword: 'elm, food',
+    description: '这里展示了商品的详细信息，更大的美图，让您大饱眼福',
+  },
   components: {
     ScrollView,
     CircleButton,

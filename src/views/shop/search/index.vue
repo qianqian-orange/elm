@@ -79,6 +79,11 @@ import SearchList from './searchList.vue'
 
 export default {
   name: 'ShopSearch',
+  title: '饿了么搜索',
+  meta: {
+    keyword: 'elm, search',
+    description: '这里是饿了么搜索页面，如果是我，我肯定选择汉堡',
+  },
   components: {
     ElmHeader,
     SearchList,

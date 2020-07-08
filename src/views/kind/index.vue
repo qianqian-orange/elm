@@ -55,6 +55,11 @@ import ShopList from '@/components/shopList/index.vue'
 
 export default {
   name: 'Kind',
+  title: '饿了么分类',
+  meta: {
+    keyword: 'elm, kind',
+    description: '这是饿了么分类页面，在这里你可以找到你想要吃的食物',
+  },
   components: {
     ElmHeader,
     OutsideCategory,

@@ -14,6 +14,11 @@ import Common from '../common/index.vue'
 
 export default {
   name: 'Comment',
+  title: '饿了么商店评论',
+  meta: {
+    keyword: 'elm, comment',
+    description: '这里是饿了么商家评论页面，这里可以看到大家对店家的评价',
+  },
   components: {
     Common,
   },

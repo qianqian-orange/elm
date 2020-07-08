@@ -52,6 +52,11 @@ import Ball from './ball.vue'
 
 export default {
   name: 'Order',
+  title: '饿了么商家商品详情',
+  meta: {
+    keyword: 'elm, shop',
+    description: '哦，上帝，相信你会爱上这个的',
+  },
   components: {
     Common,
     FoodList,

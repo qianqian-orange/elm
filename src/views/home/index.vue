@@ -101,6 +101,11 @@ import Kind from './kind.vue'
 
 export default {
   name: 'Home',
+  title: '饿了么首页',
+  meta: {
+    keyword: 'elm, home',
+    description: '这是饿了么首页，展示本站的主要功能，看到那个轮播图了吗，是不是很酷呀',
+  },
   components: {
     HomeHeader,
     ScrollView,

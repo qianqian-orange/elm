@@ -12,8 +12,8 @@ const shopRouter = require('./routes/shop')
 const resolve = (...paths) => path.join(__dirname, ...paths)
 const app = express()
 app.use(compression())
-app.use(favicon(path.join(__dirname, '../dist/favicon.ico')))
-app.use('/elm/static/', express.static(path.join(__dirname, '../dist/static')))
+app.use(favicon(path.join(__dirname, './public/favicon.ico')))
+app.use('/elm/static/', express.static(path.join(__dirname, './public/static')))
 
 app.use('/elm/api/city', cityRouter)
 app.use('/elm/api/advertisement', advertisementRouter)
@@ -39,8 +39,8 @@ if (isDev) {
   )
 } else {
   const template = fs.readFileSync(templatePath, 'utf-8')
-  const bundle = require('../dist/vue-ssr-server-bundle.json')
-  const manifest = require('../dist/vue-ssr-client-manifest.json')
+  const bundle = require('./public/vue-ssr-server-bundle.json')
+  const manifest = require('./public/vue-ssr-client-manifest.json')
   renderer = createBundleRenderer(bundle, {
     template,
     clientManifest: manifest,

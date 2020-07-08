@@ -75,6 +75,11 @@ import List from './list.vue'
 
 export default {
   name: 'City',
+  title: '饿了么城市',
+  meta: {
+    keyword: 'elm, city',
+    description: '这里可以选择您的城市信息，请选择正确的城市哦',
+  },
   components: {
     ElmHeader,
     ScrollView,

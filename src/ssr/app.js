@@ -19,10 +19,15 @@ import {
   Badge,
 } from '@/ui'
 import '@/config/axios'
+import titleMixin from '@/mixins/title'
+import metaMixin from '@/mixins/meta'
 import 'normalize.css'
 import '@/assets/css/index.css'
 import '@/ui/index.scss'
 import '@/assets/font/iconfont.css'
+
+Vue.mixin(titleMixin)
+Vue.mixin(metaMixin)
 
 Vue.use(Notify)
 Vue.use(Loading)
