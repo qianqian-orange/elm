@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:ssr": "cross-env NODE_ENV=development node server.js",
-    "start:ssr": "cross-env NODE_ENV=production node server.js",
+    "start:ssr": "cross-env NODE_ENV=production pm2 start server.js --name elm",
     "start": "node index.js"
   },
   "keywords": [],
