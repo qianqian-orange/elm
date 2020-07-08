@@ -53,6 +53,10 @@ export default {
       type: Number,
       default: 3000,
     },
+    nested: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -73,6 +77,7 @@ export default {
       duration: this.duration,
       loop: this.loop,
       bounce: this.bounce,
+      nested: this.nested,
     })
     this.slider.on('scrollEnd', () => {
       this.current = this.slider.getCurrentPage()

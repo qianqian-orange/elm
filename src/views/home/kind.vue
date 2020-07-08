@@ -3,6 +3,7 @@
     :data-source="kindGroup"
     :loop="false"
     :bounce="false"
+    :nested="true"
   >
     <ul class="group-list">
       <li

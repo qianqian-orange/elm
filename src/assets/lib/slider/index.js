@@ -10,7 +10,8 @@ class Slider {
     loop = true,
     bounce = true,
     click = true,
-    stopPropagation = true,
+    stopPropagation = false,
+    nested = false,
   } = {}) {
     // 这个的el传的是上面HTML文档结构中的div
     this.el = typeof el === 'string' ? document.querySelector(el) : el
@@ -20,6 +21,7 @@ class Slider {
     }
     this.click = click
     this.stopPropagation = stopPropagation
+    this.nested = nested
     // 记录开始触碰div的触点的clientX, 即touches[0].clientX
     this.clientX = 0
     // 记录ul的当前偏移位置
@@ -147,7 +149,8 @@ class Slider {
       }
     }
     // 这里处理click事件
-    if (this.pending) return
+    if (this.pending || this.nested) return
+    console.log(1)
     if (this.click && Math.abs(e.changedTouches[0].clientX - this.clientX) <= 8) {
       const event = new Event('click')
       let stop = false

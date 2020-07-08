@@ -3,51 +3,51 @@
   "all": [
     "favicon.ico",
     "static/image/bg.4bb880.png",
-    "static/js/0.9839cd.js",
-    "static/js/0.9839cd.js.map",
-    "static/js/10.9839cd.js",
-    "static/js/10.9839cd.js.map",
-    "static/js/11.9839cd.js",
-    "static/js/11.9839cd.js.map",
-    "static/js/12.9839cd.js",
-    "static/js/12.9839cd.js.map",
-    "static/js/2.9839cd.js",
-    "static/js/2.9839cd.js.map",
-    "static/js/3.9839cd.js",
-    "static/js/3.9839cd.js.map",
-    "static/js/4.9839cd.js",
-    "static/js/4.9839cd.js.map",
-    "static/js/5.9839cd.js",
-    "static/js/5.9839cd.js.map",
-    "static/js/6.9839cd.js",
-    "static/js/6.9839cd.js.map",
-    "static/js/7.9839cd.js",
-    "static/js/7.9839cd.js.map",
-    "static/js/8.9839cd.js",
-    "static/js/8.9839cd.js.map",
-    "static/js/9.9839cd.js",
-    "static/js/9.9839cd.js.map",
-    "static/js/app.9839cd.js",
-    "static/js/app.9839cd.js.map",
+    "static/js/0.336fd6.js",
+    "static/js/0.336fd6.js.map",
+    "static/js/10.336fd6.js",
+    "static/js/10.336fd6.js.map",
+    "static/js/11.336fd6.js",
+    "static/js/11.336fd6.js.map",
+    "static/js/12.336fd6.js",
+    "static/js/12.336fd6.js.map",
+    "static/js/2.336fd6.js",
+    "static/js/2.336fd6.js.map",
+    "static/js/3.336fd6.js",
+    "static/js/3.336fd6.js.map",
+    "static/js/4.336fd6.js",
+    "static/js/4.336fd6.js.map",
+    "static/js/5.336fd6.js",
+    "static/js/5.336fd6.js.map",
+    "static/js/6.336fd6.js",
+    "static/js/6.336fd6.js.map",
+    "static/js/7.336fd6.js",
+    "static/js/7.336fd6.js.map",
+    "static/js/8.336fd6.js",
+    "static/js/8.336fd6.js.map",
+    "static/js/9.336fd6.js",
+    "static/js/9.336fd6.js.map",
+    "static/js/app.336fd6.js",
+    "static/js/app.336fd6.js.map",
     "static/js/flexible.js",
     "static/js/worker.js"
   ],
   "initial": [
-    "static/js/app.9839cd.js"
+    "static/js/app.336fd6.js"
   ],
   "async": [
-    "static/js/0.9839cd.js",
-    "static/js/10.9839cd.js",
-    "static/js/11.9839cd.js",
-    "static/js/12.9839cd.js",
-    "static/js/2.9839cd.js",
-    "static/js/3.9839cd.js",
-    "static/js/4.9839cd.js",
-    "static/js/5.9839cd.js",
-    "static/js/6.9839cd.js",
-    "static/js/7.9839cd.js",
-    "static/js/8.9839cd.js",
-    "static/js/9.9839cd.js",
+    "static/js/0.336fd6.js",
+    "static/js/10.336fd6.js",
+    "static/js/11.336fd6.js",
+    "static/js/12.336fd6.js",
+    "static/js/2.336fd6.js",
+    "static/js/3.336fd6.js",
+    "static/js/4.336fd6.js",
+    "static/js/5.336fd6.js",
+    "static/js/6.336fd6.js",
+    "static/js/7.336fd6.js",
+    "static/js/8.336fd6.js",
+    "static/js/9.336fd6.js",
     "static/js/flexible.js",
     "static/js/worker.js"
   ],
@@ -575,7 +575,7 @@
       27,
       1
     ],
-    "04e8c680": [
+    "54cc8ca7": [
       26,
       27,
       1
@@ -585,12 +585,12 @@
       27,
       1
     ],
-    "79a8f0a2": [
+    "226a2410": [
       26,
       27,
       1
     ],
-    "1c9db3c4": [
+    "193c43be": [
       26,
       27,
       1
@@ -1700,12 +1700,12 @@
       27,
       1
     ],
-    "13fdca16": [
+    "6b3eb9fd": [
       26,
       27,
       1
     ],
-    "15c273ec": [
+    "4c5fb5f1": [
       26,
       27,
       1
@@ -1720,22 +1720,22 @@
       27,
       1
     ],
-    "7aff0519": [
+    "4b84bd0c": [
       26,
       27,
       1
     ],
-    "8404f0b6": [
+    "1d3c2406": [
       26,
       27,
       1
     ],
-    "a6b4d1cc": [
+    "ad77b1d8": [
       26,
       27,
       1
     ],
-    "dba871e4": [
+    "e26b51f0": [
       26,
       27,
       1

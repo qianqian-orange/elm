@@ -2,6 +2,7 @@
   <slider
     :data-source="advertisement"
     :auto-play="true"
+    :nested="true"
   >
     <ul class="advertisement-list">
       <li
