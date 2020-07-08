@@ -1,6 +1,9 @@
 <template>
   <div class="address-container">
-    <elm-header @jump="ensure(previous)">
+    <elm-header
+      to="/home"
+      @jump="ensure(previous)"
+    >
       <div class="search-container">
         <router-link
           to="/city"

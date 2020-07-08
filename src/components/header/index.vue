@@ -28,12 +28,20 @@ export default {
       type: String,
       default: '',
     },
+    replace: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     jump() {
       this.$emit('jump')
-      if (this.to) this.$router.push(this.to)
-      else this.$router.go(-1)
+      if (!this.to) {
+        this.$router.go(-1)
+        return
+      }
+      if (this.replace) this.$router.replace(this.to)
+      else this.$router.push(this.to)
     },
   },
 }

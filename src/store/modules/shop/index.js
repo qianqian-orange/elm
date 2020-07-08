@@ -16,6 +16,7 @@ import {
   CLEAR_SHOPCAR_DATA,
   SAVE_SHOPLIST_DATA,
   CLEAR_SHOPLIST_DATA,
+  DECREASE_SHOPLIST_DATA,
 } from './mutation-types'
 
 const actions = {
@@ -112,6 +113,9 @@ const mutations = {
     shopList.data = []
     shopList.finish = false
     shopList.currentPage = 1
+  },
+  [DECREASE_SHOPLIST_DATA]({ shopList }, index) {
+    shopList.data.splice(index, 1)
   },
 }
 

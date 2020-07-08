@@ -17,7 +17,7 @@
 <script>
 import { mapState, mapActions, mapMutations } from 'vuex'
 import { GET_SHOPLIST_DATA } from '@/store/modules/home/action-types'
-import { UPDATE_SHOPLIST_DATA } from '@/store/modules/home/mutation-types'
+import { UPDATE_SHOPLIST_DATA, DELETE_SHOPLIST_DATA } from '@/store/modules/home/mutation-types'
 import ShopCard from '@/components/shopCard/index.vue'
 import ElmFinish from '@/components/finish/index.vue'
 
@@ -46,7 +46,7 @@ export default {
     hate(id) {
       const index = this.shopList.findIndex(shop => shop.id === id)
       if (index === -1) return
-      this.shopList.splice(index, 1)
+      this[DELETE_SHOPLIST_DATA](index)
       this.$emit('hate')
     },
     getData(more = true) {
@@ -73,7 +73,7 @@ export default {
       return this.getData(false)
     },
     ...mapActions('home', [GET_SHOPLIST_DATA]),
-    ...mapMutations('home', [UPDATE_SHOPLIST_DATA]),
+    ...mapMutations('home', [UPDATE_SHOPLIST_DATA, DELETE_SHOPLIST_DATA]),
   },
 }
 </script>

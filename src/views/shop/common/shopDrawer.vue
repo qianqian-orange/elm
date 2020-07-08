@@ -55,11 +55,13 @@
             <p class="desc">{{ support.description }}</p>
           </li>
         </ul>
-        <p
-          ref="notice"
-          class="title"
-        >公告</p>
-        <p class="notice">公告: {{ restaurant.notice }}</p>
+        <div v-if="restaurant.notice">
+          <p
+            ref="notice"
+            class="title"
+          >公告</p>
+          <p class="notice">公告: {{ restaurant.notice }}</p>
+        </div>
       </scroll-view>
     </div>
   </elm-drawer>

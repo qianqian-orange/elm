@@ -7,14 +7,16 @@ function move(scrollX, scrollY) {
   }]
   if (scrollX) {
     fns.push((e) => {
-      this.curScrollWidth = this.ensureX(this.preScrollWidth + e.touches[0].clientX - this.startClientX)
+      const clientX = parseInt(e.touches[0].clientX, 10)
+      this.curScrollWidth = this.ensureX(this.preScrollWidth + clientX - this.startClientX)
       this.el.style.transform = `translateX(${this.curScrollWidth}px)`
       return e
     })
   }
   if (scrollY) {
     fns.push((e) => {
-      this.curScrollHeight = this.ensureY(this.preScrollHeight + e.touches[0].clientY - this.startClientY)
+      const clientY = parseInt(e.touches[0].clientY, 10)
+      this.curScrollHeight = this.ensureY(this.preScrollHeight + clientY - this.startClientY)
       this.el.style.transform = `translateY(${this.curScrollHeight}px)`
       return e
     })
@@ -87,8 +89,8 @@ class Translate {
   }
 
   start(e) {
-    this.startClientY = e.touches[0].clientY
-    this.startClientX = e.touches[0].clientX
+    this.startClientY = parseInt(e.touches[0].clientY, 10)
+    this.startClientX = parseInt(e.touches[0].clientX, 10)
     this.eventEmitter.emit(eventType.beforeScrollStart, { x: this.preScrollWidth, y: this.preScrollHeight })
   }
 

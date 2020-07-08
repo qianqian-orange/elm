@@ -12,6 +12,7 @@ import {
   SAVE_KIND_DATA,
   SAVE_SHOPLIST_DATA,
   UPDATE_SHOPLIST_DATA,
+  DELETE_SHOPLIST_DATA,
 } from './mutation-types'
 
 const actions = {
@@ -62,6 +63,9 @@ const mutations = {
   [UPDATE_SHOPLIST_DATA]({ shopList }) {
     shopList.finish = false
     shopList.currentPage = 1
+  },
+  [DELETE_SHOPLIST_DATA]({ shopList }, index) {
+    shopList.data.splice(index, 1)
   },
 }
 

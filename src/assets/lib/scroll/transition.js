@@ -7,11 +7,12 @@ function move(scrollX, scrollY) {
   const fns = []
   if (scrollX) {
     fns.push((e) => {
-      const instance = Math.abs(e.touches[0].clientX - this.startClientX)
-      if (instance > this.instanceX) this.instanceX = instance
+      const clientX = parseInt(e.touches[0].clientX, 10)
+      const instance = Math.abs(clientX - this.startClientX)
+      if (instance >= this.instanceX) this.instanceX = instance
       else {
         this.timeStampX = Date.now()
-        this.startClientX = e.touches[0].clientX
+        this.startClientX = clientX
         this.instanceX = 0
       }
       return e
@@ -19,11 +20,12 @@ function move(scrollX, scrollY) {
   }
   if (scrollY) {
     fns.push((e) => {
-      const instance = Math.abs(e.touches[0].clientY - this.startClientY)
-      if (instance > this.instanceY) this.instanceY = instance
+      const clientY = parseInt(e.touches[0].clientY)
+      const instance = Math.abs(clientY - this.startClientY)
+      if (instance >= this.instanceY) this.instanceY = instance
       else {
         this.timeStampY = Date.now()
-        this.startClientY = e.touches[0].clientY
+        this.startClientY = clientY
         this.instanceY = 0
       }
       return e
@@ -51,10 +53,13 @@ function end(scrollX, scrollY) {
         this.instanceY = 0
         return e
       }
-      let speed = +(Math.floor(this.instanceY) / (Date.now() - this.timeStampY)).toFixed(2)
+      let speed = 0
+      const time = Date.now() - this.timeStampY
+      if (this.instanceY && time) speed = +(this.instanceY / time).toFixed(2)
       this.instanceY = 0
       if (speed < this.lowestSpeed) return e
-      speed = e.changedTouches[0].clientY < this.startClientY ? -speed : speed
+      const clientY = e.changedTouches[0].clientY
+      speed = clientY < this.startClientY ? -speed : speed
       this.translate.offsetY(parseInt(speed * this.seconds), 10)
       this.pending = true
       return e
@@ -66,10 +71,13 @@ function end(scrollX, scrollY) {
         this.instanceX = 0
         return e
       }
-      let speed = +(Math.floor(this.instanceX) / (Date.now() - this.timeStampX)).toFixed(2)
+      let speed = 0
+      const time = Date.now() - this.timeStampX
+      if (this.instanceX && time) speed = +(this.instanceX / time).toFixed(2)
       this.instanceX = 0
       if (speed < this.lowestSpeed) return e
-      speed = e.changedTouches[0].clientX < this.startClientX ? -speed : speed
+      const clientX = e.changedTouches[0].clientX
+      speed = clientX < this.startClientX ? -speed : speed
       this.translate.offsetX(parseInt(speed * this.seconds), 10)
       this.pending = true
       return e
@@ -109,7 +117,7 @@ class Transition {
   coordinate() {
     regex.test(window.getComputedStyle(this.el, null).transform)
     const [, , , , x, y] = RegExp.$1.split(', ')
-    return { x: +x, y: +y }
+    return { x: parseInt(+x, 10), y: parseInt(+y, 10) }
   }
 
   stop() {
@@ -120,8 +128,8 @@ class Transition {
 
   start(e) {
     if (this.pending) this.stop()
-    this.startClientX = e.touches[0].clientX
-    this.startClientY = e.touches[0].clientY
+    this.startClientX = parseInt(e.touches[0].clientX, 10)
+    this.startClientY = parseInt(e.touches[0].clientY, 10)
     this.timeStampX = this.timeStampY = Date.now()
   }
 

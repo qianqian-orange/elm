@@ -22,7 +22,11 @@
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
-import { SAVE_SHOPLIST_DATA, CLEAR_SHOPLIST_DATA } from '@/store/modules/shop/mutation-types'
+import {
+  SAVE_SHOPLIST_DATA,
+  CLEAR_SHOPLIST_DATA,
+  DECREASE_SHOPLIST_DATA,
+} from '@/store/modules/shop/mutation-types'
 import { GET_SHOPLIST_DATA } from '@/store/modules/shop/action-types'
 import ListScrollView from '@/components/listScrollView/index.vue'
 import ShopCard from '@/components/shopCard/index.vue'
@@ -62,7 +66,7 @@ export default {
     hate(id) {
       const index = this.shopList.findIndex(shop => shop.id === id)
       if (index === -1) return
-      this.shopList.splice(index, 1)
+      this[DECREASE_SHOPLIST_DATA](index)
       this.$refs.list.reset()
     },
     getData() {
@@ -89,7 +93,7 @@ export default {
       return this.$refs.list.getScroll()
     },
     ...mapActions('shop', [GET_SHOPLIST_DATA]),
-    ...mapMutations('shop', [SAVE_SHOPLIST_DATA, CLEAR_SHOPLIST_DATA]),
+    ...mapMutations('shop', [SAVE_SHOPLIST_DATA, CLEAR_SHOPLIST_DATA, DECREASE_SHOPLIST_DATA]),
   },
 }
 </script>
