@@ -72,14 +72,13 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 import InsertSortFilter from './insertSortFilter.vue'
 import MultipartSortFilter from './multipartSortFilter.vue'
+import { GET_FILTER_DATA } from '@/store/modules/shop/action-types'
 import {
   SAVE_FILTER_DATA,
 } from '@/store/modules/shop/mutation-types'
-import { resolveImageUrl } from '@/utils'
 import variable from '@/scss/var.scss'
 
 const sortFilters = {
@@ -139,27 +138,9 @@ export default {
   },
   methods: {
     getData() {
-      return axios.get('/api/shop/sort')
-        .then(({ data }) => {
-          if (data.code !== 0) {
-            this.$notify({ type: 'danger', message: '获取数据失败' })
-            return
-          }
-          const { sortList, filterList } = data.data
-          this[SAVE_FILTER_DATA]({
-            insideSortFilter: sortList.insideSortFilter,
-            outsideSortFilter: sortList.outsideSortFilter,
-            outsideFilters: sortList.outsideFilters,
-            supports: filterList.supports.map(support => ({
-              id: support.id,
-              name: support.name,
-              imagePath: resolveImageUrl(support.iconHash),
-            })),
-            activities: filterList.activityTypes,
-            averageCosts: filterList.averageCosts,
-          })
-          this.insideSortFilterIndex = 0
-        })
+      this[GET_FILTER_DATA]()
+        .then(() => { this.insideSortFilterIndex = 0 })
+        .catch(() => { this.$notify({ type: 'danger', message: '获取数据失败' }) })
     },
     toggle(sortFilter) {
       this.sortFilter = this.sortFilter === sortFilter ? '' : sortFilter
@@ -208,6 +189,7 @@ export default {
     search() {
       this.$emit('search')
     },
+    ...mapActions('shop', [GET_FILTER_DATA]),
     ...mapMutations('shop', [SAVE_FILTER_DATA]),
   },
 }

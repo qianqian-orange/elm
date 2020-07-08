@@ -22,6 +22,7 @@ module.exports = {
     'no-func-assign': 0,
     'vue/no-deprecated-filter': 0,
     'standard/no-callback-literal': 0,
+    'prefer-promise-reject-errors': 0,
   },
   extends: [
     'plugin:vue/vue3-recommended',

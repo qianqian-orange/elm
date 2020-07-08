@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.build.js",
-    "build:dll": "webpack --config config/webpack.dll.js"
+    "build:dll": "webpack --config config/webpack.dll.js",
+    "build:ssr": "rimraf dist && npm run build:dll:ssr && npm run build:client && npm run build:server",
+    "build:client": "cross-env NODE_ENV=production webpack --config config/ssr/webpack.client.js",
+    "build:server": "cross-env NODE_ENV=production webpack --config config/ssr/webpack.server.js",
+    "build:dll:ssr": "webpack --config config/ssr/webpack.dll.js"
   },
   "keywords": [],
   "author": "",
@@ -40,6 +44,7 @@
     "mini-css-extract-plugin": "0.9.0",
     "node-sass": "4.14.1",
     "postcss-loader": "3.0.0",
+    "rimraf": "^3.0.2",
     "sass-loader": "8.0.2",
     "style-loader": "1.2.1",
     "stylelint": "13.6.1",
@@ -48,12 +53,17 @@
     "stylelint-webpack-plugin": "2.1.0",
     "url-loader": "4.1.0",
     "vue-loader": "15.9.2",
+    "vue-server-renderer": "^2.6.11",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "2.6.11",
     "webpack": "4.43.0",
     "webpack-bundle-analyzer": "3.8.0",
     "webpack-cli": "3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "3.11.0",
-    "webpack-merge": "4.2.2"
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "4.2.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@babel/runtime": "7.10.2",

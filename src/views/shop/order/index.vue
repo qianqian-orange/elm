@@ -38,8 +38,10 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
+import { GET_RESTAURANT_DATA } from '@/store/modules/shop/action-types'
 import transitionMixin from '@/mixins/transition'
 import { transition } from '@/config'
+import storeModuleKey from '@/config/store'
 import { debounce } from '@/utils'
 import { routes } from '@/config/router'
 import ShopCar from '@/components/shopCar/index.vue'
@@ -95,6 +97,9 @@ export default {
           break
       }
     })
+  },
+  asyncData({ store, route }) {
+    return store.dispatch(`${storeModuleKey.shop}/${GET_RESTAURANT_DATA}`, route.params.id)
   },
   data() {
     return {

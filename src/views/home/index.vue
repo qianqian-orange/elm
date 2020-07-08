@@ -36,8 +36,8 @@
         >
           <wave />
         </div>
-        <advertisement :advertisement="advertisement" />
-        <kind :data-source="kindGroup" />
+        <advertisement ref="advertisement" />
+        <kind ref="kind" />
         <div class="constraint">
           <div
             class="super-vip"
@@ -79,11 +79,18 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapState, mapActions } from 'vuex'
+import {
+  GET_ADVERTISEMENT_DATA,
+  GET_KIND_DATA,
+  GET_SHOPLIST_DATA,
+} from '@/store/modules/home/action-types'
+import { GET_FILTER_DATA } from '@/store/modules/shop/action-types'
 import loadmoreMixin from '@/mixins/loadmore'
 import transitionMixin from '@/mixins/transition'
 import { UPDATE_TRANSITION } from '@/store/modules/global/mutation-types'
 import { transition } from '@/config'
+import storeModuleKey from '@/config/store'
 import SortFilter from '@/components/sortFilter/index.vue'
 import ShopList from './shopList.vue'
 import HomeHeader from './header.vue'
@@ -108,12 +115,20 @@ export default {
     this[UPDATE_TRANSITION](transition.slideLeft)
     next()
   },
+  asyncData({ store, route }) {
+    // 在服务端渲染的时候我们可以获取路由匹配的组件，然后调用组件的asyncData方法
+    // 但是注意子组件如filterSort, shopList等，那么是不会调用他们的asyncData方法的
+    // 所以这里需要手动调用子组件获取数据的方法
+    return Promise.all([
+      store.dispatch(`${storeModuleKey.home}/${GET_ADVERTISEMENT_DATA}`),
+      store.dispatch(`${storeModuleKey.home}/${GET_KIND_DATA}`),
+      store.dispatch(`${storeModuleKey.home}/${GET_SHOPLIST_DATA}`),
+      store.dispatch(`${storeModuleKey.shop}/${GET_FILTER_DATA}`),
+    ])
+  },
   data() {
     return {
       loading: false,
-      advertisement: [],
-      kindGroup: [],
-      col: 10, // 每组个数
       paddingTop: 0,
       translateY: 0,
       offsetTop: 0,
@@ -123,12 +138,27 @@ export default {
       interval: 600,
     }
   },
+  computed: {
+    ...mapState('home', {
+      advertisement: state => state.advertisement,
+      kindGroup: state => state.kindGroup,
+    }),
+  },
   mounted() {
     this.scrollHandler()
+    if (this.advertisement.length && this.kindGroup.length) {
+      // 在服务端渲染中，广告和分类数据已经有了，advertisement和kind组件已经渲染完成
+      // 但是这里还是需要nextTick的原因是因为在scrollHandler中修改了paddingTop值
+      // 会触发重新渲染，那么就需要在下一nextTick才能获取到正确的数据
+      this.$nextTick(() => {
+        this.top = this.offsetTop = this.$refs.list.$el.offsetTop - this.filterHeight
+      })
+      return
+    }
     this.loading = true
     Promise.all([
-      this.getAdvertisement(),
-      this.getKind(),
+      this[GET_ADVERTISEMENT_DATA](),
+      this[GET_KIND_DATA](),
     ]).then(() => {
       this.reset()
       this.$nextTick(() => {
@@ -141,24 +171,6 @@ export default {
     })
   },
   methods: {
-    getAdvertisement() {
-      return axios.get('/api/advertisement/list')
-        .then(({ data }) => {
-          if (data.code !== 0) throw new Error()
-          this.advertisement = data.data
-        })
-    },
-    getKind() {
-      return axios.get('/api/kind/list')
-        .then(({ data }) => {
-          if (data.code !== 0) throw new Error()
-          const kinds = data.data
-          const length = Math.ceil(kinds.length / this.col)
-          for (let i = 0; i < length; i += 1) {
-            this.kindGroup.push(kinds.slice(i * this.col, (i + 1) * this.col))
-          }
-        })
-    },
     scrollHandler() {
       this.filterHeight = this.$refs.filter.$el.offsetHeight
       const { headerHeight, locationHeight } = this.$refs.header.height()
@@ -174,7 +186,7 @@ export default {
         // 处理loadmore
         if (this.parentHeight + this.interval >= this.contentHeight + y) this.loadmore()
       })
-      // 为了保证数据精确，监听scrollEnd
+      // 为了保证数据精确
       this.$refs.scroll.on('scrollEnd', ({ y }) => {
         y = Math.ceil(y)
         this.translateY = locationHeight + y <= 0 ? -locationHeight : y
@@ -201,6 +213,7 @@ export default {
     noop() {
       this.$notify({ type: 'success', message: '功能正在开发中' })
     },
+    ...mapActions('home', [GET_KIND_DATA, GET_ADVERTISEMENT_DATA]),
   },
 }
 </script>

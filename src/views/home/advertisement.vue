@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Slider from '@/components/slider/index.vue'
 import Dot from '@/components/dot/index.vue'
 
@@ -34,11 +35,10 @@ export default {
     Slider,
     Dot,
   },
-  props: {
-    advertisement: {
-      type: Array,
-      default: () => [],
-    },
+  computed: {
+    ...mapState('home', {
+      advertisement: state => state.advertisement,
+    }),
   },
 }
 </script>
@@ -59,7 +59,6 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: px2rem(12);
-      object-fit: cover;
     }
   }
 </style>

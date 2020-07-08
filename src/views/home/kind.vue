@@ -1,12 +1,12 @@
 <template>
   <slider
-    :data-source="dataSource"
+    :data-source="kindGroup"
     :loop="false"
     :bounce="false"
   >
     <ul class="group-list">
       <li
-        v-for="(kinds, index) in dataSource"
+        v-for="(kinds, index) in kindGroup"
         :key="index"
         class="group-item"
       >
@@ -29,7 +29,7 @@
     </ul>
     <template #dot="{ current }">
       <dot
-        :data-source="dataSource"
+        :data-source="kindGroup"
         :current="current"
       />
     </template>
@@ -39,6 +39,7 @@
 <script>
 import Slider from '@/components/slider/index.vue'
 import Dot from '@/components/dot/index.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Kind',
@@ -47,10 +48,6 @@ export default {
     Dot,
   },
   props: {
-    dataSource: {
-      type: Array,
-      default: () => [],
-    },
     col: {
       type: Number,
       default: 5,
@@ -62,11 +59,14 @@ export default {
         flexBasis: `${100 / this.col}%`,
       }
     },
+    ...mapState('home', {
+      kindGroup: state => state.kindGroup,
+    }),
   },
   methods: {
     jump(id) {
       if (!id) {
-        this.$notify({ type: 'primary', message: '功能正在开发中' })
+        this.$notify({ type: 'success', message: '功能正在开发中' })
         return
       }
       this.$router.push(`/kind/${id}`)
@@ -102,7 +102,6 @@ export default {
     img {
       width: px2rem(90);
       height: px2rem(90);
-      object-fit: cover;
     }
 
     .title {

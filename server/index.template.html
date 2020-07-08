@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>elm</title>
+  <script type="text/javascript">
+    (function (document, window) {
+      const docEl = document.documentElement
+      const psdWidth = 750
+      const baseFontSize = 75
+      let meta = document.querySelector('meta[name="viewport"]')
+      if (!meta) {
+        meta = document.createElement('meta')
+        meta.setAttribute('name', 'viewport')
+        document.head.appendChild(meta)
+      }
+
+      function setRemUnit() {
+        const dpr = window.devicePixelRatio || 1
+        const scale = 1 / dpr
+        meta.setAttribute('content', `width=device-width, initial-scale=${scale}, user-scalable=no`)
+        const width = docEl.clientWidth
+        docEl.style.fontSize = width / (psdWidth / baseFontSize) + 'px'
+      }
+
+      setRemUnit()
+      window.addEventListener('resize', setRemUnit)
+    })(document, window)
+  </script>
+  <style type="text/css">
+    @media (-webkit-min-device-pixel-ratio: 1) {
+      body {
+        font-size: 12px;
+      }
+    }
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      body {
+        font-size: 24px;
+      }
+    }
+    @media (-webkit-min-device-pixel-ratio: 3) {
+      body {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--vue-ssr-outlet-->
+  <script type="text/javascript" src="/elm/static/dll/vendors.e2ec48.dll.js"></script>
+</body>
+</html>

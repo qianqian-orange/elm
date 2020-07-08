@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import store from './store'
-import router from './router'
+import createRouter from '@/router/createRouter'
+import createStore from '@/store/createStore'
 import { destroy } from '@/assets/lib/scroll'
-import './cache'
-import io from './directives/v-lazy'
-import App from './App.vue'
+import '@/cache'
+import io from '@/directives/v-lazy'
+import App from '@/App.vue'
 import {
   Notify,
   Loading,
@@ -17,7 +17,7 @@ import {
   Dialog,
   Drawer,
   Badge,
-} from './ui'
+} from '@/ui'
 import '@/config/axios'
 import 'normalize.css'
 import '@/assets/css/index.css'
@@ -36,16 +36,17 @@ Vue.use(Dialog)
 Vue.use(Drawer)
 Vue.use(Badge)
 
-new Vue({
-  router,
-  store,
-  beforeDestroy() {
-    destroy()
-    io.disconnect()
-  },
-  render: h => h(App),
-}).$mount('#app')
-
-if (module && module.hot) {
-  module.hot.accept()
+export default function createApp() {
+  const router = createRouter()
+  const store = createStore()
+  const app = new Vue({
+    router,
+    store,
+    beforeDestroy() {
+      destroy()
+      io.disconnect()
+    },
+    render: h => h(App),
+  })
+  return { app, router, store }
 }

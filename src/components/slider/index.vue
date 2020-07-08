@@ -68,18 +68,16 @@ export default {
     },
   },
   mounted() {
-    this.$nextTick(() => {
-      this.slider = new Slider({
-        el: this.$el,
-        duration: this.duration,
-        loop: this.loop,
-        bounce: this.bounce,
-      })
-      this.slider.on('scrollEnd', () => {
-        this.current = this.slider.getCurrentPage()
-      })
-      if (this.autoPlay) strategy.autoPlay.call(this)
+    this.slider = new Slider({
+      el: this.$el,
+      duration: this.duration,
+      loop: this.loop,
+      bounce: this.bounce,
     })
+    this.slider.on('scrollEnd', () => {
+      this.current = this.slider.getCurrentPage()
+    })
+    if (this.autoPlay) strategy.autoPlay.call(this)
   },
   beforeDestroy() {
     clearInterval(this.id)

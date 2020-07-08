@@ -1,4 +1,5 @@
 import { debounce } from '@/utils'
+import { isServer } from '@/config'
 
 const queue = []
 
@@ -10,7 +11,7 @@ const resize = debounce(() => {
 
 // 在手机端，由于页面的高度很容易改变，所以需要监听resize事件触发reset
 // 这样才能恢复正常的滚动效果
-window.addEventListener('resize', resize, false)
+if (!isServer) window.addEventListener('resize', resize, false)
 
 export function add(scroll) {
   if (queue.includes(scroll)) return

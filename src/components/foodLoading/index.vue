@@ -1,21 +1,24 @@
 <template>
-  <transition
-    name="food-loading"
-    appear
-  >
-    <elm-mask background-color="rgba(255, 255, 255, .6)">
-      <span
-        ref="icon"
-        :style="{
-          backgroundPosition: `0 -${index * height}px`,
-        }"
-        class="food-loading-icon"
-      />
-    </elm-mask>
-  </transition>
+  <div>
+    <transition
+      name="food-loading"
+      appear
+    >
+      <elm-mask background-color="rgba(255, 255, 255, .6)">
+        <span
+          ref="icon"
+          :style="{
+            backgroundPosition: `0 -${index * height}px`,
+          }"
+          class="food-loading-icon"
+        />
+      </elm-mask>
+    </transition>
+  </div>
 </template>
 
 <script>
+
 export default {
   name: 'FoodLoading',
   data() {

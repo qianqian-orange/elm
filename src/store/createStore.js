@@ -7,13 +7,13 @@ import { isDev } from '@/config'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-  strict: isDev,
-  modules: {
-    global,
-    shop,
-    home,
-  },
-})
-
-export default store
+export default function createStore() {
+  return new Vuex.Store({
+    strict: isDev,
+    modules: {
+      global,
+      shop,
+      home,
+    },
+  })
+}

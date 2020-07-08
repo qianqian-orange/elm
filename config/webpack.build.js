@@ -6,7 +6,7 @@ const baseConfig = require('./webpack.base')
 
 const resolve = (...paths) => path.resolve(__dirname, ...paths)
 
-module.exports = webpackMerge(baseConfig, {
+module.exports = webpackMerge({}, baseConfig, {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin({

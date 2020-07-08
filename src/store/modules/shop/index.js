@@ -1,8 +1,11 @@
 import axios from 'axios'
 import { Notify } from '@/ui'
+import { getShopList, getRestaurant } from '@/store/api'
 import { resolveImageUrl } from '@/utils'
 import {
   GET_SHOPLIST_DATA,
+  GET_FILTER_DATA,
+  GET_RESTAURANT_DATA,
 } from './action-types'
 import {
   SAVE_FILTER_DATA,
@@ -15,78 +18,48 @@ import {
   CLEAR_SHOPLIST_DATA,
 } from './mutation-types'
 
-const initState = {
-  filter: {
-    initial: false,
-    insideSortFilter: [],
-    outsideSortFilter: [],
-    outsideFilters: [],
-    supports: [],
-    activities: [],
-    averageCosts: [],
-  },
-  restaurant: null,
-  food: null,
-  shopList: {
-    data: [],
-    finish: false,
-    currentPage: 1,
-    pageSize: 8,
-  },
-}
-
 const actions = {
   [GET_SHOPLIST_DATA]({ commit, state: { shopList } }) {
     return new Promise((resolve) => {
       if (shopList.finish) return resolve()
-      axios.get('/api/shop/recommend', {
-        params: {
-          currentPage: shopList.currentPage,
-          pageSize: shopList.pageSize,
-        },
-      }).then(({ data }) => {
-        if (data.code !== 0) {
-          Notify({ type: 'danger', message: '获取数据失败' })
-          return
-        }
-        const result = data.data.map(({ restaurant, foods }) => {
-          return {
-            id: restaurant.id,
-            name: restaurant.name,
-            rating: restaurant.rating,
-            recentOrderNum: restaurant.recent_order_num,
-            floatMinimumOrderAmount: restaurant.float_minimum_order_amount,
-            floatDeliveryFee: restaurant.float_delivery_fee,
-            distance: restaurant.distance,
-            orderLeadTime: restaurant.order_lead_time,
-            recommendReasons: restaurant.recommend_reasons.map(({ reason }) => reason),
-            supportTags: restaurant.support_tags.map(item => ({
-              color: item.color,
-              border: item.border,
-              text: item.text,
-              background: item.background ? {
-                rgbFrom: item.background.rgb_from,
-                rgbTo: item.background.rgb_to,
-              } : null,
-            })),
-            imagePath: resolveImageUrl(restaurant.image_path),
-            activities: restaurant.activities.map(item => ({
-              description: item.description,
-              iconColor: item.icon_color,
-              iconName: item.icon_name,
-              id: item.id,
-            })),
-            foods: foods ? foods.map((food) => ({
-              id: food.id,
-              name: food.name,
-              price: food.price,
-              imagePath: resolveImageUrl(food.image_path),
-            })) : [],
-          }
-        })
-        commit(SAVE_SHOPLIST_DATA, result)
+      getShopList({
+        currentPage: shopList.currentPage,
+        pageSize: shopList.pageSize,
+      }).then((data) => {
+        commit(SAVE_SHOPLIST_DATA, data)
         resolve()
+      }).catch(() => {
+        Notify({ type: 'danger', message: '获取数据失败' })
       })
+    })
+  },
+  [GET_FILTER_DATA]({ commit }) {
+    return axios.get('/api/shop/sort')
+      .then(({ data }) => {
+        if (data.code !== 0) throw new Error('获取数据失败')
+        const { sortList, filterList } = data.data
+        commit(SAVE_FILTER_DATA, {
+          insideSortFilter: sortList.insideSortFilter,
+          outsideSortFilter: sortList.outsideSortFilter,
+          outsideFilters: sortList.outsideFilters,
+          supports: filterList.supports.map(support => ({
+            id: support.id,
+            name: support.name,
+            imagePath: resolveImageUrl(support.iconHash),
+          })),
+          activities: filterList.activityTypes,
+          averageCosts: filterList.averageCosts,
+        })
+      })
+  },
+  [GET_RESTAURANT_DATA]({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      getRestaurant(id)
+        .then((data) => {
+          commit(SAVE_RESTAURANT_DATA, data)
+          resolve()
+        })
+        .catch(reject)
     })
   },
 }
@@ -144,7 +117,25 @@ const mutations = {
 
 export default {
   namespaced: true,
-  state: initState,
+  state: () => ({
+    filter: {
+      initial: false,
+      insideSortFilter: [],
+      outsideSortFilter: [],
+      outsideFilters: [],
+      supports: [],
+      activities: [],
+      averageCosts: [],
+    },
+    restaurant: null,
+    food: null,
+    shopList: {
+      data: [],
+      finish: false,
+      currentPage: 1,
+      pageSize: 8,
+    },
+  }),
   actions,
   mutations,
 }

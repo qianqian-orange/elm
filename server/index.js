@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const express = require('express')
+const compression = require('compression')
 const favicon = require('express-favicon')
 const cityRouter = require('./routes/city')
 const advertisementRouter = require('./routes/advertisement')
@@ -9,6 +10,7 @@ const shopRouter = require('./routes/shop')
 
 const app = express()
 
+app.use(compression())
 app.use(favicon(path.join(__dirname, './public/favicon.ico')))
 app.use('/elm/dll/', express.static(path.join(__dirname, './public/dll')))
 app.use('/elm/static/', express.static(path.join(__dirname, './public/static')))
