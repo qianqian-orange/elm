@@ -12,11 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime-corejs3": "7.10.4",
     "axios": "0.19.2",
     "compression": "1.7.4",
     "express": "4.17.1",
     "express-favicon": "2.0.1",
-    "vue-server-renderer": "2.6.11"
+    "vue": "2.6.11",
+    "vue-router": "3.3.4",
+    "vue-server-renderer": "2.6.11",
+    "vuex": "3.5.1"
   },
   "devDependencies": {
     "cross-env": "7.0.2"
