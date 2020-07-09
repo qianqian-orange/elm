@@ -107,7 +107,6 @@
           <scroll-view
             :scroll-x="true"
             :scroll-y="false"
-            :stop-propagation="false"
             :nested="true"
           >
             <ul class="food-list">

@@ -3,6 +3,7 @@ import Transition from './transition'
 import EventEmitter from '../eventEmitter'
 import eventType from '../eventType'
 import { add, remove, destroy } from './scheduler'
+import { compose } from '@/utils'
 
 function trigger(type, e) {
   switch (type) {
@@ -18,6 +19,32 @@ function trigger(type, e) {
     default:
       throw new TypeError('illegal type value')
   }
+}
+
+function move() {
+  const fns = []
+  fns.push((e) => {
+    e.preventDefault()
+    if (this.nested && !this.stop) return
+    if (this.stopPropagation) e.stopPropagation()
+    this.origins.forEach((origin) => {
+      trigger.call(origin, eventType.touchmove, e)
+    })
+  })
+  if (this.nested) {
+    fns.push((e) => {
+      if (!this.toggle) {
+        this.toggle = true
+        const intervalX = Math.abs(parseInt(e.touches[0].clientX, 10) - this.clientX)
+        const intervalY = Math.abs(parseInt(e.touches[0].clientY, 10) - this.clientY)
+        if (this.scrollX && intervalX < intervalY) this.stop = false
+        if (this.scrollY && intervalY < intervalX) this.stop = false
+      }
+      if (this.stop) e.stopPropagation()
+      return e
+    })
+  }
+  return compose(...fns)
 }
 
 // TODO: 由于调用了e.preventDefault方法，如果当前页面处于浏览器原生滚动状态的话会报错
@@ -42,6 +69,10 @@ class Scroll {
     this.click = click
     this.stopPropagation = stopPropagation
     this.nested = nested
+    this.stop = true
+    this.toggle = false
+    this.scrollX = scrollX
+    this.scrollY = scrollY
     this.eventEmitter = new EventEmitter()
     this.translate = new Translate({
       el: this.el,
@@ -68,49 +99,51 @@ class Scroll {
   }
 
   init() {
+    this.move = move.call(this)
     this.el.style.transitionProperty = 'transform'
     this.el.style.transitionTimingFunction = 'cubic-bezier(0.165, 0.84, 0.44, 1)'
     this.el.style.transitionDuration = '0ms'
     this.el.style.transform = 'translate(0, 0)'
     this.el.style.willChange = 'transform'
     this.bindStart = this.start.bind(this)
-    this.bindMove = this.move.bind(this)
     this.bindEnd = this.end.bind(this)
     this.transition.addEventListener()
     this.el.addEventListener(eventType.touchstart, this.bindStart, false)
-    this.el.addEventListener(eventType.touchmove, this.bindMove, false)
+    this.el.addEventListener(eventType.touchmove, this.move, false)
     this.el.addEventListener(eventType.touchend, this.bindEnd, false)
   }
 
   start(e) {
     e.preventDefault()
-    if (this.stopPropagation) e.stopPropagation()
     this.pending = this.transition.run()
-    this.clientY = e.touches[0].clientY
-    this.clientX = e.touches[0].clientX
+    this.clientY = parseInt(e.touches[0].clientY, 10)
+    this.clientX = parseInt(e.touches[0].clientX, 10)
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchstart, e)
     })
   }
 
-  move(e) {
-    e.preventDefault()
-    if (this.stopPropagation) e.stopPropagation()
-    this.origins.forEach((origin) => {
-      trigger.call(origin, eventType.touchmove, e)
-    })
-  }
-
   end(e) {
     e.preventDefault()
-    if (this.stopPropagation || this.nested) e.stopPropagation()
+    this.toggle = false
+    if (this.nested) {
+      if (!this.stop) {
+        this.stop = true
+        return
+      }
+      e.stopPropagation()
+    }
+    if (this.stopPropagation) e.stopPropagation()
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchend, e)
     })
     // 如果处于过渡状态那么不触发点击事件
+    // console.log(this.pending)
     if (this.pending) return
-    if (this.click && Math.abs(e.changedTouches[0].clientY - this.clientY) <= this.min &&
-      Math.abs(e.changedTouches[0].clientX - this.clientX) <= this.min) {
+    const clientY = parseInt(e.changedTouches[0].clientY, 10)
+    const clientX = parseInt(e.changedTouches[0].clientX, 10)
+    if (this.click && Math.abs(clientY - this.clientY) <= this.min &&
+      Math.abs(clientX - this.clientX) <= this.min) {
       const event = new Event('click')
       let stop = false
       event.stopPropagation = function () {
@@ -129,7 +162,7 @@ class Scroll {
     remove(this)
     this.transition.destroy()
     this.el.removeEventListener(eventType.touchstart, this.bindStart, false)
-    this.el.removeEventListener(eventType.touchmove, this.bindMove, false)
+    this.el.removeEventListener(eventType.touchmove, this.move, false)
     this.el.removeEventListener(eventType.touchend, this.bindEnd, false)
   }
 

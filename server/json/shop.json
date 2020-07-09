@@ -3408,8 +3408,8 @@
             },
             {
                 "background": {
-                    "rgbFrom": "F9DA9F",
-                    "rgbTo": "F9DA9F"
+                    "rgb_from": "F9DA9F",
+                    "rgb_to": "F9DA9F"
                 },
                 "bizCode": 160,
                 "border": "E8D6C3",
