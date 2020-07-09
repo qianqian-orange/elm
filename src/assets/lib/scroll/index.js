@@ -20,6 +20,8 @@ function trigger(type, e) {
   }
 }
 
+// TODO: 由于调用了e.preventDefault方法，如果当前页面处于浏览器原生滚动状态的话会报错
+// 需要监听当前页面是否滚动判断是否调用e.preventDefault
 class Scroll {
   constructor({
     el,
@@ -28,6 +30,7 @@ class Scroll {
     stopPropagation = false,
     scrollY = true,
     scrollX = false,
+    nested = false,
   } = {}) {
     this.el = typeof el === 'string' ? document.querySelector(el) : el
     if (!this.el) {
@@ -38,6 +41,7 @@ class Scroll {
     this.probeType = probeType
     this.click = click
     this.stopPropagation = stopPropagation
+    this.nested = nested
     this.eventEmitter = new EventEmitter()
     this.translate = new Translate({
       el: this.el,
@@ -99,7 +103,7 @@ class Scroll {
 
   end(e) {
     e.preventDefault()
-    if (this.stopPropagation) e.stopPropagation()
+    if (this.stopPropagation || this.nested) e.stopPropagation()
     this.origins.forEach((origin) => {
       trigger.call(origin, eventType.touchend, e)
     })

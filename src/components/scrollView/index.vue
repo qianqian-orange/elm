@@ -36,6 +36,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    nested: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -59,6 +63,7 @@ export default {
       stopPropagation: this.stopPropagation,
       scrollX: this.scrollX,
       scrollY: this.scrollY,
+      nested: this.nested,
     })
   },
   beforeDestroy() {
