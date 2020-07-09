@@ -107,7 +107,7 @@
           <scroll-view
             :scroll-x="true"
             :scroll-y="false"
-            :stop-propagation="true"
+            :stop-propagation="false"
           >
             <ul class="food-list">
               <router-link
