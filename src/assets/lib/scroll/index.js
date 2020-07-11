@@ -49,6 +49,8 @@ function move() {
 
 // TODO: 由于调用了e.preventDefault方法，如果当前页面处于浏览器原生滚动状态的话会报错
 // 需要监听当前页面是否滚动判断是否调用e.preventDefault
+// 对于内嵌的scroll，点击它内部的元素的话外层的scroll是不会派发click事件的
+// nested的优先级要比stopPropagtion要高
 class Scroll {
   constructor({
     el,

@@ -147,6 +147,7 @@ export default {
   }
 
   .tip {
+    height: px2rem(80);
     padding: 0 px2rem(30);
     color: $primaryTextColor;
     font-size: px2rem(28);

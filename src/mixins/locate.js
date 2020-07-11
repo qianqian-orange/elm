@@ -17,6 +17,17 @@ export default {
         },
       }).then(({ data }) => {
         if (data.status !== '1') throw new Error()
+        if (data.rectangle.length === 0) {
+          this.$notify({ type: 'danger', message: '获取地址数据失败，使用默认数据' })
+          this[UPDATE_LOCATION]({
+            initial: initial,
+            city: '汕头',
+            adcode: '440500',
+            longitude: '116.6117942',
+            latitude: '23.28637076',
+          })
+          return
+        }
         const [longitude, latitude] = data.rectangle.split(';')[0].split(',')
         this[UPDATE_LOCATION]({
           initial: initial,
